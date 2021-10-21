@@ -5,6 +5,8 @@ import styled from "styled-components";
 import Section from "../../component/section";
 import Image from "../../component/image";
 
+var path = process.env.PUBLIC_URL + "/assets/images";
+
 const BannerText = styled.div`
   color: white;
   padding: 10px 0px;
@@ -34,10 +36,12 @@ const ContentTextContainer = styled.div`
 
 const LeftContent = styled(ContentTextContainer)`
   text-align: left;
+  padding-left: 200px;
 `;
 
 const RightContent = styled(ContentTextContainer)`
-  text-align: right;
+  text-align: left;
+  padding-left: 200px;
 `;
 
 const ContentTextTitle = styled.div`
@@ -49,6 +53,19 @@ const ContentTextTitle = styled.div`
 
 const ContentTitlePoints = styled.div`
   width: 100%;
+`;
+
+const Liner = styled.div`
+  width: 100%;
+  height: 200px;
+  background: url(${path + "/products/liner.jpg"}) center no-repeat, #161616;
+  background-size: contain;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  letter-spacing: 5px;
 `;
 const Products = () => {
   return (
@@ -67,7 +84,7 @@ const Products = () => {
       </Banner>
       <Section>
         <Content>
-          <Image p="100px" src="/products/1.jpg" wap_p="10px" />
+          <Image p="50px" src="/products/1.jpg" wap_p="10px" />
           <LeftContent>
             <ContentTextTitle>海量精美模板</ContentTextTitle>
             <ContentTitlePoints>◼ 多款独家精美模板</ContentTitlePoints>
@@ -82,10 +99,10 @@ const Products = () => {
             <ContentTitlePoints>◼ 多种精彩特色玩法</ContentTitlePoints>
             <ContentTitlePoints>◼ 自由组合随心搭配</ContentTitlePoints>
           </RightContent>
-          <Image p="100px" src="/products/2.jpg" wap_p="10px" />
+          <Image p="50px" src="/products/2.jpg" wap_p="10px" />
         </Content>
         <Content>
-          <Image p="100px" src="/products/3.jpg" wap_p="10px" />
+          <Image p="50px" src="/products/3.jpg" wap_p="10px" />
           <LeftContent>
             <ContentTextTitle>智能数据管理</ContentTextTitle>
             <ContentTitlePoints>◼ 单一后台多站管理</ContentTitlePoints>
@@ -100,10 +117,10 @@ const Products = () => {
             <ContentTitlePoints>◼ 全民代理无限推广</ContentTitlePoints>
             <ContentTitlePoints>◼ 自定义优惠活动</ContentTitlePoints>
           </RightContent>
-          <Image p="100px" src="/products/4.jpg" wap_p="10px" />
+          <Image p="50px" src="/products/4.jpg" wap_p="10px" />
         </Content>
-        <div>123</div>
       </Section>
+      <Liner>开创未来 由您开始</Liner>
     </Page>
   );
 };
