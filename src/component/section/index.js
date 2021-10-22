@@ -9,7 +9,7 @@ const BannerContainer = styled.div`
 `;
 
 const BannerContent = styled.div`
-  max-width: 1280px;
+  width: 1280px;
 `;
 
 const Section = (props) => {

@@ -21,7 +21,7 @@ width: 100%;
 `;
 
 const BannerContent = styled.div`
-  max-width: 1280px;
+  width: 1280px;
   display: flex;
   justify-content: center;
   align-items: center;

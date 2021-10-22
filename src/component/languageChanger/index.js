@@ -15,8 +15,6 @@ const LanguageOption = styled.div`
 `;
 
 const LanguageChanger = () => {
-  const [open, setOpen] = useState(false);
-
   const languages = [
     {
       language: "en-US",
@@ -29,6 +27,18 @@ const LanguageChanger = () => {
     },
   ];
 
+  var path = window.location.pathname.split("/");
+
+  function changeLanguage(language) {
+    i18n.changeLanguage(language);
+    if (path[2] !== "") {
+      AppHistory.push("/" + language + "/" + path[2]);
+      window.location.reload(); //temporary solution until change language without refresh works.
+    } else {
+      window.location.reload(); //temporary solution until change language without refresh works.
+    }
+  }
+
   return (
     <LanguageHolder>
       {languages.map((data, index) => {
@@ -36,8 +46,7 @@ const LanguageChanger = () => {
           <LanguageOption
             key={index}
             onClick={() => {
-              i18n.changeLanguage(data.language);
-              setOpen(!open);
+              changeLanguage(data.language);
             }}
           >
             {data.name}

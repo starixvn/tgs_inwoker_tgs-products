@@ -15,10 +15,10 @@ const CustomAppBarContainer = styled.div`
 `;
 
 const AppBarLength = styled.div`
-  max-width: 1280px;
+  width: 1280px;
   height: 100%;
   display: grid;
-  grid-template-columns: 10% 80% 10%;
+  grid-template-columns: 15% 70% 15%;
 `;
 
 const AppBarContent = styled.div`

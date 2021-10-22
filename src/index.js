@@ -9,13 +9,7 @@ import Pages from "./pages";
 
 const Wrapper = () => {
   //run this when the app is initialize.
-  var path = window.location.pathname.split("/");
-
   useEffect(() => {
-    if (path[2] === "") {
-      AppHistory.push("/" + i18n.language);
-    } else {
-    }
     document.title = config.brand;
     document.querySelector("link[rel*='icon']").href =
       process.env.PUBLIC_URL + `/assets/favicon/${config.brand}.ico`;

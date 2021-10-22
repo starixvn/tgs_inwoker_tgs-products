@@ -29,7 +29,7 @@ i18n.use(LanguageDetector).init({
       translation: require("../assets/translation/zh-TW.json"),
     },
   },
-  whitelist: ["zh-CN", "en-US", "zh-TW"],
+  whitelist: ["en-US", "zh-TW", "zh-CN"],
   fallbackLng: languageInLocalStorage ? languageInLocalStorage : "en-US",
   detection: {
     order: ["path"],

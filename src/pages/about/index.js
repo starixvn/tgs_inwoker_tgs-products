@@ -39,7 +39,6 @@ const MoveRightImage = styled.img`
   height: 500px;
   transition: margin 1s;
   :hover {
-    margin-right: -100px;
   }
 `;
 
@@ -123,6 +122,11 @@ const RightContainer = styled(Container)`
       background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
         url(${({ src }) => src}) center no-repeat;
     }
+
+    ${MoveRightImage} {
+      margin-right: -100px;
+    }
+
     ${FloatOnLeft} {
       opacity: 1;
       transition: opacity 3s;

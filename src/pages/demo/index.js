@@ -4,6 +4,8 @@ import Page from "../../component/page";
 import styled from "styled-components";
 import Section from "../../component/section";
 import Image from "../../component/image";
+import { useEffect } from "react/cjs/react.development";
+import { useParams } from "react-router";
 
 const Content = styled.div``;
 const BannerTitle = styled.div`
@@ -102,13 +104,14 @@ const Demo = () => {
   ];
 
   const [project, setProject] = useState("web");
+  const { type } = useParams();
   var path = process.env.PUBLIC_URL + "/assets/images";
 
   return (
     <Page>
       <Content>
         <Banner
-          background="banner/demo-web.jpg"
+          background={`banner/demo-${project}.jpg`}
           gradient="rgb(255,255,255,0.1), rgb(255,255,255,0.1)"
         >
           <BannerTitle>最全面的包网方案</BannerTitle>
