@@ -4,6 +4,7 @@ import Page from "../../component/page";
 import styled from "styled-components";
 import Section from "../../component/section";
 import Image from "../../component/image";
+import i18n from "../../config/i18n";
 
 var path = process.env.PUBLIC_URL + "/assets/images";
 
@@ -19,12 +20,18 @@ const Title = styled(BannerText)`
 
 const Description = styled(BannerText)`
   width: 650px;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const Content = styled.div`
   display: grid;
   width: 1280px;
   grid-template-columns: 50% 50%;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const ContentTextContainer = styled.div`
@@ -37,11 +44,17 @@ const ContentTextContainer = styled.div`
 const LeftContent = styled(ContentTextContainer)`
   text-align: left;
   padding-left: 200px;
+  @media (max-width: 600px) {
+    padding-left: 20px;
+  }
 `;
 
 const RightContent = styled(ContentTextContainer)`
   text-align: left;
   padding-left: 200px;
+  @media (max-width: 600px) {
+    padding-left: 20px;
+  }
 `;
 
 const ContentTextTitle = styled.div`
@@ -74,53 +87,72 @@ const Products = () => {
         background="banner/products.jpg"
         gradient="rgb(0,0,0,0.3), rgb(0,0,0,0.3)"
       >
-        <Title>
-          五分钟火速开站 <br />
-          尊享品牌订制服务
-        </Title>
-        <Description>
-          专属顾问免费在线咨询，即刻打造专属于您的在线娱乐平台！一条龙式的快速建站服务，全面支持PC/移动端全渠道开站、品牌运营、游戏介接、数据管理、营销推广等强大功能，技术团队24小时全年在线支持，为您的事业保驾护航！
-        </Description>
+        <Title>{i18n.t("product.title")}</Title>
+        <Description>{i18n.t("product.description")}</Description>
       </Banner>
       <Section>
         <Content>
           <Image p="50px" src="/products/1.jpg" wap_p="10px" />
           <LeftContent>
-            <ContentTextTitle>海量精美模板</ContentTextTitle>
-            <ContentTitlePoints>◼ 多款独家精美模板</ContentTitlePoints>
-            <ContentTitlePoints>◼ 专业客制化网页设计</ContentTitlePoints>
-            <ContentTitlePoints>◼ 打造专属品牌形象</ContentTitlePoints>
+            <ContentTextTitle>{i18n.t("product.1.title")}</ContentTextTitle>
+            <ContentTitlePoints>
+              ◼ {i18n.t("product.1.point1")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("product.1.point2")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("product.1.point3")}
+            </ContentTitlePoints>
           </LeftContent>
         </Content>
         <Content>
           <RightContent>
-            <ContentTextTitle>千款精彩游戏</ContentTextTitle>
-            <ContentTitlePoints>◼ 汇集全球知名游戏</ContentTitlePoints>
-            <ContentTitlePoints>◼ 多种精彩特色玩法</ContentTitlePoints>
-            <ContentTitlePoints>◼ 自由组合随心搭配</ContentTitlePoints>
+            <ContentTextTitle>{i18n.t("product.2.title")}</ContentTextTitle>
+            <ContentTitlePoints>
+              ◼ {i18n.t("product.2.point1")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("product.2.point2")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("product.2.point3")}
+            </ContentTitlePoints>
           </RightContent>
           <Image p="50px" src="/products/2.jpg" wap_p="10px" />
         </Content>
         <Content>
           <Image p="50px" src="/products/3.jpg" wap_p="10px" />
           <LeftContent>
-            <ContentTextTitle>智能数据管理</ContentTextTitle>
-            <ContentTitlePoints>◼ 单一后台多站管理</ContentTitlePoints>
-            <ContentTitlePoints>◼ 大数据报表分析</ContentTitlePoints>
-            <ContentTitlePoints>◼ 智能CRM玩家追踪</ContentTitlePoints>
+            <ContentTextTitle>{i18n.t("product.3.title")}</ContentTextTitle>
+            <ContentTitlePoints>
+              ◼ {i18n.t("product.3.point1")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("product.3.point2")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("product.3.point3")}
+            </ContentTitlePoints>
           </LeftContent>
         </Content>
         <Content>
           <RightContent>
-            <ContentTextTitle>高效营销推广</ContentTextTitle>
-            <ContentTitlePoints>◼ VIP会员分级管理</ContentTitlePoints>
-            <ContentTitlePoints>◼ 全民代理无限推广</ContentTitlePoints>
-            <ContentTitlePoints>◼ 自定义优惠活动</ContentTitlePoints>
+            <ContentTextTitle>{i18n.t("product.4.title")}</ContentTextTitle>
+            <ContentTitlePoints>
+              ◼ {i18n.t("product.4.point1")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("product.4.point2")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("product.4.point3")}
+            </ContentTitlePoints>
           </RightContent>
           <Image p="50px" src="/products/4.jpg" wap_p="10px" />
         </Content>
       </Section>
-      <Liner>开创未来 由您开始</Liner>
+      <Liner>{i18n.t("product.last")}</Liner>
     </Page>
   );
 };

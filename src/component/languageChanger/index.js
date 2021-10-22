@@ -35,6 +35,7 @@ const LanguageChanger = () => {
       AppHistory.push("/" + language + "/" + path[2]);
       window.location.reload(); //temporary solution until change language without refresh works.
     } else {
+      AppHistory.push("/" + language);
       window.location.reload(); //temporary solution until change language without refresh works.
     }
   }

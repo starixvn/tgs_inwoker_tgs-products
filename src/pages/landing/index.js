@@ -6,6 +6,7 @@ import Section from "../../component/section";
 import SectionTwo from "./section2";
 import Partners from "./partners";
 import Contact from "./contact";
+import i18n from "../../config/i18n";
 
 const BannerText = styled.div`
   color: white;
@@ -18,10 +19,16 @@ const Title = styled(BannerText)`
 
 const Description = styled(BannerText)`
   width: 650px;
+  @media (max-width: 600px) {
+    width: calc(100% - 40px);
+  }
 `;
 
 const TheGap = styled.div`
   margin-top: 100px;
+  @media (max-width: 600px) {
+    margin-top: 40px;
+  }
 `;
 
 const Landing = () => {
@@ -31,10 +38,8 @@ const Landing = () => {
         background="banner/landing.jpg"
         gradient="rgb(0,0,0,0.3), rgb(0,0,0,0.3)"
       >
-        <Title>一站式包网系统 定义全球新未来</Title>
-        <Description>
-          PG系统是亚洲地区最受欢迎的全方位游戏包网系统，由经验丰富的顶尖研发团队潜心打造，致力于为客户提供最强大、最完善的在线娱乐产品及客制化整合服务；精准掌握市场趋势，用实力创造无限盈利，与您共创事业极致巅峰！
-        </Description>
+        <Title>{i18n.t("landing.title")}</Title>
+        <Description>{i18n.t("landing.description")}</Description>
       </Banner>
       <TheGap>
         <SectionTwo />

@@ -1,5 +1,6 @@
 import React from "react";
 import AppBar from "../component/appbar";
+import MobileMenu from "../component/appbar/mobilemenu";
 import Footer from "../component/footer";
 import Page from "../component/page";
 import AppRouter from "../config/router";

@@ -6,6 +6,7 @@ import Section from "../../component/section";
 import Image from "../../component/image";
 import { useEffect } from "react/cjs/react.development";
 import { useParams } from "react-router";
+import i18n from "../../config/i18n";
 
 const Content = styled.div``;
 const BannerTitle = styled.div`
@@ -41,12 +42,20 @@ const DemoProjectWrapper = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   width: 1280px;
+  @media (max-width: 600px) {
+    width: 100%;
+    grid-template-columns: 100%;
+  }
 `;
 
 const DemoWapProjectWrapper = styled.div`
   display: grid;
   grid-template-columns: 33.33% 33.33% 33.33%;
   width: 1280px;
+  @media (max-width: 600px) {
+    width: 100%;
+    grid-template-columns: 100%;
+  }
 `;
 
 const DemoProjectButton = styled.div`
@@ -77,6 +86,10 @@ const DemoProject = styled.div`
       display: block;
     }
   }
+
+  @media (max-width: 600px) {
+    padding: 20px;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -85,22 +98,28 @@ const ImageContainer = styled.div`
   justify-content: center;
 `;
 
+const TheImage = styled.img`
+  @media (max-width: 600px) {
+    max-width: calc(100vw - 40px);
+  }
+`;
+
 const Demo = () => {
   const webProject = [
-    { image: "/demo/web/t1.jpg", title: "2", link: "" },
-    { image: "/demo/web/t2.jpg", title: "2", link: "" },
-    { image: "/demo/web/t3.jpg", title: "2", link: "" },
-    { image: "/demo/web/t4.jpg", title: "2", link: "" },
-    { image: "/demo/web/t5.jpg", title: "2", link: "" },
+    { image: "/demo/web/t1.jpg", title: "T1", link: "" },
+    { image: "/demo/web/t2.jpg", title: "T2", link: "" },
+    { image: "/demo/web/t3.jpg", title: "T3", link: "" },
+    { image: "/demo/web/t4.jpg", title: "T4", link: "" },
+    { image: "/demo/web/t5.jpg", title: "T5", link: "" },
   ];
 
   const wapProject = [
-    { image: "/demo/wap/t1.jpg", title: "1", link: "" },
-    { image: "/demo/wap/t2.jpg", title: "1", link: "" },
-    { image: "/demo/wap/t3.jpg", title: "1", link: "" },
-    { image: "/demo/wap/t4.jpg", title: "1", link: "" },
-    { image: "/demo/wap/t5.jpg", title: "1", link: "" },
-    { image: "/demo/wap/t6.jpg", title: "1", link: "" },
+    { image: "/demo/wap/t1.jpg", title: "T1", link: "" },
+    { image: "/demo/wap/t2.jpg", title: "T2", link: "" },
+    { image: "/demo/wap/t3.jpg", title: "T3", link: "" },
+    { image: "/demo/wap/t4.jpg", title: "T4", link: "" },
+    { image: "/demo/wap/t5.jpg", title: "T5", link: "" },
+    { image: "/demo/wap/t6.jpg", title: "T6", link: "" },
   ];
 
   const [project, setProject] = useState("web");
@@ -114,7 +133,7 @@ const Demo = () => {
           background={`banner/demo-${project}.jpg`}
           gradient="rgb(255,255,255,0.1), rgb(255,255,255,0.1)"
         >
-          <BannerTitle>最全面的包网方案</BannerTitle>
+          <BannerTitle>{i18n.t("demo.title")}</BannerTitle>
         </Banner>
         <Section>
           <ButtonWrapper>
@@ -124,7 +143,7 @@ const Demo = () => {
                 setProject("web");
               }}
             >
-              网页版本
+              {i18n.t("demo.version.web")}
             </CustomButton>
             <CustomButton
               selected={project === "wap"}
@@ -132,7 +151,7 @@ const Demo = () => {
                 setProject("wap");
               }}
             >
-              手机版本
+              {i18n.t("demo.version.wap")}
             </CustomButton>
           </ButtonWrapper>
           {project === "web" ? (
@@ -142,7 +161,7 @@ const Demo = () => {
                   <DemoProject>
                     <ImageContainer>
                       <ImageOverlay src={path + "/demo/web/hover.png"} />
-                      <img src={path + data.image} />
+                      <TheImage src={path + data.image} />
                     </ImageContainer>
                     <DemoProjectButton>{data.title}</DemoProjectButton>
                   </DemoProject>

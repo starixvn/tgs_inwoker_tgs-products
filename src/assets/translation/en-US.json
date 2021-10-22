@@ -5,5 +5,120 @@
     "partners": "Partners",
     "about": "About",
     "contact": "Contact"
+  },
+  "landing": {
+    "title": "ONE STOP PACKAGE NETWORK SYSTEM",
+    "description": "The PG system is the most popular all-round game package network system in Asia. It is built by an experienced top R&D team and is committed to providing customers with the most powerful and complete online entertainment products and customized integration services; precise control Market trend, use strength to create unlimited profits, and create the ultimate peak of your career with you!",
+    "sec2": {
+      "title": "Hundreds of popular games with free collocation",
+      "description": "PG has the most popular and popular games at present, including live action, sports, chess, slot machines, fishing, lottery, as many as thousands of games to choose from; with the most exciting and exciting gameplay, it is guaranteed to satisfy everyone The ultimate entertainment experience for players! It can also match the game currency and language according to the country and region of the customer, and quickly respond to customer customized needs.",
+      "cards": {
+        "category": {
+          "product": "Game Product"
+        },
+        "gametype": {
+          "lottery": {
+            "title": "Lottery Game",
+            "description": "Through the core technology algorithm of the blockchain, to ensure fairness, justice, and the safest and most reliable data lottery results."
+          },
+          "chess": {
+            "title": "Chess and Card Game",
+            "description": "With the rapid rise of board and card games, switching from casual to real money game mode has become an indispensable part of the market."
+          },
+          "live": {
+            "title": "Live Video",
+            "description": "Live video brings players an unprecedented entertainment experience. It is a must-have product for your business."
+          },
+          "sport": {
+            "title": "Sports Event",
+            "description": "Provides access to a variety of sports competition platforms. There are at least thousands of joint sports events every week for your sports fans to bet. It is the best platform for your sports fans."
+          },
+          "slot": {
+            "title": "Slot Machine",
+            "description": "Online slot games are still the most popular way of online gambling. Countless gamblers love slot games. There are hundreds of slot games for you to choose from."
+          },
+          "electron": {
+            "title": "Video Game",
+            "description": "Through the core technology algorithm of the blockchain to ensure fairness, fairness, and the safest and most reliable data lottery results."
+          },
+          "fish": {
+            "title": "Fishing Game",
+            "description": "This game can not only relax the mood but also feel the fish wandering happily in the water!"
+          }
+        }
+      }
+    },
+    "partner": "Official Named Partners",
+    "contact": {
+      "title": "The most comprehensive package network solution",
+      "button": "Contact Us"
+    }
+  },
+  "product": {
+    "title": "Enjoy brand customization service",
+    "description": "Exclusive consultants provide free online consultation, and instantly create your own online entertainment platform! One-stop fast site building service, fully supports PC/mobile terminal omni-channel site opening, brand operation, game interface, data management, With powerful functions such as marketing and promotion, the technical team provides 24-hour online support throughout the year to escort your career!",
+    "1": {
+      "title": "Massive exquisite templates",
+      "point1": "A variety of exclusive exquisite templates",
+      "point2": "Professional customized web design",
+      "point3": "Create an exclusive brand image"
+    },
+    "2": {
+      "title": "Thousands of Wonderful Games",
+      "point1": "A collection of world-renowned games",
+      "point2": "A variety of exciting and unique gameplay",
+      "point3": "Free Combination and Collocation"
+    },
+    "3": {
+      "title": "Intelligent Data Management",
+      "point1": "Single background multi-station management",
+      "point2": "Big Data Report Analysis",
+      "point3": "Smart CRM Player Tracking"
+    },
+    "4": {
+      "title": "Efficient Marketing Promotion",
+      "point1": "VIP member hierarchical management",
+      "point2": "Universal agent unlimited promotion",
+      "point3": "Custom offers"
+    },
+    "last": "Create The Future, Start With You"
+  },
+  "demo": {
+    "title": "The most comprehensive package network solution",
+    "version": {
+      "web": "Web",
+      "wap": "Mobile"
+    }
+  },
+  "about": {
+    "title": "Strongest gaming and entertainment packet network system",
+    "description": "Since its establishment, PegaGaming (PG) has always insisted on innovation and service, gathering all the industry's top technology, marketing, art, operation and maintenance talents, and has actively established strategic partnerships with large global gaming groups to successfully develop Asia The market continues to set new industry records, and is committed to tailoring the most stable and excellent gaming Internet products for customers.",
+    "1": {
+      "title": "Independent research and development system",
+      "point1": "Global unique development of GMS system",
+      "point2": "One-stop management of funds/customer service/player/agent/team",
+      "point3": "Real-time data automatic report generation"
+    },
+    "2": {
+      "title": "Efficient defense mechanism",
+      "point1": "WAF protection intercepts malicious intrusion",
+      "point2": "CDN real-time information security protection",
+      "point3": "Enterprise-level multi-level defense architecture"
+    },
+    "3": {
+      "title": "Extremely fast and smooth line",
+      "point1": "Equipped with the world's top server and cloud technology",
+      "point2": "International Route Backup Mechanism",
+      "point3": "SSL transmission security technology"
+    },
+    "4": {
+      "title": "Online Technical Support",
+      "point1": "24x7x365 Technical Online Support",
+      "point2": "Quickly respond to customer needs",
+      "point3": "Regularly upgrade and optimize the system"
+    }
+  },
+  "contact": {
+    "title": "Free Consultation"
   }
 }

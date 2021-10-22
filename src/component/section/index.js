@@ -10,6 +10,13 @@ const BannerContainer = styled.div`
 
 const BannerContent = styled.div`
   width: 1280px;
+  @media (max-width: 600px) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 const Section = (props) => {

@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "../../../component/image";
+import i18n from "../../../config/i18n";
 
 const LogoHolder = styled.div`
-  width: 1280px;
+  width: 100%;
+  max-width: 1280px;
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
+
+  @media (max-width: 600px) {
+    grid-template-columns: auto auto auto;
+  }
 `;
 
 const PartnerWrapper = styled.div`
@@ -56,7 +62,7 @@ const Partners = () => {
   return (
     <PartnerWrapper>
       <TitleWrapper>
-        官方指名合作伙伴
+        {i18n.t("landing.partner")}
         <TheDamnShortBorderBottom />
       </TitleWrapper>
       <LogoHolder>

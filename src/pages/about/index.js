@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "../../component/banner";
 import Page from "../../component/page";
 import styled from "styled-components";
+import i18n from "../../config/i18n";
 
 const BannerText = styled.div`
   color: white;
@@ -15,6 +16,9 @@ const Title = styled(BannerText)`
 
 const Description = styled(BannerText)`
   width: 650px;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const ContentTextTitle = styled.div`
@@ -152,9 +156,23 @@ var path = process.env.PUBLIC_URL + "/assets/images";
 
 const Wrapper = styled.div`
   margin-top: 50px;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const Content = styled.div``;
+
+const AnotherWrapper = styled.div`
+  display: none;
+  @media (max-width: 600px) {
+    display: block;
+  }
+`;
+
+const EachBloodyPart = styled.div`
+  padding: 20px;
+`;
 const About = () => {
   return (
     <Page>
@@ -163,58 +181,121 @@ const About = () => {
           background="banner/about.jpg"
           gradient="rgb(0,0,0,0.5), rgb(0,0,0,0.5)"
         >
-          <Title>
-            亚洲最强博娱包网系统 <br />
-            引领业界新风暴
-          </Title>
-          <Description>
-            PegaGaming(PG)自成立以来，始终坚持创新与服务，汇聚所有业界顶尖的技术、营销、美术、运维人才，并且积极与全球大型博彩集团建立战略合作伙伴关系，成功开拓亚洲市场，不断创下行业新纪录，致力为客户量身打造出最稳定、最优秀的博娱互联网产品。
-          </Description>
+          <Title>{i18n.t("about.title")}</Title>
+          <Description>{i18n.t("about.description")}</Description>
         </Banner>
         <Wrapper>
           <LeftContainer src={path + "/about/1.png"}>
             <LeftImage src={path + "/about/1.png"} />
             <FloatOnTop>
-              <ContentTextTitle>自主研发系统</ContentTextTitle>
-              <ContentTitlePoints>◼ 全球独步开发GMS系统</ContentTitlePoints>
+              <ContentTextTitle>{i18n.t("about.1.title")}</ContentTextTitle>
               <ContentTitlePoints>
-                ◼ 一站管理资金/客服/玩家/代理/团队
+                ◼ {i18n.t("about.1.point1")}
               </ContentTitlePoints>
-              <ContentTitlePoints>◼ 实时数据自动生成报表</ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("about.1.point2")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("about.1.point3")}
+              </ContentTitlePoints>
             </FloatOnTop>
           </LeftContainer>
           <RightContainer>
             <FloatOnLeft>
-              <ContentTextTitle>高效防御机制</ContentTextTitle>
-              <ContentTitlePoints>◼ WAF防护拦截恶意入侵</ContentTitlePoints>
-              <ContentTitlePoints>◼ CDN实时信息安全防护</ContentTitlePoints>
+              <ContentTextTitle>{i18n.t("about.2.title")}</ContentTextTitle>
               <ContentTitlePoints>
-                ◼ 企业级多层次防御架构
-              </ContentTitlePoints>{" "}
+                ◼ {i18n.t("about.2.point1")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("about.2.point2")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("about.2.point3")}
+              </ContentTitlePoints>
             </FloatOnLeft>
             <MoveRightImage src={path + "/about/2.png"} />
           </RightContainer>
           <LeftContainer>
             <MoveLeftImage src={path + "/about/3.png"} />
             <FloatOnTopTwo>
-              <ContentTextTitle>极速流畅线路</ContentTextTitle>
+              <ContentTextTitle>{i18n.t("about.3.title")}</ContentTextTitle>
               <ContentTitlePoints>
-                ◼ 配备全球顶尖服务器和云端技术
+                ◼ {i18n.t("about.3.point1")}
               </ContentTitlePoints>
-              <ContentTitlePoints>◼ 国际线路备援机制</ContentTitlePoints>
-              <ContentTitlePoints>◼ SSL传输保密技术</ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("about.3.point2")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("about.3.point3")}
+              </ContentTitlePoints>
             </FloatOnTopTwo>
           </LeftContainer>
           <AnotherRightContainer src={path + "/about/4.png"}>
             <FloatOnTopThree>
-              <ContentTextTitle>在线技术支持</ContentTextTitle>
-              <ContentTitlePoints>◼ 24x7x365技术在线支持</ContentTitlePoints>
-              <ContentTitlePoints>◼ 快速响应客户需求</ContentTitlePoints>
-              <ContentTitlePoints>◼ 定期升级优化系统</ContentTitlePoints>
+              <ContentTextTitle>{i18n.t("about.4.title")}</ContentTextTitle>
+              <ContentTitlePoints>
+                ◼ {i18n.t("about.4.point1")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("about.4.point2")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("about.4.point3")}
+              </ContentTitlePoints>
             </FloatOnTopThree>
             <RightImage src={path + "/about/4.png"} />
           </AnotherRightContainer>
         </Wrapper>
+        <AnotherWrapper>
+          <EachBloodyPart>
+            <ContentTextTitle>{i18n.t("about.1.title")}</ContentTextTitle>
+            <ContentTitlePoints>
+              ◼ {i18n.t("about.1.point1")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("about.1.point2")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("about.1.point3")}
+            </ContentTitlePoints>
+          </EachBloodyPart>
+          <EachBloodyPart>
+            <ContentTextTitle>{i18n.t("about.2.title")}</ContentTextTitle>
+            <ContentTitlePoints>
+              ◼ {i18n.t("about.2.point1")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("about.2.point2")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("about.2.point3")}
+            </ContentTitlePoints>
+          </EachBloodyPart>
+          <EachBloodyPart>
+            <ContentTextTitle>{i18n.t("about.3.title")}</ContentTextTitle>
+            <ContentTitlePoints>
+              ◼ {i18n.t("about.3.point1")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("about.3.point2")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("about.3.point3")}
+            </ContentTitlePoints>
+          </EachBloodyPart>
+          <EachBloodyPart>
+            <ContentTextTitle>{i18n.t("about.4.title")}</ContentTextTitle>
+            <ContentTitlePoints>
+              ◼ {i18n.t("about.4.point1")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("about.4.point2")}
+            </ContentTitlePoints>
+            <ContentTitlePoints>
+              ◼ {i18n.t("about.4.point3")}
+            </ContentTitlePoints>
+          </EachBloodyPart>
+        </AnotherWrapper>
       </Content>
     </Page>
   );

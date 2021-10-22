@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Image from "../../component/image";
 import Modal from "../../component/modal";
 import { useState } from "react/cjs/react.development";
+import i18n from "../../config/i18n";
 
 const Content = styled.div`
   display: flex;
@@ -17,6 +18,10 @@ const ActualContent = styled.div`
   display: grid;
   width: 1280px;
   grid-template-columns: 25% 25% 25% 25%;
+  @media (max-width: 600px) {
+    width: 100%;
+    grid-template-columns: 50% 50%;
+  }
 `;
 
 const TheCardContainer = styled.div`
@@ -26,6 +31,9 @@ const TheCardContainer = styled.div`
   justify-content: center;
   margin-bottom: 25px;
   cursor: pointer;
+  @media (max-width: 600px) {
+    padding: 5px;
+  }
 `;
 
 const TheCardContent = styled.div`
@@ -78,7 +86,7 @@ const Contact = () => {
           background="banner/contact.jpg"
           gradient="rgb(255,255,255,0.1), rgb(255,255,255,0.1)"
         >
-          <BannerTitle>免费咨询</BannerTitle>
+          <BannerTitle>{i18n.t("contact.title")}</BannerTitle>
         </Banner>
         <ActualContent>
           {CSLists.map((data, index) => {
@@ -91,7 +99,7 @@ const Contact = () => {
                   }}
                 >
                   <TheCardContent>
-                    <Image src={"/cs/" + data.name + ".png"} />
+                    <Image p="20px" src={"/cs/" + data.name + ".png"} />
                     <Title>{data.name}</Title>
                     <Username>{data.username}</Username>
                   </TheCardContent>

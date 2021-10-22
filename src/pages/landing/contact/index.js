@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "../../../component/image";
+import i18n from "../../../config/i18n";
 
 const Wrapper = styled.div`
   position: relative;
@@ -20,6 +21,12 @@ const MiddleThingy = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media (max-width: 600px) {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+  }
 `;
 
 const ContactTitle = styled.div`
@@ -37,14 +44,18 @@ const ContactButton = styled.div`
     color: #2f94ee;
     font-weight: bold;
   }
+
+  @media (max-width: 600px) {
+    margin-top: 20px;
+  }
 `;
 const Contact = () => {
   return (
     <Wrapper>
       <Image src="/landing/contact/background.jpg" />
       <MiddleThingy>
-        <ContactTitle>最全面的包往方案</ContactTitle>
-        <ContactButton>联系我们</ContactButton>
+        <ContactTitle>{i18n.t("landing.contact.title")}</ContactTitle>
+        <ContactButton>{i18n.t("landing.contact.button")}</ContactButton>
       </MiddleThingy>
     </Wrapper>
   );

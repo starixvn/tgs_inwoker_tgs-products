@@ -21,11 +21,16 @@ width: 100%;
 `;
 
 const BannerContent = styled.div`
-  width: 1280px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 600px) {
+    width: calc(100% - 40px);
+    padding: 20px;
+    text-align: center;
+  }
 `;
 
 const Banner = (props) => {

@@ -2,7 +2,9 @@ import React from "react";
 import AppBar from "../appbar";
 import styled from "styled-components";
 
-const PageWrapper = styled.div``;
+const PageWrapper = styled.div`
+  z-index: 1;
+`;
 
 const Page = (props) => {
   return <PageWrapper>{props.children}</PageWrapper>;

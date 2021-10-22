@@ -4,6 +4,7 @@ import i18n from "../../config/i18n";
 import { AppHistory } from "../../config/router";
 import LanguageChanger from "../languageChanger";
 import Image from "../image";
+import MobileMenu from "./mobilemenu";
 
 const CustomAppBarContainer = styled.div`
   height: 100px;
@@ -12,6 +13,7 @@ const CustomAppBarContainer = styled.div`
   justify-content: center;
   position: absolute;
   width: 100%;
+  color: black;
 `;
 
 const AppBarLength = styled.div`
@@ -19,6 +21,11 @@ const AppBarLength = styled.div`
   height: 100%;
   display: grid;
   grid-template-columns: 15% 70% 15%;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    grid-template-columns: 40%;
+  }
 `;
 
 const AppBarContent = styled.div`
@@ -27,9 +34,21 @@ const AppBarContent = styled.div`
   align-items: center;
 `;
 
-const Left = styled(AppBarContent)``;
-const Middle = styled(AppBarContent)``;
-const Right = styled(AppBarContent)``;
+const Left = styled(AppBarContent)`
+  @media (max-width: 600px) {
+    margin-left: 20px;
+  }
+`;
+const Middle = styled(AppBarContent)`
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+const Right = styled(AppBarContent)`
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
 
 const Menu = styled.div`
   display: flex;
@@ -129,6 +148,7 @@ const AppBar = () => {
           </Right>
         </AppBarLength>
       </CustomAppBarContainer>
+      <MobileMenu menu={MenuList} />
     </React.Fragment>
   );
 };
