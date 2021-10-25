@@ -7,6 +7,7 @@ import SectionTwo from "./section2";
 import Partners from "./partners";
 import Contact from "./contact";
 import i18n from "../../config/i18n";
+import Demos from "./demo";
 
 const BannerText = styled.div`
   color: white;
@@ -26,9 +27,15 @@ const Description = styled(BannerText)`
 
 const TheGap = styled.div`
   margin-top: 100px;
+  position: relative;
   @media (max-width: 600px) {
     margin-top: 40px;
   }
+`;
+
+const TheGapForSlider = styled(TheGap)`
+  margin-bottom: -75px;
+  padding: 25px 0px;
 `;
 
 const Landing = () => {
@@ -47,6 +54,9 @@ const Landing = () => {
       <TheGap>
         <Partners />
       </TheGap>
+      <TheGapForSlider>
+        <Demos />
+      </TheGapForSlider>
       <TheGap>
         <Contact />
       </TheGap>
