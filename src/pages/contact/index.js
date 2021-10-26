@@ -6,6 +6,7 @@ import Image from "../../component/image";
 import Modal from "../../component/modal";
 import { useState } from "react/cjs/react.development";
 import i18n from "../../config/i18n";
+import breakpoint from "../../config/breakpoints";
 
 const Content = styled.div`
   display: flex;
@@ -18,7 +19,7 @@ const ActualContent = styled.div`
   display: grid;
   width: 1280px;
   grid-template-columns: 25% 25% 25% 25%;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     width: 100%;
     grid-template-columns: 50% 50%;
   }
@@ -31,7 +32,7 @@ const TheCardContainer = styled.div`
   justify-content: center;
   margin-bottom: 25px;
   cursor: pointer;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     padding: 5px;
   }
 `;
@@ -48,17 +49,18 @@ const TheCardContent = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  :hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 1s;
+    cursor: pointer;
+  }
 `;
 
 const Title = styled.div`
   padding: 10px;
 `;
 const Username = styled.div``;
-
-const BannerTitle = styled.div`
-  font-size: 30px;
-  color: white;
-`;
 
 const Contact = () => {
   const CSLists = [
@@ -85,9 +87,8 @@ const Contact = () => {
         <Banner
           background="banner/contact.jpg"
           gradient="rgb(255,255,255,0.1), rgb(255,255,255,0.1)"
-        >
-          <BannerTitle>{i18n.t("contact.title")}</BannerTitle>
-        </Banner>
+          title={i18n.t("contact.title")}
+        ></Banner>
         <ActualContent>
           {CSLists.map((data, index) => {
             return (

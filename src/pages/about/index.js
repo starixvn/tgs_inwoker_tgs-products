@@ -3,23 +3,7 @@ import Banner from "../../component/banner";
 import Page from "../../component/page";
 import styled from "styled-components";
 import i18n from "../../config/i18n";
-
-const BannerText = styled.div`
-  color: white;
-  padding: 10px 0px;
-`;
-
-const Title = styled(BannerText)`
-  font-size: 30px;
-  text-align: center;
-`;
-
-const Description = styled(BannerText)`
-  width: 650px;
-  @media (max-width: 600px) {
-    width: 100%;
-  }
-`;
+import breakpoint from "../../config/breakpoints";
 
 const ContentTextTitle = styled.div`
   font-size: 20px;
@@ -51,11 +35,6 @@ const RightImage = styled.div`
   transition: margin 1s;
   width: 1000px;
   background: url(${({ src }) => src}) center no-repeat;
-`;
-
-const LastRightImage = styled.div`
-  position: absolute;
-  right: 0;
 `;
 
 const Container = styled.div`
@@ -156,7 +135,7 @@ var path = process.env.PUBLIC_URL + "/assets/images";
 
 const Wrapper = styled.div`
   margin-top: 50px;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     display: none;
   }
 `;
@@ -165,7 +144,7 @@ const Content = styled.div``;
 
 const AnotherWrapper = styled.div`
   display: none;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     display: block;
   }
 `;
@@ -180,10 +159,9 @@ const About = () => {
         <Banner
           background="banner/about.jpg"
           gradient="rgb(0,0,0,0.5), rgb(0,0,0,0.5)"
-        >
-          <Title>{i18n.t("about.title")}</Title>
-          <Description>{i18n.t("about.description")}</Description>
-        </Banner>
+          title={i18n.t("about.title")}
+          description={i18n.t("about.description")}
+        ></Banner>
         <Wrapper>
           <LeftContainer src={path + "/about/1.png"}>
             <LeftImage src={path + "/about/1.png"} />

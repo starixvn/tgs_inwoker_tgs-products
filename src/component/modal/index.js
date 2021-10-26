@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import breakpoint from "../../config/breakpoints";
 
 const ModalOverlay = styled.div`
   width: 100%;
@@ -25,7 +26,7 @@ const TheModal = styled.div`
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     width: 80%;
   }
 `;

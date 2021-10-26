@@ -3,16 +3,10 @@ import Banner from "../../component/banner";
 import Page from "../../component/page";
 import styled from "styled-components";
 import Section from "../../component/section";
-import Image from "../../component/image";
-import { useEffect } from "react/cjs/react.development";
-import { useParams } from "react-router";
 import i18n from "../../config/i18n";
+import breakpoint from "../../config/breakpoints";
 
 const Content = styled.div``;
-const BannerTitle = styled.div`
-  font-size: 30px;
-  color: white;
-`;
 
 const CustomButton = styled.div`
   color: white;
@@ -42,7 +36,7 @@ const DemoProjectWrapper = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   width: 1280px;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     width: 100%;
     grid-template-columns: 100%;
   }
@@ -52,7 +46,7 @@ const DemoWapProjectWrapper = styled.div`
   display: grid;
   grid-template-columns: 33.33% 33.33% 33.33%;
   width: 1280px;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     width: 100%;
     grid-template-columns: 100%;
   }
@@ -69,13 +63,29 @@ const ImageOverlay = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  background: url(${({ src }) => src}) center no-repeat;
+  background: rgba(3, 137, 255, 0.75);
   background-size: cover;
-  display: none;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  opacity: 0;
+`;
+
+const OverlayBox = styled.div`
+  padding: 30px;
+  min-height: 100px;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 6px white;
+  font-size: 30px;
+  font-weight: bold;
+  opacity: 0;
 `;
 
 const DemoProject = styled.div`
-  margin-bottom: 10px;
   cursor: pointer;
   :hover {
     ${DemoProjectButton} {
@@ -83,11 +93,17 @@ const DemoProject = styled.div`
       color: white;
     }
     ${ImageOverlay} {
-      display: block;
+      opacity: 1;
+      transition: opacity 0.5s;
+    }
+
+    ${OverlayBox} {
+      opacity: 1;
+      transition: opacity 2s;
     }
   }
 
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     padding: 20px;
   }
 `;
@@ -99,31 +115,33 @@ const ImageContainer = styled.div`
 `;
 
 const TheImage = styled.img`
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     max-width: calc(100vw - 40px);
   }
 `;
 
 const Demo = () => {
   const webProject = [
-    { image: "/demo/web/t1.jpg", title: "T1", link: "" },
-    { image: "/demo/web/t2.jpg", title: "T2", link: "" },
-    { image: "/demo/web/t3.jpg", title: "T3", link: "" },
-    { image: "/demo/web/t4.jpg", title: "T4", link: "" },
-    { image: "/demo/web/t5.jpg", title: "T5", link: "" },
+    { image: "/demo/web/t1.jpg", title: "T1", link: "https://t1.srvptt.com/" },
+    { image: "/demo/web/t2.jpg", title: "T2", link: "https://t2.srvptt.com/" },
+    { image: "/demo/web/t3.jpg", title: "T3", link: "https://t3.srvptt.com/" },
+    { image: "/demo/web/t4.jpg", title: "T4", link: "https://t4.srvptt.com/" },
+    { image: "/demo/web/t5.jpg", title: "T5", link: "https://t5.srvptt.com/" },
   ];
 
   const wapProject = [
-    { image: "/demo/wap/t1.jpg", title: "T1", link: "" },
-    { image: "/demo/wap/t2.jpg", title: "T2", link: "" },
-    { image: "/demo/wap/t3.jpg", title: "T3", link: "" },
-    { image: "/demo/wap/t4.jpg", title: "T4", link: "" },
-    { image: "/demo/wap/t5.jpg", title: "T5", link: "" },
-    { image: "/demo/wap/t6.jpg", title: "T6", link: "" },
+    { image: "/demo/wap/t1.jpg", title: "T1", link: "https://t1.srvptt.com/" },
+    { image: "/demo/wap/t2.jpg", title: "T2", link: "https://t2.srvptt.com/" },
+    { image: "/demo/wap/t3.jpg", title: "T3", link: "https://t3.srvptt.com/" },
+    { image: "/demo/wap/t4.jpg", title: "T4", link: "https://t4.srvptt.com/" },
+    { image: "/demo/wap/t5.jpg", title: "T5", link: "https://t5.srvptt.com/" },
   ];
 
+  function gotoPage(link) {
+    window.location.href = link;
+  }
+
   const [project, setProject] = useState("web");
-  const { type } = useParams();
   var path = process.env.PUBLIC_URL + "/assets/images";
 
   return (
@@ -132,9 +150,8 @@ const Demo = () => {
         <Banner
           background={`banner/demo-${project}.jpg`}
           gradient="rgb(255,255,255,0.1), rgb(255,255,255,0.1)"
-        >
-          <BannerTitle>{i18n.t("demo.title")}</BannerTitle>
-        </Banner>
+          title={i18n.t("demo.title")}
+        ></Banner>
         <Section>
           <ButtonWrapper>
             <CustomButton
@@ -160,10 +177,17 @@ const Demo = () => {
                 return (
                   <DemoProject>
                     <ImageContainer>
-                      <ImageOverlay src={path + "/demo/web/hover.png"} />
+                      <ImageOverlay
+                        src={path + "/demo/web/hover.png"}
+                        onClick={() => {
+                          gotoPage(data.link);
+                        }}
+                      >
+                        <OverlayBox>{data.title}</OverlayBox>
+                      </ImageOverlay>
+
                       <TheImage src={path + data.image} />
                     </ImageContainer>
-                    <DemoProjectButton>{data.title}</DemoProjectButton>
                   </DemoProject>
                 );
               })}
@@ -174,10 +198,16 @@ const Demo = () => {
                 return (
                   <DemoProject>
                     <ImageContainer>
-                      <ImageOverlay src={path + "/demo/wap/hover.png"} />
-                      <img src={path + data.image} />
+                      <ImageOverlay
+                        src={path + "/demo/web/hover.png"}
+                        onClick={() => {
+                          gotoPage(data.link);
+                        }}
+                      >
+                        <OverlayBox>{data.title}</OverlayBox>
+                      </ImageOverlay>
+                      <img src={path + data.image} alt={path + data.image} />
                     </ImageContainer>
-                    <DemoProjectButton>{data.title}</DemoProjectButton>
                   </DemoProject>
                 );
               })}

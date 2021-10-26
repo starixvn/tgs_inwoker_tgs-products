@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "../../../component/image";
+import breakpoint from "../../../config/breakpoints";
 import i18n from "../../../config/i18n";
 
 const SectionTwoWrapper = styled.div``;
@@ -10,7 +11,7 @@ const TheWrapperForCard = styled.div`
   display: flex;
   justify-content: center;
 
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     margin-top: 0px;
   }
 `;
@@ -19,7 +20,7 @@ const CardContainer = styled.div`
   display: grid;
   grid-template-columns: 33.33% 33.33% 33.33%;
   width: 1280px;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     width: 100%;
     grid-template-columns: 50% 50%;
   }
@@ -36,6 +37,12 @@ const TheCard = styled.div`
   flex-direction: column;
   height: 100%;
   box-shadow: 0 2px 16px -2px rgb(255 255 255), 0 5px 11px -3px rgb(0 0 0 / 30%);
+
+  :hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 1s;
+    cursor: pointer;
+  }
 `;
 
 const TheContent = styled.div`
@@ -49,7 +56,7 @@ const TheWrapper = styled.div`
   color: white;
   z-index: -1;
 
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     height: 300px;
   }
 `;
@@ -63,7 +70,7 @@ const TheTextContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     padding: 20px;
     width: calc(100% - 40px);
   }
@@ -72,13 +79,14 @@ const TheTextContainer = styled.div`
 const Title = styled.div`
   font-size: 30px;
   padding: 10px 0px;
+  font-weight: bold;
 `;
 
 const Description = styled.div`
   width: 690px;
   padding: 10px 0px;
 
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     width: 100%;
   }
 `;
@@ -96,6 +104,8 @@ const CardDescription = styled.div`
   padding: 0px 20px;
   opacity: 0.6;
 `;
+
+const CardImageContainer = styled.div``;
 
 const SectionTwo = () => {
   const cards = [
@@ -158,6 +168,7 @@ const SectionTwo = () => {
               <CardWrapper>
                 <TheCard>
                   <Image src={data.image} />
+
                   <TheContent>
                     <CardType>{data.type}</CardType>
                     <CardTitle>{data.title}</CardTitle>

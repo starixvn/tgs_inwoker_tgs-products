@@ -1,15 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
+import breakpoint from "../../../config/breakpoints";
 import i18n from "../../../config/i18n";
 import { AppHistory } from "../../../config/router";
 import LanguageChanger from "../../languageChanger";
 
 const FixedPosition = styled.div`
   position: fixed;
-  z-index: 2;
+  z-index: 4;
   display: none;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     display: block;
   }
 `;

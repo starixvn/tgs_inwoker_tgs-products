@@ -11,7 +11,7 @@ import i18n from "./i18n";
 export const AppHistory = createBrowserHistory();
 
 const AppRouter = () => {
-  const baseRouteUrl = `/:locale(en-US|zh-CN|zh-TW|th-TH|id-ID|vi-VN)`;
+  const baseRouteUrl = `/:locale(en-US|zh-CN)`;
   const paths = [
     { route: "/products", component: Products },
     { route: "/demo", component: Demo },

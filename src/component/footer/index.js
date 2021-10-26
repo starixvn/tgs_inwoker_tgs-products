@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import breakpoint from "../../config/breakpoints";
 import Image from "../image";
 
 const FooterContainer = styled.div`
@@ -16,22 +17,39 @@ const FooterContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     width: 100%;
   }
 `;
+const FlipWithScale = keyframes`
+  0% {
+    transform: perspective(400px) scaleX(1);
+  }
 
+  100% {
+    transform: perspective(400px) scaleX(-1);
+ }
+ `;
 const FooterIconContainer = styled.div`
   display: flex;
   align-items: center;
 `;
 const FooterIcon = styled.div`
   padding: 10px;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     padding: 0px;
     transform: scale(0.5);
   }
+
+  :hover {
+    animation-name: ${FlipWithScale};
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 0.25s;
+    cursor: pointer;
+  }
 `;
+
 const FooterText = styled.div``;
 
 const Footer = () => {

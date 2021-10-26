@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import breakpoint from "../../config/breakpoints";
 
 const BannerContainer = styled.div`
   min-height: 100vh;
@@ -10,7 +11,7 @@ const BannerContainer = styled.div`
 
 const BannerContent = styled.div`
   width: 1280px;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     width: 100%;
     display: flex;
     align-items: center;

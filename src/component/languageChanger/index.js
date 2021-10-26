@@ -1,20 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import i18n from "../../config/i18n";
 import { AppHistory } from "../../config/router";
 
 const LanguageHolder = styled.div`
   display: flex;
+  color: ${({ scrolled }) => {
+    return scrolled ? "black" : "white ";
+  }};
 `;
 
 const LanguageOption = styled.div`
   padding-left: 20px;
-  color: white;
+
   user-select: none;
   cursor: pointer;
 `;
 
-const LanguageChanger = () => {
+const LanguageChanger = ({ scrolled }) => {
   const languages = [
     {
       language: "en-US",
@@ -33,15 +36,13 @@ const LanguageChanger = () => {
     i18n.changeLanguage(language);
     if (path[2] !== "") {
       AppHistory.push("/" + language + "/" + path[2]);
-      window.location.reload(); //temporary solution until change language without refresh works.
     } else {
       AppHistory.push("/" + language);
-      window.location.reload(); //temporary solution until change language without refresh works.
     }
   }
 
   return (
-    <LanguageHolder>
+    <LanguageHolder scrolled={scrolled}>
       {languages.map((data, index) => {
         return (
           <LanguageOption

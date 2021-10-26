@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "../../../component/image";
+import breakpoint from "../../../config/breakpoints";
 import i18n from "../../../config/i18n";
 
 const LogoHolder = styled.div`
@@ -9,8 +10,11 @@ const LogoHolder = styled.div`
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
 
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     grid-template-columns: auto auto auto;
+  }
+
+  :hover {
   }
 `;
 
@@ -24,6 +28,7 @@ const PartnerWrapper = styled.div`
 const TitleWrapper = styled.div`
   font-size: 30px;
   position: relative;
+  font-weight: bold;
   padding-bottom: 15px;
   margin-bottom: 30px;
 `;
@@ -67,7 +72,7 @@ const Partners = () => {
       </TitleWrapper>
       <LogoHolder>
         {partner.map((data, index) => {
-          return <Image src={data.image} p="20px" />;
+          return <Image src={data.image} p="20px" grayscale={true} />;
         })}
       </LogoHolder>
     </PartnerWrapper>

@@ -5,15 +5,28 @@ import { AppHistory } from "../../config/router";
 import LanguageChanger from "../languageChanger";
 import Image from "../image";
 import MobileMenu from "./mobilemenu";
+import breakpoint from "../../config/breakpoints";
 
 const CustomAppBarContainer = styled.div`
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   width: 100%;
+  z-index: 3;
   color: black;
+  transition: background 0.75s;
+
+  ${({ scrolled }) => {
+    return (
+      scrolled &&
+      `
+    background: white;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);
+    `
+    );
+  }}
 `;
 
 const AppBarLength = styled.div`
@@ -22,7 +35,7 @@ const AppBarLength = styled.div`
   display: grid;
   grid-template-columns: 15% 70% 15%;
 
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     width: 100%;
     grid-template-columns: 40%;
   }
@@ -35,17 +48,17 @@ const AppBarContent = styled.div`
 `;
 
 const Left = styled(AppBarContent)`
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     margin-left: 20px;
   }
 `;
 const Middle = styled(AppBarContent)`
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     display: none;
   }
 `;
 const Right = styled(AppBarContent)`
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     display: none;
   }
 `;
@@ -60,33 +73,45 @@ const Menu = styled.div`
 const MenuButton = styled.div`
   padding: 10px 20px;
   cursor: pointer;
-  color: white;
   border-radius: 15px;
   text-transform: uppercase;
-
   user-select: none;
 
-  ${({ selected }) => {
-    return (
-      selected &&
-      `
-    color: #0389FF;`
-    );
+  ${({ scrolled }) => {
+    return scrolled ? `color: black;` : `color: white;`;
   }}
 
-  ${({ border, selected }) => {
+  ${({ selected, border }) => {
+    return selected ? (border ? "color: white;" : "color: #0389FF;") : ``;
+  }}
+
+
+  ${({ border, selected, scrolled }) => {
     return (
       border &&
       ` 
-      border: ${selected ? "solid 1px #0389FF" : "solid 1px #FFF"};
-      color: white;
-      background: ${selected ? "#0389FF" : ""};
+      ${
+        scrolled
+          ? `
+          border: ${selected ? "solid 1px #0389FF" : "solid 1px black"};
+         color: ${selected && "white"};
+          background: ${selected && "#0389FF"};
+          `
+          : `
+          border: ${selected ? "solid 1px #0389FF" : "solid 1px #FFF"};
+          background: ${selected && "#0389FF"};
+      `
+      }
     `
     );
   }}
 `;
 
-const AppBar = () => {
+const LogoHolder = styled.div`
+  cursor: pointer;
+`;
+
+const AppBar = ({ scrolled }) => {
   const MenuList = [
     { title: "products", withBorder: false },
     { title: "demo", withBorder: false },
@@ -114,21 +139,24 @@ const AppBar = () => {
   }, []);
 
   return (
-    <React.Fragment>
-      <CustomAppBarContainer>
+    <div>
+      <CustomAppBarContainer scrolled={scrolled}>
         <AppBarLength>
-          <Left
-            onClick={() => {
-              performClickMenu("");
-            }}
-          >
-            <Image src="/logo/PGG.png" />
+          <Left>
+            <LogoHolder
+              onClick={() => {
+                performClickMenu("");
+              }}
+            >
+              <Image src={scrolled ? "/logo/PGG-gold.png" : "/logo/PGG.png"} />
+            </LogoHolder>
           </Left>
           <Middle>
             <Menu>
               {MenuList.map((data, index) => {
                 return (
                   <MenuButton
+                    scrolled={scrolled}
                     key={index}
                     selected={selected === data.title}
                     onClick={(e) => {
@@ -144,12 +172,12 @@ const AppBar = () => {
             </Menu>
           </Middle>
           <Right>
-            <LanguageChanger />
+            <LanguageChanger scrolled={scrolled} />
           </Right>
         </AppBarLength>
       </CustomAppBarContainer>
       <MobileMenu menu={MenuList} />
-    </React.Fragment>
+    </div>
   );
 };
 

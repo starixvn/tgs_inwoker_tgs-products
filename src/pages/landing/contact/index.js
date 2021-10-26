@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "../../../component/image";
+import breakpoint from "../../../config/breakpoints";
 import i18n from "../../../config/i18n";
 
 const Wrapper = styled.div`
@@ -13,16 +14,14 @@ const Wrapper = styled.div`
 const MiddleThingy = styled.div`
   position: absolute;
   color: white;
-  background: #2f94ee;
-  height: 30%;
-  width: 50%;
+
   border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     height: 100%;
     width: 100%;
     background: transparent;
@@ -30,7 +29,7 @@ const MiddleThingy = styled.div`
 `;
 
 const ContactTitle = styled.div`
-  font-size: 30px;
+  font-size: 50px;
 `;
 
 const ContactButton = styled.div`
@@ -45,7 +44,7 @@ const ContactButton = styled.div`
     font-weight: bold;
   }
 
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     margin-top: 20px;
   }
 `;

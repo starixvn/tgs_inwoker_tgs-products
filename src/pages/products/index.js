@@ -1,27 +1,22 @@
-import AppBar from "../../component/appbar";
 import Banner from "../../component/banner";
 import Page from "../../component/page";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Section from "../../component/section";
 import Image from "../../component/image";
 import i18n from "../../config/i18n";
+import breakpoint from "../../config/breakpoints";
 
 var path = process.env.PUBLIC_URL + "/assets/images";
 
-const BannerText = styled.div`
-  color: white;
-  padding: 10px 0px;
-`;
-
-const Title = styled(BannerText)`
-  font-size: 30px;
-  text-align: center;
-`;
-
-const Description = styled(BannerText)`
-  width: 650px;
-  @media (max-width: 600px) {
-    width: 100%;
+const ZoomIn = keyframes`
+  0%{
+  transform: scale(1);
+  }
+  50%{
+    transform: scale(1.05);
+  }
+  100%{
+    transform: scale(1);
   }
 `;
 
@@ -29,7 +24,13 @@ const Content = styled.div`
   display: grid;
   width: 1280px;
   grid-template-columns: 50% 50%;
-  @media (max-width: 600px) {
+  :hover {
+    animation-name: ${ZoomIn};
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.75s;
+  }
+  @media (${breakpoint.mobile}) {
     width: 100%;
   }
 `;
@@ -44,7 +45,7 @@ const ContentTextContainer = styled.div`
 const LeftContent = styled(ContentTextContainer)`
   text-align: left;
   padding-left: 200px;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     padding-left: 20px;
   }
 `;
@@ -52,7 +53,7 @@ const LeftContent = styled(ContentTextContainer)`
 const RightContent = styled(ContentTextContainer)`
   text-align: left;
   padding-left: 200px;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     padding-left: 20px;
   }
 `;
@@ -79,6 +80,7 @@ const Liner = styled.div`
   justify-content: center;
   font-size: 40px;
   letter-spacing: 5px;
+  text-align: center;
 `;
 const Products = () => {
   return (
@@ -86,10 +88,9 @@ const Products = () => {
       <Banner
         background="banner/products.jpg"
         gradient="rgb(0,0,0,0.3), rgb(0,0,0,0.3)"
-      >
-        <Title>{i18n.t("product.title")}</Title>
-        <Description>{i18n.t("product.description")}</Description>
-      </Banner>
+        title={i18n.t("product.title")}
+        description={i18n.t("product.description")}
+      ></Banner>
       <Section>
         <Content>
           <Image p="50px" src="/products/1.jpg" wap_p="10px" />

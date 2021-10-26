@@ -1,34 +1,17 @@
-import AppBar from "../../component/appbar";
 import Banner from "../../component/banner";
 import Page from "../../component/page";
 import styled from "styled-components";
-import Section from "../../component/section";
 import SectionTwo from "./section2";
 import Partners from "./partners";
 import Contact from "./contact";
 import i18n from "../../config/i18n";
 import Demos from "./demo";
-
-const BannerText = styled.div`
-  color: white;
-  padding: 10px 0px;
-`;
-
-const Title = styled(BannerText)`
-  font-size: 30px;
-`;
-
-const Description = styled(BannerText)`
-  width: 650px;
-  @media (max-width: 600px) {
-    width: calc(100% - 40px);
-  }
-`;
+import breakpoint from "../../config/breakpoints";
 
 const TheGap = styled.div`
   margin-top: 100px;
   position: relative;
-  @media (max-width: 600px) {
+  @media (${breakpoint.mobile}) {
     margin-top: 40px;
   }
 `;
@@ -44,10 +27,9 @@ const Landing = () => {
       <Banner
         background="banner/landing.jpg"
         gradient="rgb(0,0,0,0.3), rgb(0,0,0,0.3)"
-      >
-        <Title>{i18n.t("landing.title")}</Title>
-        <Description>{i18n.t("landing.description")}</Description>
-      </Banner>
+        title={i18n.t("landing.title")}
+        description={i18n.t("landing.description")}
+      ></Banner>
       <TheGap>
         <SectionTwo />
       </TheGap>

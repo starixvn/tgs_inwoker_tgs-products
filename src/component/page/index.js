@@ -1,5 +1,4 @@
 import React from "react";
-import AppBar from "../appbar";
 import styled from "styled-components";
 
 const PageWrapper = styled.div`
