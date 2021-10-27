@@ -145,6 +145,7 @@ const AppBar = ({ scrolled }) => {
           <Left>
             <LogoHolder
               onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
                 performClickMenu("");
               }}
             >
@@ -161,8 +162,8 @@ const AppBar = ({ scrolled }) => {
                     selected={selected === data.title}
                     onClick={(e) => {
                       e.preventDefault();
-                      performClickMenu(data.title);
                       window.scrollTo({ top: 0, behavior: "smooth" });
+                      performClickMenu(data.title);
                     }}
                     border={data.withBorder}
                   >
