@@ -72,7 +72,7 @@ const SliderWrapper = styled.div`
 `;
 
 const Demos = () => {
-  const [current, setCurrent] = useState("");
+  const [current, setCurrent] = useState(0);
 
   const settings = {
     dots: false,
