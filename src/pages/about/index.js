@@ -19,15 +19,11 @@ const ContentTitlePoints = styled.div`
 const MoveLeftImage = styled.img`
   height: 500px;
   transition: margin 1s;
-  :hover {
-  }
 `;
 
 const MoveRightImage = styled.img`
   height: 500px;
   transition: margin 1s;
-  :hover {
-  }
 `;
 
 const RightImage = styled.div`
@@ -51,6 +47,7 @@ const FloatOnTop = styled.div`
   position: absolute;
   margin-left: 20%;
   opacity: 0;
+  transition: opacity 1s;
 `;
 
 const FloatOnTopThree = styled.div`
@@ -71,6 +68,7 @@ const FloatOnTopTwo = styled.div`
   color: black;
   margin-right: 20%;
   opacity: 0;
+  transition: opacity 1s;
 `;
 
 const LeftContainer = styled(Container)`
@@ -85,11 +83,9 @@ const LeftContainer = styled(Container)`
     }
     ${FloatOnTop} {
       opacity: 1;
-      transition: opacity 1s;
     }
     ${FloatOnTopTwo} {
       opacity: 1;
-      transition: opacity 1s;
     }
   }
 `;
@@ -97,6 +93,7 @@ const LeftContainer = styled(Container)`
 const FloatOnLeft = styled.div`
   margin-left: 20%;
   opacity: 0;
+  transition: opacity 3s;
 `;
 
 const RightContainer = styled(Container)`
@@ -112,7 +109,6 @@ const RightContainer = styled(Container)`
 
     ${FloatOnLeft} {
       opacity: 1;
-      transition: opacity 3s;
     }
   }
 `;

@@ -19,11 +19,11 @@ const ImageContainer = styled.div`
       `
     
     filter: grayscale(100%);
-
+    transition: transform 1s;
     :hover{
       filter: grayscale(0%);
        transform: scale(1.1);
-       transition: transform 0.5s;
+       
        cursor: pointer; 
     }
     `

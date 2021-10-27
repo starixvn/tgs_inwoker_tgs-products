@@ -49,10 +49,10 @@ const TheCardContent = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
+  transition: box-shadow 1s;
   :hover {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 1s;
+
     cursor: pointer;
   }
 `;

@@ -13,3 +13,16 @@ code {
 * {
   user-select: none;
 }
+.fade-in-section {
+  opacity: 0;
+
+  transition: opacity 2s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  display: flex;
+}

@@ -5,6 +5,8 @@ import Section from "../../component/section";
 import Image from "../../component/image";
 import i18n from "../../config/i18n";
 import breakpoint from "../../config/breakpoints";
+import React from "react";
+import FadeInSection from "../../component/fadeIn";
 
 var path = process.env.PUBLIC_URL + "/assets/images";
 
@@ -13,7 +15,7 @@ const ZoomIn = keyframes`
   transform: scale(1);
   }
   50%{
-    transform: scale(1.05);
+    transform: scale(1.01);
   }
   100%{
     transform: scale(1);
@@ -92,66 +94,74 @@ const Products = () => {
         description={i18n.t("product.description")}
       ></Banner>
       <Section>
-        <Content>
-          <Image p="50px" src="/products/1.jpg" wap_p="10px" />
-          <LeftContent>
-            <ContentTextTitle>{i18n.t("product.1.title")}</ContentTextTitle>
-            <ContentTitlePoints>
-              ◼ {i18n.t("product.1.point1")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("product.1.point2")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("product.1.point3")}
-            </ContentTitlePoints>
-          </LeftContent>
-        </Content>
-        <Content>
-          <RightContent>
-            <ContentTextTitle>{i18n.t("product.2.title")}</ContentTextTitle>
-            <ContentTitlePoints>
-              ◼ {i18n.t("product.2.point1")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("product.2.point2")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("product.2.point3")}
-            </ContentTitlePoints>
-          </RightContent>
-          <Image p="50px" src="/products/2.jpg" wap_p="10px" />
-        </Content>
-        <Content>
-          <Image p="50px" src="/products/3.jpg" wap_p="10px" />
-          <LeftContent>
-            <ContentTextTitle>{i18n.t("product.3.title")}</ContentTextTitle>
-            <ContentTitlePoints>
-              ◼ {i18n.t("product.3.point1")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("product.3.point2")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("product.3.point3")}
-            </ContentTitlePoints>
-          </LeftContent>
-        </Content>
-        <Content>
-          <RightContent>
-            <ContentTextTitle>{i18n.t("product.4.title")}</ContentTextTitle>
-            <ContentTitlePoints>
-              ◼ {i18n.t("product.4.point1")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("product.4.point2")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("product.4.point3")}
-            </ContentTitlePoints>
-          </RightContent>
-          <Image p="50px" src="/products/4.jpg" wap_p="10px" />
-        </Content>
+        <FadeInSection>
+          <Content>
+            <Image p="50px" src="/products/1.jpg" wap_p="10px" />
+            <LeftContent>
+              <ContentTextTitle>{i18n.t("product.1.title")}</ContentTextTitle>
+              <ContentTitlePoints>
+                ◼ {i18n.t("product.1.point1")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("product.1.point2")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("product.1.point3")}
+              </ContentTitlePoints>
+            </LeftContent>
+          </Content>
+        </FadeInSection>
+        <FadeInSection>
+          <Content>
+            <RightContent>
+              <ContentTextTitle>{i18n.t("product.2.title")}</ContentTextTitle>
+              <ContentTitlePoints>
+                ◼ {i18n.t("product.2.point1")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("product.2.point2")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("product.2.point3")}
+              </ContentTitlePoints>
+            </RightContent>
+            <Image p="50px" src="/products/2.jpg" wap_p="10px" />
+          </Content>
+        </FadeInSection>
+        <FadeInSection>
+          <Content>
+            <Image p="50px" src="/products/3.jpg" wap_p="10px" />
+            <LeftContent>
+              <ContentTextTitle>{i18n.t("product.3.title")}</ContentTextTitle>
+              <ContentTitlePoints>
+                ◼ {i18n.t("product.3.point1")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("product.3.point2")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("product.3.point3")}
+              </ContentTitlePoints>
+            </LeftContent>
+          </Content>
+        </FadeInSection>
+        <FadeInSection>
+          <Content>
+            <RightContent>
+              <ContentTextTitle>{i18n.t("product.4.title")}</ContentTextTitle>
+              <ContentTitlePoints>
+                ◼ {i18n.t("product.4.point1")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("product.4.point2")}
+              </ContentTitlePoints>
+              <ContentTitlePoints>
+                ◼ {i18n.t("product.4.point3")}
+              </ContentTitlePoints>
+            </RightContent>
+            <Image p="50px" src="/products/4.jpg" wap_p="10px" />
+          </Content>
+        </FadeInSection>
       </Section>
       <Liner>{i18n.t("product.last")}</Liner>
     </Page>

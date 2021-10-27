@@ -70,6 +70,7 @@ const ImageOverlay = styled.div`
   align-items: center;
   display: flex;
   opacity: 0;
+  transition: opacity 0.5s;
 `;
 
 const OverlayBox = styled.div`
@@ -82,6 +83,7 @@ const OverlayBox = styled.div`
   border: solid 6px white;
   font-size: 30px;
   font-weight: bold;
+  transition: opacity 2s;
   opacity: 0;
 `;
 
@@ -94,12 +96,10 @@ const DemoProject = styled.div`
     }
     ${ImageOverlay} {
       opacity: 1;
-      transition: opacity 0.5s;
     }
 
     ${OverlayBox} {
       opacity: 1;
-      transition: opacity 2s;
     }
   }
 
@@ -138,7 +138,7 @@ const Demo = () => {
   ];
 
   function gotoPage(link) {
-    window.location.href = link;
+    window.open(link);
   }
 
   const [project, setProject] = useState("web");

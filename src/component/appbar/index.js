@@ -162,6 +162,7 @@ const AppBar = ({ scrolled }) => {
                     onClick={(e) => {
                       e.preventDefault();
                       performClickMenu(data.title);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                     border={data.withBorder}
                   >

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import FadeInSection from "../../../component/fadeIn";
 import Image from "../../../component/image";
 import breakpoint from "../../../config/breakpoints";
 import i18n from "../../../config/i18n";
@@ -105,8 +106,6 @@ const CardDescription = styled.div`
   opacity: 0.6;
 `;
 
-const CardImageContainer = styled.div``;
-
 const SectionTwo = () => {
   const cards = [
     {
@@ -165,17 +164,19 @@ const SectionTwo = () => {
         <CardContainer>
           {cards.map((data, index) => {
             return (
-              <CardWrapper>
-                <TheCard>
-                  <Image src={data.image} />
+              <FadeInSection>
+                <CardWrapper>
+                  <TheCard>
+                    <Image src={data.image} />
 
-                  <TheContent>
-                    <CardType>{data.type}</CardType>
-                    <CardTitle>{data.title}</CardTitle>
-                    <CardDescription>{data.description}</CardDescription>
-                  </TheContent>
-                </TheCard>
-              </CardWrapper>
+                    <TheContent>
+                      <CardType>{data.type}</CardType>
+                      <CardTitle>{data.title}</CardTitle>
+                      <CardDescription>{data.description}</CardDescription>
+                    </TheContent>
+                  </TheCard>
+                </CardWrapper>
+              </FadeInSection>
             );
           })}
         </CardContainer>

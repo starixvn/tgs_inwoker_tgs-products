@@ -81,7 +81,7 @@ const Demos = () => {
     loop: true,
     focusOnSelect: true,
     slidesToShow: 3,
-    speed: 500,
+    speed: 1000,
     centerMode: true,
     responsive: [
       {
@@ -100,7 +100,7 @@ const Demos = () => {
   };
 
   function gotoPage(link) {
-    window.location.href = link;
+    window.open(link);
   }
 
   const SliderPartition = ({ image, link, count, name }) => {
@@ -113,14 +113,21 @@ const Demos = () => {
 
     return (
       <SliderPartitionContainer
-        onClick={() => {
-          setClick(!clicked);
-          if (clicked) {
-            gotoPage(link);
-          }
+        onMouseOver={() => {
+          setClick(true);
+        }}
+        onMouseOut={() => {
+          setClick(false);
         }}
       >
-        <AnotherOverlayToClick clicked={clicked}>
+        <AnotherOverlayToClick
+          clicked={clicked}
+          onClick={() => {
+            if (clicked) {
+              gotoPage(link);
+            }
+          }}
+        >
           <OverlayBox>{name}</OverlayBox>
         </AnotherOverlayToClick>
         <Overlay />
