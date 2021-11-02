@@ -1,6 +1,6 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
+
 import AppBar from "../component/appbar";
 import Footer from "../component/footer";
 import Page from "../component/page";
