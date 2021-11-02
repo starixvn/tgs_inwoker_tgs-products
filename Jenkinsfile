@@ -31,7 +31,6 @@ pipeline {
                         envItems.each { key, value -> 
                             env."tgs_${key}" = value;
                         }
-                        componentArray = "${env.tgs_lobby_t3_components}".split(",")
                     }
                 }
 
@@ -54,10 +53,7 @@ pipeline {
                 script {			
                     withKubeConfig([credentialsId: env.k8s_config]) {
                         message += "\nComponent:"
-                        for (i = 0;i < componentArray.length; i++) {
-                            message += "\n    ${componentArray[i]}"
-                            sh "kubectl set image deployment/${componentArray[i]} ${componentArray[i]}=${Registry}${Image}:${TAG} --record -n $env.kube_ns"
-                        }
+						sh "kubectl set image deployment/${Image} ${Image}=${Registry}${Image}:${TAG} --record -n $env.kube_ns"
                     }
                 }
             }
