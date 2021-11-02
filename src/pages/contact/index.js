@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Banner from "../../component/banner";
 import Page from "../../component/page";
 import styled from "styled-components";
 import Image from "../../component/image";
 import Modal from "../../component/modal";
-import { useState } from "react/cjs/react.development";
+
 import i18n from "../../config/i18n";
 import breakpoint from "../../config/breakpoints";
 
