@@ -3,18 +3,18 @@ pipeline {
     agent any
     environment {
         TAG = sh(script: "echo `date +%Y-%m%d-%H%M`", returnStdout: true).trim()
-        Registry = "registry.gitlab.com/rayprosoft/turnkey-gaming-system/"
+        Registry = "pgtgs/"
         Image = "tgs-production"
-        gitlab_user_pwd = credentials('gitlab-user-pwd')
+        dockerhub = credentials('dockerhub')
     }
 	
     stages {		    	
         stage('Prepare Env') {
             steps {
-                sh "sudo docker login registry.gitlab.com -u ${gitlab_user_pwd_USR} -p ${gitlab_user_pwd_PSW}"
+                sh "docker login -u ${dockerhub_USR} -p ${dockerhub_PSW}"
                 sh "echo 'Branch: ${env.GIT_BRANCH}'"         
                 script {
-					env.k8s_config = 'stag-k8s-config';	
+					env.k8s_config = 'prod-k8s-config';	
 					env.kube_ns = "prod";
                     TAG = env.kube_ns + '-' + TAG
                     message += "\nBranch: ${env.GIT_BRANCH}" 
@@ -40,12 +40,12 @@ pipeline {
         }	
         stage('Docker Build') {   
             steps {	  			    
-                sh "sudo docker build -t ${Registry}${Image}:${TAG} ."
+                sh "docker build -t ${Registry}${Image}:${TAG} ."
             }
         }			
         stage('Docker Push') {   
             steps {	  
-                sh "sudo docker push ${Registry}${Image}:${TAG}"
+                sh "docker push ${Registry}${Image}:${TAG}"
             }
         }	
         stage('Deployment') {   
