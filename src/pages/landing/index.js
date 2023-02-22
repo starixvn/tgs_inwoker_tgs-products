@@ -77,8 +77,7 @@ const BrandsContainer = styled.div`
   color: #fff;
   position: absolute;
   ${({ position }) => {
-    console.log(position);
-    return [position] + ": 200px;";
+    return [position] + ": 320px;";
   }};
   top: 200px;
   display: grid;
@@ -90,6 +89,14 @@ const Brands = styled.div`
   border: solid 1px #fff;
   padding: 10px 20px;
   border-radius: 4px;
+  display: flex;
+
+  align-items: center;
+  gap: 10px;
+`;
+
+const LogoHolder = styled.img`
+  height: 25px;
 `;
 
 const Landing = () => {
@@ -111,7 +118,18 @@ const Landing = () => {
                   return b.gametype.includes(selected.title);
                 })
                 .map((c, index) => {
-                  return <Brands>{c.name}</Brands>;
+                  return (
+                    <Brands>
+                      <LogoHolder
+                        src={path + "providers/" + c.name + ".png"}
+                        alt={c.name}
+                      />
+                      <div>
+                        {a.title}
+                        {c.name}
+                      </div>
+                    </Brands>
+                  );
                 })}
             </BrandsContainer>
           );
