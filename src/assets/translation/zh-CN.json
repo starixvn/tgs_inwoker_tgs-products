@@ -1,4 +1,100 @@
 {
+  "slots": {
+    "pp": "PP",
+    "haba": "Habanero",
+    "jdb": "JDB",
+    "sw": "Skywind",
+    "rt": "RT",
+    "jili": "JILI吉利",
+    "awc_facai": "FC發財",
+    "nt": "NT",
+    "awc_spade": "Spade",
+    "awc_pgs": "PGSoft",
+    "endorphina": "Endorphina",
+    "awc_fs": "Fast Spin",
+    "joker": "Joker",
+    "nlc": "NLC",
+    "btg": "BTG"
+  },
+
+  "egame": {
+    "pp": "PP",
+    "haba": "Habanero",
+    "sw": "Skywind",
+    "rt": "RT",
+    "awc_spade": "Spade",
+    "awc_facai": "FC發財",
+    "awc_pgs": "PGSoft",
+    "awc_km": "KM",
+    "awc_ludo": "LUDO",
+    "awc_yl": "YL"
+  },
+
+  "sports": {
+    "saba": "SABA體育",
+    "sbo": "SBO體育",
+    "bc": "BC體育",
+    "wg": "WG體育",
+    "bti": "BTi體育",
+    "phsb": "PHSB體育",
+    "pinnacle": "平博",
+    "pp": "PP虛擬體育"
+  },
+
+  "esports": {
+    "imes": "IM",
+    "avia": "AVIA",
+    "tf": "TF"
+  },
+
+  "horserace": {
+    "wgfm": "WG",
+    "awc_rcb": "RCB888"
+  },
+
+  "live": {
+    "ag": "AG真人",
+    "bg": "BG真人",
+    "sg": "SEXY真人",
+    "sw": "SW真人",
+    "evo": "EVO真人",
+    "ab": "AB真人",
+    "dg": "DG真人",
+    "wm": "WM真人",
+    "pp": "PP真人",
+    "awc_venus": "VENUS真人"
+  },
+
+  "fish": {
+    "ly": "LEG樂游",
+    "ky": "KY",
+    "bg": "BG",
+    "awc_spade": "Spade",
+    "jili": "JILI吉利",
+    "awc_facai": "FC發財",
+    "jdb": "JDB",
+    "awc_yl": "YL",
+    "joker": "Joker"
+  },
+
+  "qipai": {
+    "ly": "LEG棋牌",
+    "ky": "KY棋牌",
+    "365": "365棋牌"
+  },
+
+  "cockfight": {
+    "awc_cockfight": "SV388",
+    "sm01": "SM01"
+  },
+
+  "lottery": {
+    "vr": "VR",
+    "tcg_sea": "TCG東南亞彩",
+    "tcg_lotto": "TCG彩票",
+    "tcg_lotto_vn": "TCG越南彩"
+  },
+
   "gametype": {
     "slots": "老虎机",
     "egame": "电子竞技",

@@ -1,4 +1,99 @@
 {
+  "slots": {
+    "pp": "PP",
+    "haba": "Habanero",
+    "jdb": "JDB",
+    "sw": "Skywind",
+    "rt": "RT",
+    "jili": "Jili",
+    "nt": "NT",
+    "awc_spade": "Spade",
+    "awc_facai": "FC",
+    "awc_pgs": "PGSoft",
+    "endorphina": "Endorphina",
+    "awc_fs": "Fast Spin",
+    "joker": "Joker",
+    "nlc": "NLC",
+    "btg": "BTG"
+  },
+
+  "egame": {
+    "pp": "PP",
+    "haba": "Habanero",
+    "sw": "Skywind",
+    "rt": "RT",
+    "awc_spade": "Spade",
+    "awc_facai": "FC",
+    "awc_pgs": "PGSoft",
+    "awc_km": "KM",
+    "awc_ludo": "LUDO",
+    "awc_yl": "YL"
+  },
+
+  "sports": {
+    "saba": "SABA Sports",
+    "sbo": "SBO Sports",
+    "bc": "BC Sports",
+    "wg": "WG Sports",
+    "bti": "BTi Sports",
+    "phsb": "PHSB Sports",
+    "pinnacle": "Pinnacle Sports",
+    "pp": "PP Sports"
+  },
+  "esports": {
+    "imes": "IM",
+    "avia": "AVIA",
+    "tf": "TF"
+  },
+
+  "horserace": {
+    "wgfm": "WG",
+    "awc_rcb": "RCB888"
+  },
+
+  "live": {
+    "ag": "AG",
+    "bg": "BG",
+    "sg": "SEXY",
+    "sw": "SW",
+    "evo": "EVO",
+    "ab": "AB",
+    "dg": "DG",
+    "wm": "WM",
+    "pp": "PP",
+    "awc_venus": "VENUS"
+  },
+
+  "fish": {
+    "ly": "LEG",
+    "ky": "KY",
+    "bg": "BG",
+    "awc_spade": "Spade",
+    "jili": "JILI",
+    "awc_facai": "FC",
+    "jdb": "JDB",
+    "awc_yl": "YL",
+    "joker": "Joker"
+  },
+
+  "qipai": {
+    "ly": "LEG",
+    "ky": "KY",
+    "365": "365"
+  },
+
+  "cockfight": {
+    "awc_cockfight": "SV388",
+    "sm01": "SM01"
+  },
+
+  "lottery": {
+    "vr": "VR",
+    "tcg_sea": "TCG SEA",
+    "tcg_lotto": "TCG LOTTO",
+    "tcg_lotto_vn": "TCG VN"
+  },
+
   "gametype": {
     "slots": "Slots",
     "egame": "E-Games",

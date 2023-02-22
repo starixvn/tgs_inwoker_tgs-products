@@ -96,7 +96,8 @@ const Brands = styled.div`
 `;
 
 const LogoHolder = styled.img`
-  height: 25px;
+  height: auto;
+  width: 25px;
 `;
 
 const Landing = () => {
@@ -119,15 +120,12 @@ const Landing = () => {
                 })
                 .map((c, index) => {
                   return (
-                    <Brands>
+                    <Brands key={index}>
                       <LogoHolder
                         src={path + "providers/" + c.name + ".png"}
                         alt={c.name}
                       />
-                      <div>
-                        {a.title}
-                        {c.name}
-                      </div>
+                      <div>{i18n.t(a.title + "." + c.name)}</div>
                     </Brands>
                   );
                 })}
