@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const PageWrapper = styled.div`
   z-index: 1;
+  position: relative;
 `;
 
 const Page = (props) => {

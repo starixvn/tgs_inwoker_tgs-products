@@ -1,0 +1,98 @@
+const homepage = [
+  {
+    title: "slots",
+    position: "left",
+  },
+  {
+    title: "egame",
+    position: "left",
+  },
+  {
+    title: "sports",
+    position: "left",
+  },
+  {
+    title: "esports",
+    position: "left",
+  },
+  {
+    title: "horserace",
+    position: "left",
+  },
+  {
+    title: "live",
+    position: "left",
+  },
+  {
+    title: "fish",
+    position: "left",
+  },
+  {
+    title: "qipai",
+    position: "right",
+  },
+  {
+    title: "cockfight",
+    position: "left",
+  },
+  {
+    title: "lottery",
+    position: "right",
+  },
+];
+
+const brands = [
+  { name: "pp", gametype: ["slots", "egame", "sports", "live"] },
+  { name: "haba", gametype: ["slots", "egame"] },
+  { name: "jdb", gametype: ["slots", "fish"] },
+  { name: "sw", gametype: ["slots", "egame"] },
+  { name: "rt", gametype: ["slots", "egame"] },
+  { name: "jili", gametype: ["slots", "fish"] },
+  { name: "nt", gametype: ["slots"] },
+  { name: "spade", gametype: ["slots", "egame", "fish"] },
+  { name: "facai", gametype: ["slots", "egame", "fish"] },
+  { name: "pg", gametype: ["slots", "egame"] },
+  { name: "endorphina", gametype: ["slots"] },
+  { name: "fs", gametype: ["slots"] },
+  { name: "joker", gametype: ["slots", "fish"] },
+  { name: "nlc", gametype: ["slots"] },
+  { name: "btg", gametype: ["slots"] },
+  { name: "imes", gametype: ["esports"] },
+  { name: "avia", gametype: ["esports"] },
+  { name: "tf", gametype: ["esports"] },
+  { name: "wg", gametype: ["horserace"] },
+  { name: "rcb988", gametype: ["horserace"] },
+  { name: "leg", gametype: ["qipai", "fish"] },
+  { name: "ky", gametype: ["qipai", "fish"] },
+  { name: "365", gametype: ["qipai"] },
+  { name: "km", gametype: ["egame"] },
+  { name: "ludo", gametype: ["egame"] },
+  { name: "yl", gametype: ["egame", "fish"] },
+  { name: "sv388", gametype: ["cockfight"] },
+  { name: "sm01", gametype: ["cockfight"] },
+  { name: "saba", gametype: ["sports"] },
+  { name: "sbo", gametype: ["sports"] },
+  { name: "bc", gametype: ["sports"] },
+  { name: "wg", gametype: ["sports"] },
+  { name: "bti", gametype: ["sports"] },
+  { name: "phsb", gametype: ["sports"] },
+  { name: "pinnacle", gametype: ["sports"] },
+  { name: "vr", gametype: ["lottery"] },
+  { name: "tcg_sea", gametype: ["lottery"] },
+  { name: "tcg_lotto", gametype: ["lottery"] },
+  { name: "tcg_lotto_vn", gametype: ["lottery"] },
+  { name: "bg", gametype: ["fish", "live"] },
+  { name: "ag", gametype: ["live"] },
+  { name: "sexy", gametype: ["live"] },
+  { name: "sw", gametype: ["live"] },
+  { name: "evo", gametype: ["live"] },
+  { name: "ab", gametype: ["live"] },
+  { name: "dg", gametype: ["live"] },
+  { name: "wm", gametype: ["live"] },
+  { name: "venus", gametype: ["live"] },
+];
+
+export const hardcoded = {
+  homepage,
+  brands,
+};

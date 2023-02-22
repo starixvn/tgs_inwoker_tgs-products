@@ -1,4 +1,16 @@
 {
+  "gametype": {
+    "slots": "老虎机",
+    "egame": "电子竞技",
+    "sports": "体育博彩",
+    "esports": "电子竞技",
+    "horserace": "赛马游戏",
+    "live": "真人视讯",
+    "fish": "捕鱼游戏",
+    "qipai": "棋牌游戏",
+    "cockfight": "斗鸡直播",
+    "lottery": "彩票游戏"
+  },
   "menu": {
     "products": "产品价绍",
     "demo": "案例展示",

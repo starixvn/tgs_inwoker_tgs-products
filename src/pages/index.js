@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 import AppBar from "../component/appbar";
-import Footer from "../component/footer";
 import Page from "../component/page";
 import AppRouter from "../config/router";
 
@@ -28,7 +27,6 @@ const Pages = () => {
       <Page>
         <AppRouter />
       </Page>
-      <Footer />
     </div>
   );
 };

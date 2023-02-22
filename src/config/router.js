@@ -13,7 +13,6 @@ export const AppHistory = createBrowserHistory();
 const AppRouter = () => {
   const baseRouteUrl = `/:locale(en-US|zh-CN)`;
   const paths = [
-    { route: "/products", component: Products },
     { route: "/demo", component: Demo },
     { route: "/contact", component: Contact },
     { route: "/about", component: About },

@@ -113,10 +113,10 @@ const LogoHolder = styled.div`
 
 const AppBar = ({ scrolled }) => {
   const MenuList = [
-    { title: "products", withBorder: false },
-    { title: "demo", withBorder: false },
-    { title: "about", withBorder: false },
-    { title: "contact", withBorder: true },
+    { title: "products", withBorder: false, route: "" },
+    { title: "demo", withBorder: false, route: "demo" },
+    { title: "about", withBorder: false, route: "about" },
+    { title: "contact", withBorder: true, route: "contact" },
   ];
 
   function redirect(path) {
@@ -163,7 +163,7 @@ const AppBar = ({ scrolled }) => {
                     onClick={(e) => {
                       e.preventDefault();
                       window.scrollTo({ top: 0, behavior: "smooth" });
-                      performClickMenu(data.title);
+                      performClickMenu(data.route);
                     }}
                     border={data.withBorder}
                   >

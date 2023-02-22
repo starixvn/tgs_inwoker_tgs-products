@@ -4,6 +4,13 @@ import breakpoint from "../../config/breakpoints";
 
 var path = process.env.PUBLIC_URL + "/assets/images/";
 
+const FadeInAnimation = keyframes`0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}`;
+
 const BannerContainer = styled.div`
 height: 100vh;
 width: 100%;
@@ -19,14 +26,12 @@ width: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-`;
 
-const FadeInAnimation = keyframes`0% {
-  opacity: 0;
-}
-100% {
-  opacity: 1;
-}`;
+
+  transition: background 0.75s;
+ 
+
+`;
 
 const BannerContent = styled.div`
   width: 100%;

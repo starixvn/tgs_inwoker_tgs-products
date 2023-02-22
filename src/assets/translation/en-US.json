@@ -1,4 +1,16 @@
 {
+  "gametype": {
+    "slots": "Slots",
+    "egame": "E-Games",
+    "sports": "Sports ",
+    "esports": "E-Sports",
+    "horserace": "Horse Racing",
+    "live": "Live Casino",
+    "fish": "Fishing Game",
+    "qipai": "Chess Game",
+    "cockfight": "Cockfighting",
+    "lottery": "Lottery Game"
+  },
   "menu": {
     "products": "Products",
     "demo": "Demo",
