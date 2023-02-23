@@ -1,278 +1,231 @@
 import React from "react";
-import Banner from "../../component/banner";
 import Page from "../../component/page";
+import { common } from "../../utils/common";
 import styled from "styled-components";
+import Arrow from "../../component/arrow";
 import i18n from "../../config/i18n";
-import breakpoint from "../../config/breakpoints";
+import ProperSectionOne from "./section1";
+import SectionTwo from "./section2";
+import SectionThree from "./section3";
+import AdvantageAndPartner from "./section4";
 
-const ContentTextTitle = styled.div`
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: bold;
-  width: 100%;
-`;
-
-const ContentTitlePoints = styled.div`
-  width: 100%;
-`;
-
-const MoveLeftImage = styled.img`
-  height: 500px;
-  transition: margin 1s;
-`;
-
-const MoveRightImage = styled.img`
-  height: 500px;
-  transition: margin 1s;
-`;
-
-const RightImage = styled.div`
-  height: 500px;
-  transition: margin 1s;
-  width: 1000px;
-  background: url(${({ src }) => src}) center no-repeat;
-`;
-
-const Container = styled.div`
-  height: 600px;
-  display: flex;
+const SectionOne = styled.div`
+  display: grid;
+  grid-template-columns: 55% 45%;
+  height: calc(100vh - 100px);
   align-items: center;
-  flex: 1;
-  justify-content: space-between;
+`;
+
+const SectionOneContentOrientation = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+`;
+
+const Title = styled.div`
+  font-size: 4rem;
+  font-weight: 700;
+`;
+
+const Description = styled.div`
+  padding: 30px 0;
+  white-space: pre-line;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+`;
+
+const SectionOneContent = styled.div``;
+
+const GapLeaver = styled.div`
+  background: #081525;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+`;
+
+const Content = styled.div`
+  width: 1280px;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 40% 60%;
+`;
+
+const AnotherTitle = styled.div`
+  font-size: 5rem;
+  font-weight: 700;
+`;
+
+const TitleAndDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const AnotherDescription = styled.div`
+  padding: 10px 0;
+  white-space: pre-line;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+`;
+
+const TripleCircleContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const random = () => {
+  return Math.floor(Math.random() * 20) - 10;
+};
+
+const UnderneathCircle = styled.div`
+  background: #03396a;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+
+  z-index: 0;
+
+  animation: ${({ animate }) => {
+      return [animate];
+    }}
+    5s infinite;
+  @keyframes move1 {
+    0% {
+      transform: translate(${random()}px, ${random()}px);
+    }
+    50% {
+      transform: translate(${random()}px, ${random()}px);
+    }
+    100% {
+      transform: translate(${random()}px, ${random()}px);
+    }
+  }
+
+  @keyframes move2 {
+    0% {
+      transform: translate(${random()}px, ${random()}px);
+    }
+    50% {
+      transform: translate(${random()}px, ${random()}px);
+    }
+    100% {
+      transform: translate(${random()}px, ${random()}px);
+    }
+  }
+
+  @keyframes move3 {
+    0% {
+      transform: translate(${random()}px, ${random()}px);
+    }
+    50% {
+      transform: translate(${random()}px, ${random()}px);
+    }
+    100% {
+      transform: translate(${random()}px, ${random()}px);
+    }
+  }
+`;
+
+const AboveCircle = styled.div`
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #0389ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  font-size: 2rem;
+  white-space: pre-line;
+  font-weight: bold;
+  letter-spacing: 0.25rem;
+`;
+
+const TheCircleWrapper = styled.div`
   position: relative;
+  width: 170px;
+  height: 170px;
 `;
 
-const FloatOnTop = styled.div`
-  color: white;
-  position: absolute;
-  margin-left: 20%;
-  opacity: 0;
-  transition: opacity 1s;
-`;
+const SectionOneCircle = () => {
+  const TheCircle = ({ children, animate }) => {
+    //randomly assign move1, move2, move3 to animate and wont duplicate the same move
+    var moves = ["move1", "move2", "move3"];
+    var move = moves[Math.floor(Math.random() * moves.length)];
+    moves.splice(moves.indexOf(move), 1);
+    animate = move;
 
-const FloatOnTopThree = styled.div`
-  position: absolute;
-  right: 20%;
-  color: white;
-  opacity: 0;
-`;
+    return (
+      <TheCircleWrapper>
+        <UnderneathCircle animate={animate}></UnderneathCircle>
+        <AboveCircle>{children}</AboveCircle>
+      </TheCircleWrapper>
+    );
+  };
 
-const LeftImage = styled.div`
-  height: 500px;
-  transition: margin 1s;
-  width: 1000px;
-  background: url(${({ src }) => src}) center no-repeat;
-`;
-
-const FloatOnTopTwo = styled.div`
-  color: black;
-  margin-right: 20%;
-  opacity: 0;
-  transition: opacity 1s;
-`;
-
-const LeftContainer = styled(Container)`
-  :hover {
-    ${LeftImage} {
-      background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-        url(${({ src }) => src}) center no-repeat;
-    }
-
-    ${MoveLeftImage} {
-      margin-left: -100px;
-    }
-    ${FloatOnTop} {
-      opacity: 1;
-    }
-    ${FloatOnTopTwo} {
-      opacity: 1;
-    }
-  }
-`;
-
-const FloatOnLeft = styled.div`
-  margin-left: 20%;
-  opacity: 0;
-  transition: opacity 3s;
-`;
-
-const RightContainer = styled(Container)`
-  :hover {
-    ${LeftImage} {
-      background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-        url(${({ src }) => src}) center no-repeat;
-    }
-
-    ${MoveRightImage} {
-      margin-right: -100px;
-    }
-
-    ${FloatOnLeft} {
-      opacity: 1;
-    }
-  }
-`;
-
-const AnotherRightContainer = styled(RightContainer)`
-  justify-content: flex-end;
-  :hover {
-    ${RightImage} {
-      background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-        url(${({ src }) => src}) center no-repeat;
-    }
-    ${FloatOnTopThree} {
-      opacity: 1;
-      transition: opacity 1s;
-    }
-  }
-`;
-
-var path = process.env.PUBLIC_URL + "/assets/images";
-
-const Wrapper = styled.div`
-  margin-top: 50px;
-  @media (${breakpoint.mobile}) {
-    display: none;
-  }
-`;
-
-const Content = styled.div``;
-
-const AnotherWrapper = styled.div`
-  display: none;
-  @media (${breakpoint.mobile}) {
-    display: block;
-  }
-`;
-
-const EachBloodyPart = styled.div`
-  padding: 20px;
-`;
-const About = () => {
   return (
-    <Page>
+    <GapLeaver>
       <Content>
-        <Banner
-          background="banner/about.jpg"
-          gradient="rgb(0,0,0,0.5), rgb(0,0,0,0.5)"
-          title={i18n.t("about.title")}
-          description={i18n.t("about.description")}
-        ></Banner>
-        <Wrapper>
-          <LeftContainer src={path + "/about/1.png"}>
-            <LeftImage src={path + "/about/1.png"} />
-            <FloatOnTop>
-              <ContentTextTitle>{i18n.t("about.1.title")}</ContentTextTitle>
-              <ContentTitlePoints>
-                ◼ {i18n.t("about.1.point1")}
-              </ContentTitlePoints>
-              <ContentTitlePoints>
-                ◼ {i18n.t("about.1.point2")}
-              </ContentTitlePoints>
-              <ContentTitlePoints>
-                ◼ {i18n.t("about.1.point3")}
-              </ContentTitlePoints>
-            </FloatOnTop>
-          </LeftContainer>
-          <RightContainer>
-            <FloatOnLeft>
-              <ContentTextTitle>{i18n.t("about.2.title")}</ContentTextTitle>
-              <ContentTitlePoints>
-                ◼ {i18n.t("about.2.point1")}
-              </ContentTitlePoints>
-              <ContentTitlePoints>
-                ◼ {i18n.t("about.2.point2")}
-              </ContentTitlePoints>
-              <ContentTitlePoints>
-                ◼ {i18n.t("about.2.point3")}
-              </ContentTitlePoints>
-            </FloatOnLeft>
-            <MoveRightImage src={path + "/about/2.png"} />
-          </RightContainer>
-          <LeftContainer>
-            <MoveLeftImage src={path + "/about/3.png"} />
-            <FloatOnTopTwo>
-              <ContentTextTitle>{i18n.t("about.3.title")}</ContentTextTitle>
-              <ContentTitlePoints>
-                ◼ {i18n.t("about.3.point1")}
-              </ContentTitlePoints>
-              <ContentTitlePoints>
-                ◼ {i18n.t("about.3.point2")}
-              </ContentTitlePoints>
-              <ContentTitlePoints>
-                ◼ {i18n.t("about.3.point3")}
-              </ContentTitlePoints>
-            </FloatOnTopTwo>
-          </LeftContainer>
-          <AnotherRightContainer src={path + "/about/4.png"}>
-            <FloatOnTopThree>
-              <ContentTextTitle>{i18n.t("about.4.title")}</ContentTextTitle>
-              <ContentTitlePoints>
-                ◼ {i18n.t("about.4.point1")}
-              </ContentTitlePoints>
-              <ContentTitlePoints>
-                ◼ {i18n.t("about.4.point2")}
-              </ContentTitlePoints>
-              <ContentTitlePoints>
-                ◼ {i18n.t("about.4.point3")}
-              </ContentTitlePoints>
-            </FloatOnTopThree>
-            <RightImage src={path + "/about/4.png"} />
-          </AnotherRightContainer>
-        </Wrapper>
-        <AnotherWrapper>
-          <EachBloodyPart>
-            <ContentTextTitle>{i18n.t("about.1.title")}</ContentTextTitle>
-            <ContentTitlePoints>
-              ◼ {i18n.t("about.1.point1")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("about.1.point2")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("about.1.point3")}
-            </ContentTitlePoints>
-          </EachBloodyPart>
-          <EachBloodyPart>
-            <ContentTextTitle>{i18n.t("about.2.title")}</ContentTextTitle>
-            <ContentTitlePoints>
-              ◼ {i18n.t("about.2.point1")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("about.2.point2")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("about.2.point3")}
-            </ContentTitlePoints>
-          </EachBloodyPart>
-          <EachBloodyPart>
-            <ContentTextTitle>{i18n.t("about.3.title")}</ContentTextTitle>
-            <ContentTitlePoints>
-              ◼ {i18n.t("about.3.point1")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("about.3.point2")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("about.3.point3")}
-            </ContentTitlePoints>
-          </EachBloodyPart>
-          <EachBloodyPart>
-            <ContentTextTitle>{i18n.t("about.4.title")}</ContentTextTitle>
-            <ContentTitlePoints>
-              ◼ {i18n.t("about.4.point1")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("about.4.point2")}
-            </ContentTitlePoints>
-            <ContentTitlePoints>
-              ◼ {i18n.t("about.4.point3")}
-            </ContentTitlePoints>
-          </EachBloodyPart>
-        </AnotherWrapper>
+        <TitleAndDescription>
+          <AnotherTitle>迅速开站</AnotherTitle>
+          <AnotherDescription>前台、后台、代理一次解决</AnotherDescription>
+        </TitleAndDescription>
+        <TripleCircleContainer>
+          <TheCircle>
+            客制 <br></br> 前台
+          </TheCircle>
+          <TheCircle>
+            後台 <br></br> 系統
+          </TheCircle>
+          <TheCircle>
+            代理 <br></br> 系統
+          </TheCircle>
+        </TripleCircleContainer>
       </Content>
-    </Page>
+    </GapLeaver>
   );
 };
 
-export default About;
+const AboutPage = () => {
+  return (
+    <>
+      <Page
+        background={common.imageUrl + "/about/sc1.jpg"}
+        style={{ height: "calc(100vh - 200px)" }}
+      >
+        <SectionOne>
+          <SectionOneContent>
+            <SectionOneContentOrientation>
+              <Title>{i18n.t("new_about.sc1_title")}</Title>
+              <Description>{i18n.t("new_about.sc1_description")}</Description>
+              <Arrow direction="down" animate={true} size="xlarge" />
+            </SectionOneContentOrientation>
+          </SectionOneContent>
+          <SectionOneContent>
+            <div>
+              <img
+                src={common.imageUrl + "about/sc1-right.png"}
+                alt="sc1right"
+              />
+            </div>
+          </SectionOneContent>
+        </SectionOne>
+      </Page>
+      <SectionOneCircle />
+      <ProperSectionOne />
+      <SectionTwo />
+      <SectionThree />
+      <AdvantageAndPartner />
+    </>
+  );
+};
+
+export default AboutPage;

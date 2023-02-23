@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import breakpoint from "../../config/breakpoints";
+import { common } from "../../utils/common";
 
 const ImageContainer = styled.div`
   padding: ${({ padding }) => {
@@ -42,7 +43,6 @@ const ImageComponent = styled.img`
   height: 100%;
 `;
 const Image = ({ src, p, h, w, wap_p, grayscale }) => {
-  var path = process.env.PUBLIC_URL + "/assets/images";
   return (
     <ImageContainer
       padding={p}
@@ -51,7 +51,7 @@ const Image = ({ src, p, h, w, wap_p, grayscale }) => {
       wapPadding={wap_p}
       grayscale={grayscale}
     >
-      <ImageComponent src={path + src} />
+      <ImageComponent src={common.imageUrl + src} />
     </ImageContainer>
   );
 };

@@ -2,11 +2,10 @@ import React from "react";
 import { Router, Route, Switch, Redirect } from "react-router";
 import Landing from "../pages/landing";
 import { createBrowserHistory } from "history";
-import Products from "../pages/products";
-import Demo from "../pages/demo";
-import Contact from "../pages/contact";
-import About from "../pages/about";
+
 import i18n from "./i18n";
+import Demo from "../pages/demo";
+import AboutPage from "../pages/about";
 
 export const AppHistory = createBrowserHistory();
 
@@ -14,8 +13,8 @@ const AppRouter = () => {
   const baseRouteUrl = `/:locale(en-US|zh-CN)`;
   const paths = [
     { route: "/demo", component: Demo },
-    { route: "/contact", component: Contact },
-    { route: "/about", component: About },
+    { route: "/contact", component: Landing },
+    { route: "/about", component: AboutPage },
     { route: "/", component: Landing },
   ];
   return (

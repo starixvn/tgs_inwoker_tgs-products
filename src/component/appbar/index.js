@@ -110,15 +110,13 @@ const MenuButton = styled.div`
 const LogoHolder = styled.div`
   cursor: pointer;
 `;
-
+const MenuList = [
+  { title: "products", withBorder: false, route: "" },
+  { title: "demo", withBorder: false, route: "demo" },
+  { title: "about", withBorder: false, route: "about" },
+  { title: "contact", withBorder: true, route: "contact" },
+];
 const AppBar = ({ scrolled }) => {
-  const MenuList = [
-    { title: "products", withBorder: false, route: "" },
-    { title: "demo", withBorder: false, route: "demo" },
-    { title: "about", withBorder: false, route: "about" },
-    { title: "contact", withBorder: true, route: "contact" },
-  ];
-
   function redirect(path) {
     AppHistory.push("/" + i18n.language + "/" + path);
   }

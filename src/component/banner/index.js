@@ -1,8 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import breakpoint from "../../config/breakpoints";
-
-var path = process.env.PUBLIC_URL + "/assets/images/";
+import { common } from "../../utils/common";
 
 const FadeInAnimation = keyframes`0% {
   opacity: 0;
@@ -17,7 +16,7 @@ width: 100%;
   background:${({ gradient, background }) => {
     return background
       ? `linear-gradient(${gradient}), url(${
-          path + background
+          common.imageUrl + background
         }) center no-repeat;`
       : "#212121;";
   }}

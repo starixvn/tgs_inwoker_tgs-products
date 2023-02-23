@@ -33,6 +33,7 @@ const LanguageChanger = ({ scrolled }) => {
   var path = window.location.pathname.split("/");
 
   function changeLanguage(language) {
+    console.log(path);
     i18n.changeLanguage(language);
     if (path[2] !== "") {
       AppHistory.push("/" + language + "/" + path[2]);

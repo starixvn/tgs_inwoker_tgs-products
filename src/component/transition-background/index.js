@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { common } from "../../utils/common";
 
 import { hardcoded } from "../../utils/hardcode";
-
-var path = process.env.PUBLIC_URL + "/assets/images/";
 
 const BannerContainer = styled.div`
   height: 100vh;
   width: 100%;
   background: ${({ background }) => {
-    return `url(${path + background}) center no-repeat;`;
+    return `url(${common.imageUrl + background}) center no-repeat;`;
   }};
   background-size: cover;
   display: flex;

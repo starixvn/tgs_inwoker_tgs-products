@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 import AppBar from "../component/appbar";
-import Page from "../component/page";
+
 import AppRouter from "../config/router";
 
 const Pages = () => {
@@ -23,10 +23,8 @@ const Pages = () => {
 
   return (
     <div>
-      <AppBar scrolled={y >= 300} />
-      <Page>
-        <AppRouter />
-      </Page>
+      <AppBar scrolled={y >= 100} />
+      <AppRouter />
     </div>
   );
 };

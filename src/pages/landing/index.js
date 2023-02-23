@@ -1,16 +1,14 @@
-import Banner from "../../component/banner";
-import Page from "../../component/page";
 import styled from "styled-components";
 
-import breakpoint from "../../config/breakpoints";
-import { useEffect, useState } from "react";
 import { hardcoded } from "../../utils/hardcode";
 import TransitionBackground from "../../component/transition-background";
 import i18n from "../../config/i18n";
+import { useState } from "react";
+import Page from "../../component/page";
+import { common } from "../../utils/common";
 
 const GameListContainer = styled.div`
   bottom: 40px;
-  width: 100%;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -59,11 +57,9 @@ const GameListItem = styled.div`
   }
 `;
 
-var path = process.env.PUBLIC_URL + "/assets/images/";
-
 const Icon = styled.div`
   mask: url(${({ icon }) => {
-    return path + "homepage/icons/" + icon + ".svg";
+    return common.imageUrl + "homepage/icons/" + icon + ".svg";
   }});
   mask-size: 100%;
   mask-repeat: no-repeat;
@@ -97,7 +93,7 @@ const Brands = styled.div`
 
 const LogoHolder = styled.img`
   height: auto;
-  width: 25px;
+  width: 40px;
 `;
 
 const Landing = () => {
@@ -122,7 +118,7 @@ const Landing = () => {
                   return (
                     <Brands key={index}>
                       <LogoHolder
-                        src={path + "providers/" + c.name + ".png"}
+                        src={common.imageUrl + "providers/" + c.name + ".png"}
                         alt={c.name}
                       />
                       <div>{i18n.t(a.title + "." + c.name)}</div>
@@ -138,6 +134,7 @@ const Landing = () => {
           {hardcoded.homepage.map((data, index) => {
             return (
               <GameListItem
+                key={index}
                 selected={data.title === selected.title}
                 onClick={() => {
                   setSelected(data);
