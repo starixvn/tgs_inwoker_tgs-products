@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import breakpoint from "../../../config/breakpoints";
 import { common } from "../../../utils/common";
 
 const HugeAssNumber = styled.div`
@@ -44,6 +45,10 @@ const TheContent = styled.div`
   display: grid;
   grid-template-columns: 20% 80%;
   align-items: center;
+
+  @media (${breakpoint.mobile}) {
+    width: 100%;
+  }
 `;
 
 const RightContent = styled.div`

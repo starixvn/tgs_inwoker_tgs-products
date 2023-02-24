@@ -18,6 +18,10 @@ const CustomAppBarContainer = styled.div`
   color: black;
   transition: background 0.75s;
 
+  @media (${breakpoint.mobile}) {
+    height: 60px;
+  }
+
   ${({ scrolled }) => {
     return (
       scrolled &&
@@ -49,7 +53,8 @@ const AppBarContent = styled.div`
 
 const Left = styled(AppBarContent)`
   @media (${breakpoint.mobile}) {
-    margin-left: 20px;
+    margin-left: 80px;
+    width: 50%;
   }
 `;
 const Middle = styled(AppBarContent)`

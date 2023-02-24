@@ -17,18 +17,18 @@ const FixedPosition = styled.div`
 
 const Hamburger = styled.div`
   position: fixed;
-  right: 20px;
-  top: 20px;
+  left: 20px;
+  top: 0px;
   height: 50px;
   width: 50px;
-  background: white;
+  background: transparent;
+  color: #fff;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 1;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 `;
 
 const MobileMenuList = styled.div`

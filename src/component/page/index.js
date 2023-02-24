@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import breakpoint from "../../config/breakpoints";
 
 const PageWrapper = styled.div`
   z-index: 1;
@@ -22,10 +23,16 @@ const PageWrapper = styled.div`
     return `url(${background}) top no-repeat;`;
   }};
   background-size: cover;
+
+  @media (${breakpoint.mobile}) {
+    padding: 60px 0px;
+  }
 `;
 
 const WorkableArea = styled.div`
-  width: 1280px;
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
 `;
 const Page = (props) => {
   return (

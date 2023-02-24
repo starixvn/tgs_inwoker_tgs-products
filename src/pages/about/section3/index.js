@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import breakpoint from "../../../config/breakpoints";
 import i18n from "../../../config/i18n";
 import { common } from "../../../utils/common";
 import { hardcoded } from "../../../utils/hardcode";
@@ -51,6 +52,9 @@ const ContentWrapper = styled.div`
   width: 1280px;
   grid-template-columns: 76% 24%;
   align-items: center;
+  @media (${breakpoint.mobile}) {
+    width: 100%;
+  }
 `;
 
 const RightContent = styled.div`

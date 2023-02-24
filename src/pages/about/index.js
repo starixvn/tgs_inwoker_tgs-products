@@ -8,6 +8,7 @@ import ProperSectionOne from "./section1";
 import SectionTwo from "./section2";
 import SectionThree from "./section3";
 import AdvantageAndPartner from "./section4";
+import breakpoint from "../../config/breakpoints";
 
 const SectionOne = styled.div`
   display: grid;
@@ -52,6 +53,10 @@ const Content = styled.div`
   color: #fff;
   display: grid;
   grid-template-columns: 40% 60%;
+
+  @media (${breakpoint.mobile}) {
+    width: 100%;
+  }
 `;
 
 const AnotherTitle = styled.div`

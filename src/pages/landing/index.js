@@ -6,6 +6,7 @@ import i18n from "../../config/i18n";
 import { useState } from "react";
 import Page from "../../component/page";
 import { common } from "../../utils/common";
+import breakpoint from "../../config/breakpoints";
 
 const GameListContainer = styled.div`
   bottom: 40px;
@@ -13,6 +14,9 @@ const GameListContainer = styled.div`
   justify-content: center;
   position: fixed;
   z-index: 1;
+  @media (${breakpoint.mobile}) {
+    display: none;
+  }
 `;
 
 const GameList = styled.div`
@@ -20,6 +24,10 @@ const GameList = styled.div`
   width: 1280px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 10px 20px;
+
+  @media (${breakpoint.mobile}) {
+    width: 100%;
+  }
 `;
 
 const GameListItem = styled.div`
@@ -55,6 +63,7 @@ const GameListItem = styled.div`
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
       }
   }
+
 `;
 
 const Icon = styled.div`
@@ -79,6 +88,14 @@ const BrandsContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+
+  @media (${breakpoint.mobile}) {
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+    padding: 10px;
+  }
 `;
 
 const Brands = styled.div`
@@ -89,6 +106,9 @@ const Brands = styled.div`
 
   align-items: center;
   gap: 10px;
+  @media (${breakpoint.mobile}) {
+    background: rgba(0, 0, 0, 0.5);
+  }
 `;
 
 const LogoHolder = styled.img`
@@ -96,6 +116,24 @@ const LogoHolder = styled.img`
   width: 40px;
 `;
 
+const CustomMenu = styled.div`
+  background: #0d1931;
+  height: 60px;
+
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+`;
+
+const CustomGameListItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: ${({ selected }) => (selected ? "#0389ff" : "rgba(0,0,0,0.5)")};
+  color: #fff;
+  width: 200px;
+`;
 const Landing = () => {
   const [gameList, setGameList] = useState(hardcoded.homepage);
   const [selected, setSelected] = useState(gameList[0]);
@@ -103,6 +141,22 @@ const Landing = () => {
   return (
     <Page>
       <TransitionBackground selected={selected.title} />
+      <CustomMenu>
+        {hardcoded.homepage.map((data, index) => {
+          return (
+            <CustomGameListItem
+              key={index}
+              selected={data.title === selected.title}
+              onClick={() => {
+                setSelected(data);
+              }}
+            >
+              <Icon icon={data.title} />
+              <div>{i18n.t("gametype." + data.title)}</div>
+            </CustomGameListItem>
+          );
+        })}
+      </CustomMenu>
       {hardcoded.homepage
         .filter((a) => {
           return a.title === selected.title;
