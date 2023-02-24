@@ -20,8 +20,7 @@ const GapLeaver = styled.div`
 
   :hover {
     ${HugeAssNumber} {
-      animation: glow 1s ease-in-out infinite alternate;
-      -webkit-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out alternate;
 
       @keyframes glow {
         from {

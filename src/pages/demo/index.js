@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Page from "../../component/page";
 import i18n from "../../config/i18n";
 import { common } from "../../utils/common";
+import { hardcoded } from "../../utils/hardcode";
 
 const Contents = styled.div`
   display: grid;
@@ -13,7 +14,7 @@ const Contents = styled.div`
 const CustomButton = styled.div`
   color: white;
   border-radius: 8px;
-  padding: 5px 10px;
+  padding: 10px 30px;
   margin: 0px 10px;
   cursor: pointer;
   ${({ selected }) => {
@@ -22,7 +23,7 @@ const CustomButton = styled.div`
     background: #2092FF;
     `
       : `
-    background: #D5D5D5;
+    background: #707070;
     
     `;
   }}
@@ -92,6 +93,29 @@ const Overlay = styled.div`
 
   cursor: pointer;
 `;
+const TitleHolder = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 0.85;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  color: #fff;
+`;
+
+const Title = styled.div`
+  font-size: 3.4rem;
+`;
+
+const Subtittle = styled.div`
+  font-weight: bold;
+  color: #00a8ff;
+  font-size: 2.5rem;
+`;
+
+const Description = styled.div``;
 
 const Products = ({ data, onClick }) => {
   return (
@@ -109,74 +133,19 @@ const Products = ({ data, onClick }) => {
 const Demo = () => {
   const [project, setProject] = React.useState("web");
 
-  const webProject = [
-    { image: "/demo/web/t1.jpg", title: "T1", link: "https://t1.srvptt.com/" },
-    { image: "/demo/web/t2.jpg", title: "T2", link: "https://t2.srvptt.com/" },
-    { image: "/demo/web/t3.jpg", title: "T3", link: "https://t3.srvptt.com/" },
-    { image: "/demo/web/t4.jpg", title: "T4", link: "https://t4.srvptt.com/" },
-    { image: "/demo/web/t5.jpg", title: "T5", link: "https://t5.srvptt.com/" },
-    { image: "/demo/web/t8.jpg", title: "T8", link: "https://t5.srvptt.com/" },
-    { image: "/demo/web/t9.jpg", title: "T9", link: "https://t5.srvptt.com/" },
-    {
-      image: "/demo/web/t11.jpg",
-      title: "T11",
-      link: "https://t5.srvptt.com/",
-    },
-    {
-      image: "/demo/web/t13.jpg",
-      title: "T13",
-      link: "https://t5.srvptt.com/",
-    },
-    {
-      image: "/demo/web/bunny.jpg",
-      title: "BUNNY",
-      link: "https://t5.srvptt.com/",
-    },
-  ];
-
-  const wapProject = [
-    { image: "/demo/wap/t1.jpg", title: "T1", link: "https://t1.srvptt.com/" },
-    { image: "/demo/wap/t2.jpg", title: "T2", link: "https://t2.srvptt.com/" },
-    {
-      image: "/demo/wap/t2-1.jpg",
-      title: "T2-1",
-      link: "https://t2.srvptt.com/",
-    },
-    {
-      image: "/demo/wap/t2-2.jpg",
-      title: "T2=2",
-      link: "https://t2.srvptt.com/",
-    },
-    { image: "/demo/wap/t3.jpg", title: "T3", link: "https://t3.srvptt.com/" },
-    { image: "/demo/wap/t4.jpg", title: "T4", link: "https://t4.srvptt.com/" },
-    { image: "/demo/wap/t5.jpg", title: "T5", link: "https://t5.srvptt.com/" },
-    { image: "/demo/wap/t6.jpg", title: "T6", link: "https://t3.srvptt.com/" },
-    { image: "/demo/wap/t7.jpg", title: "T7", link: "https://t4.srvptt.com/" },
-    { image: "/demo/wap/t8.jpg", title: "T8", link: "https://t5.srvptt.com/" },
-    { image: "/demo/wap/t9.jpg", title: "T9", link: "https://t5.srvptt.com/" },
-    {
-      image: "/demo/wap/t10.jpg",
-      title: "T10",
-      link: "https://t5.srvptt.com/",
-    },
-    {
-      image: "/demo/wap/t11.jpg",
-      title: "T11",
-      link: "https://t5.srvptt.com/",
-    },
-    {
-      image: "/demo/wap/t13.jpg",
-      title: "T13",
-      link: "https://t5.srvptt.com/",
-    },
-  ];
-
   function gotoPage(link) {
     window.open(link);
   }
 
   return (
     <Page background={common.imageUrl + "/demo/web-bg.jpg"}>
+      <TitleHolder>
+        <Subtittle>FRONT END</Subtittle>
+        <Title>平台展示</Title>
+        <Description>
+          多種模板可以選，并且能依顧客需求客制化，所有版型都符合HTML5
+        </Description>
+      </TitleHolder>
       <ButtonWrapper>
         <CustomButton
           selected={project === "web"}
@@ -197,14 +166,14 @@ const Demo = () => {
       </ButtonWrapper>
       {project === "web" && (
         <Contents totalPerRow={2}>
-          {webProject.map((item) => {
+          {hardcoded.demoWeb.map((item) => {
             return <Products data={item} />;
           })}
         </Contents>
       )}
       {project === "wap" && (
         <Contents totalPerRow={3}>
-          {wapProject.map((item) => {
+          {hardcoded.demoWap.map((item) => {
             return (
               <Products
                 data={item}

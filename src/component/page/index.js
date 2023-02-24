@@ -8,6 +8,16 @@ const PageWrapper = styled.div`
   display: flex;
   justify-content: center;
 
+  animation: fadeIn 1s;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   background: ${({ background }) => {
     return `url(${background}) top no-repeat;`;
   }};
