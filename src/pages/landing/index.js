@@ -14,6 +14,8 @@ const GameListContainer = styled.div`
   justify-content: center;
   position: fixed;
   z-index: 1;
+  width: 100%;
+  left: 0;
   @media (${breakpoint.mobile}) {
     display: none;
   }
@@ -85,14 +87,11 @@ const BrandsContainer = styled.div`
     return [position] + ": 320px;";
   }};
   top: 200px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
 
   @media (${breakpoint.mobile}) {
     left: 0;
     right: 0;
-
+    top: 140px;
     bottom: 0;
     padding: 10px;
   }
@@ -118,13 +117,21 @@ const LogoHolder = styled.img`
 
 const CustomMenu = styled.div`
   background: #0d1931;
-  height: 60px;
+  height: 80px;
 
   display: flex;
   flex-direction: row;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  display: none;
+  position: fixed;
+  top: 60px;
+  z-index: 2;
+
+  @media (${breakpoint.mobile}) {
+    display: flex;
+  }
 `;
 
 const CustomGameListItem = styled.div`
@@ -132,7 +139,27 @@ const CustomGameListItem = styled.div`
   flex-direction: column;
   background: ${({ selected }) => (selected ? "#0389ff" : "rgba(0,0,0,0.5)")};
   color: #fff;
-  width: 200px;
+  min-width: fit-content;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+`;
+
+const LogosContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+`;
+
+const Title = styled.div`
+  font-size: 3rem;
+  padding-bottom: 20px;
+`;
+const SubTitle = styled.div`
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0389ff;
 `;
 const Landing = () => {
   const [gameList, setGameList] = useState(hardcoded.homepage);
@@ -157,6 +184,7 @@ const Landing = () => {
           );
         })}
       </CustomMenu>
+
       {hardcoded.homepage
         .filter((a) => {
           return a.title === selected.title;
@@ -164,21 +192,27 @@ const Landing = () => {
         .map((a, index) => {
           return (
             <BrandsContainer position={a.position}>
-              {hardcoded.brands
-                .filter((b) => {
-                  return b.gametype.includes(selected.title);
-                })
-                .map((c, index) => {
-                  return (
-                    <Brands key={index}>
-                      <LogoHolder
-                        src={common.imageUrl + "providers/" + c.name + ".png"}
-                        alt={c.name}
-                      />
-                      <div>{i18n.t(a.title + "." + c.name)}</div>
-                    </Brands>
-                  );
-                })}
+              <div>
+                <SubTitle>{a.title}</SubTitle>
+                <Title> {i18n.t("gametype." + a.title)}</Title>
+              </div>
+              <LogosContainer>
+                {hardcoded.brands
+                  .filter((b) => {
+                    return b.gametype.includes(selected.title);
+                  })
+                  .map((c, index) => {
+                    return (
+                      <Brands key={index}>
+                        <LogoHolder
+                          src={common.imageUrl + "providers/" + c.name + ".png"}
+                          alt={c.name}
+                        />
+                        <div>{i18n.t(a.title + "." + c.name)}</div>
+                      </Brands>
+                    );
+                  })}
+              </LogosContainer>
             </BrandsContainer>
           );
         })}

@@ -28,6 +28,16 @@ const BannerContainer = styled.div`
 `;
 
 const TransitionBackground = ({ selected }) => {
+  const [screenWidth, setScreenWidth] = React.useState(0);
+  React.useEffect(() => {
+    //keep listen to window size
+    window.addEventListener("resize", () => {
+      setScreenWidth(window.innerWidth);
+    });
+  }, []);
+
+  const device = screenWidth < 600 ? "wap" : "web";
+
   return (
     <div>
       {hardcoded.homepage.map((item, index) => {
@@ -35,7 +45,7 @@ const TransitionBackground = ({ selected }) => {
           <BannerContainer
             selected={selected === item.title}
             key={index}
-            background={"homepage/" + item.title + ".jpg"}
+            background={"homepage/" + device + "/" + item.title + ".jpg"}
             gradient={item.gradient}
           ></BannerContainer>
         );

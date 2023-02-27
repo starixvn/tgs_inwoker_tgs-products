@@ -30,6 +30,7 @@ const PageWrapper = styled.div`
 `;
 
 const WorkableArea = styled.div`
+  width: 1280px;
   @media (max-width: 768px) {
     width: 100vw;
   }
