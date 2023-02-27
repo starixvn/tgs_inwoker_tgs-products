@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Page from "../../../component/page";
+import breakpoint from "../../../config/breakpoints";
 import { common } from "../../../utils/common";
 import { hardcoded } from "../../../utils/hardcode";
 
@@ -9,6 +10,11 @@ const Contents = styled.div`
   display: grid;
   grid-template-columns: 1;
   gap: 200px;
+
+  @media (${breakpoint.mobile}) {
+    gap: 10px;
+    width: 100%;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -29,7 +35,7 @@ const Subtitle = styled.div`
 `;
 
 const Logos = styled.img`
-  width: 200px;
+  width: auto;
   height: auto;
 `;
 
@@ -48,6 +54,11 @@ const AdvantageHolder = styled.div`
   gap: 30px 30px;
   align-items: stretch;
   justify-content: center;
+
+  @media (${breakpoint.mobile}) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
 `;
 
 const BenefitContainer = styled.div`

@@ -15,6 +15,12 @@ const SectionOne = styled.div`
   grid-template-columns: 55% 45%;
   height: calc(100vh - 100px);
   align-items: center;
+
+  @media (${breakpoint.mobile}) {
+    display: block;
+    padding: 20px;
+    transform: scale(0.7);
+  }
 `;
 
 const SectionOneContentOrientation = styled.div`
@@ -56,6 +62,8 @@ const Content = styled.div`
 
   @media (${breakpoint.mobile}) {
     width: 100%;
+    display: block;
+    transform: scale(0.7);
   }
 `;
 
@@ -158,6 +166,15 @@ const TheCircleWrapper = styled.div`
   position: relative;
   width: 170px;
   height: 170px;
+  @media (${breakpoint.mobile}) {
+    transform: scale(0.7);
+  }
+`;
+
+const ToHide = styled.div`
+  @media (${breakpoint.mobile}) {
+    display: none;
+  }
 `;
 
 const SectionOneCircle = () => {
@@ -215,12 +232,12 @@ const AboutPage = () => {
             </SectionOneContentOrientation>
           </SectionOneContent>
           <SectionOneContent>
-            <div>
+            <ToHide>
               <img
                 src={common.imageUrl + "about/sc1-right.png"}
                 alt="sc1right"
               />
-            </div>
+            </ToHide>
           </SectionOneContent>
         </SectionOne>
       </Page>

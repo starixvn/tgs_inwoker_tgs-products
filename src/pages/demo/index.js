@@ -9,6 +9,7 @@ const Contents = styled.div`
   display: grid;
   grid-template-columns: repeat(${(props) => props.totalPerRow}, 1fr);
   gap: 20px;
+  padding: 20px;
 `;
 
 const CustomButton = styled.div`
@@ -115,7 +116,9 @@ const Subtittle = styled.div`
   font-size: 2.5rem;
 `;
 
-const Description = styled.div``;
+const Description = styled.div`
+  text-align: center;
+`;
 
 const Products = ({ data, onClick }) => {
   return (
