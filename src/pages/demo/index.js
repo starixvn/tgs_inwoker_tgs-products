@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import AppBar from "../../component/appbar";
 import Footer from "../../component/footer";
 import Page from "../../component/page";
 import breakpoint from "../../config/breakpoints";
@@ -50,8 +51,8 @@ const TheImage = styled.img`
 
 const TheSquare = styled.div`
   color: #fff;
-  height: 150px;
-  width: 150px;
+  height: 100%;
+  width: 100%;
   border: solid 8px #fff;
   display: flex;
   align-items: center;
@@ -60,47 +61,10 @@ const TheSquare = styled.div`
   justify-content: center;
 
   @media (${breakpoint.mobile}) {
-    width: 75px;
-    height: 75px;
+    font-size: 1.5rem;
   }
 `;
 
-const Overlay = styled.div`
-  background: rgba(3, 137, 255, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.5s;
-
- 
-  :hover {
-    opacity: 1;
-    ${TheSquare} {
-     animation: breathing 0.75s infinite;
-     @keyframes breathing {
-       0% {
-         transform: scale(1);
-         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
-       }
-       70% {
-         transform: scale(1.025);
-         box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-       }
-       100% {
-         transform: scale(1);
-         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-       }
-    }
-  }
-
-  cursor: pointer;
-`;
 const TitleHolder = styled.div`
   display: flex;
   justify-content: center;
@@ -134,16 +98,77 @@ const Description = styled.div`
   }
 `;
 
+const TheTitle = styled.div`
+  color: #fff;
+  with: 100%;
+  text-align: center;
+  padding: 20px;
+`;
+
+const Overlay = styled.div`
+  background: rgba(3, 137, 255, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+
+  padding: 50px;
+
+  :hover {
+    opacity: 1;
+
+    ${TheSquare} {
+      animation: breathing 0.75s infinite;
+      @keyframes breathing {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+        }
+        70% {
+          transform: scale(1.025);
+          box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+      }
+    }
+  }
+
+  cursor: pointer;
+
+  @media (${breakpoint.mobile}) {
+    padding: 10px;
+  }
+`;
+
+const EntireShitWrapper = styled.div`
+  :hover {
+    ${TheTitle} {
+      background: #00a8ff;
+    }
+  }
+`;
+
 const Products = ({ data, onClick }) => {
   return (
-    <>
+    <EntireShitWrapper>
       <ProductContainer>
         <Overlay>
-          <TheSquare onClick={onClick}>{data.title}</TheSquare>
+          <TheSquare onClick={onClick}>DEMO</TheSquare>
         </Overlay>
         <TheImage src={common.imageUrl + data.image} alt={data.title} />
       </ProductContainer>
-    </>
+
+      <TheTitle>{data.title} </TheTitle>
+    </EntireShitWrapper>
   );
 };
 
@@ -156,6 +181,7 @@ const Demo = () => {
 
   return (
     <>
+      <AppBar />
       <Page background={common.imageUrl + "/demo/web-bg.jpg"}>
         <TitleHolder>
           <Subtittle>FRONT END</Subtittle>

@@ -10,6 +10,7 @@ import SectionThree from "./section3";
 import AdvantageAndPartner from "./section4";
 import breakpoint from "../../config/breakpoints";
 import Footer from "../../component/footer";
+import AppBar from "../../component/appbar";
 
 const SectionOne = styled.div`
   display: grid;
@@ -227,6 +228,7 @@ const SectionOneCircle = () => {
 const AboutPage = () => {
   return (
     <>
+      <AppBar />
       <>
         <Page
           background={common.imageUrl + "/about/sc1.jpg"}

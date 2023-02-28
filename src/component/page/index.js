@@ -33,7 +33,7 @@ const PageWrapper = styled.div`
 
 const WorkableArea = styled.div`
   width: 1280px;
-  @media (max-width: 768px) {
+  @media (${breakpoint.mobile}) {
     width: 100vw;
     max-width: 100vw;
   }

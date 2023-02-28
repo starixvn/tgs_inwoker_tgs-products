@@ -6,7 +6,7 @@ import { AppHistory } from "../../config/router";
 const LanguageHolder = styled.div`
   display: flex;
   color: ${({ scrolled }) => {
-    return scrolled ? "black" : "white ";
+    return scrolled ? "white" : "white ";
   }};
 `;
 
@@ -33,7 +33,6 @@ const LanguageChanger = ({ scrolled }) => {
   var path = window.location.pathname.split("/");
 
   function changeLanguage(language) {
-    console.log(path);
     i18n.changeLanguage(language);
     if (path[2] !== "") {
       AppHistory.push("/" + language + "/" + path[2]);

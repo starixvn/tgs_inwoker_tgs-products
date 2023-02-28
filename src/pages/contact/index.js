@@ -7,6 +7,7 @@ import breakpoint from "../../config/breakpoints";
 import Footer from "../../component/footer";
 import Modal from "../../component/modal";
 import QRCode from "react-qr-code";
+import AppBar from "../../component/appbar";
 
 const Content = styled.div`
   min-height: 100vh;
@@ -117,6 +118,7 @@ const Supports = ({ data }) => {
 const Contact = () => {
   return (
     <>
+      <AppBar />
       <Page background={common.imageUrl + "/contact/bg.jpg"}>
         <Content>
           <TitleHolder>
@@ -130,7 +132,6 @@ const Contact = () => {
           </SupportsContainer>
         </Content>
       </Page>
-
       <Footer />
     </>
   );

@@ -8,6 +8,8 @@ import Page from "../../component/page";
 import { common } from "../../utils/common";
 import breakpoint from "../../config/breakpoints";
 
+import AppBar from "../../component/appbar";
+
 const GameListContainer = styled.div`
   bottom: 40px;
   display: flex;
@@ -93,7 +95,7 @@ const BrandsContainer = styled.div`
     right: 0;
     top: 140px;
     bottom: 0;
-    padding: 10px;
+    padding: 20px;
   }
 `;
 
@@ -127,6 +129,9 @@ const CustomMenu = styled.div`
   display: none;
   position: fixed;
   top: 60px;
+  right: 0;
+  left: 0;
+  width: 100%;
   z-index: 2;
 
   @media (${breakpoint.mobile}) {
@@ -143,6 +148,10 @@ const CustomGameListItem = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
+
+  :first-child {
+    padding: 20px;
+  }
 `;
 
 const LogosContainer = styled.div`
@@ -166,62 +175,14 @@ const Landing = () => {
   const [selected, setSelected] = useState(gameList[0]);
 
   return (
-    <Page>
-      <TransitionBackground selected={selected.title} />
-      <CustomMenu>
-        {hardcoded.homepage.map((data, index) => {
-          return (
-            <CustomGameListItem
-              key={index}
-              selected={data.title === selected.title}
-              onClick={() => {
-                setSelected(data);
-              }}
-            >
-              <Icon icon={data.title} />
-              <div>{i18n.t("gametype." + data.title)}</div>
-            </CustomGameListItem>
-          );
-        })}
-      </CustomMenu>
-
-      {hardcoded.homepage
-        .filter((a) => {
-          return a.title === selected.title;
-        })
-        .map((a, index) => {
-          return (
-            <BrandsContainer position={a.position}>
-              <div>
-                <SubTitle>{a.title}</SubTitle>
-                <Title> {i18n.t("gametype." + a.title)}</Title>
-              </div>
-              <LogosContainer>
-                {hardcoded.brands
-                  .filter((b) => {
-                    return b.gametype.includes(selected.title);
-                  })
-                  .map((c, index) => {
-                    return (
-                      <Brands key={index}>
-                        <LogoHolder
-                          src={common.imageUrl + "providers/" + c.name + ".png"}
-                          alt={c.name}
-                        />
-                        <div>{i18n.t(a.title + "." + c.name)}</div>
-                      </Brands>
-                    );
-                  })}
-              </LogosContainer>
-            </BrandsContainer>
-          );
-        })}
-
-      <GameListContainer>
-        <GameList>
+    <>
+      <AppBar />
+      <Page>
+        <TransitionBackground selected={selected.title} />
+        <CustomMenu>
           {hardcoded.homepage.map((data, index) => {
             return (
-              <GameListItem
+              <CustomGameListItem
                 key={index}
                 selected={data.title === selected.title}
                 onClick={() => {
@@ -229,13 +190,64 @@ const Landing = () => {
                 }}
               >
                 <Icon icon={data.title} />
-                {i18n.t("gametype." + data.title)}
-              </GameListItem>
+                <div>{i18n.t("gametype." + data.title)}</div>
+              </CustomGameListItem>
             );
           })}
-        </GameList>
-      </GameListContainer>
-    </Page>
+        </CustomMenu>
+        {hardcoded.homepage
+          .filter((a) => {
+            return a.title === selected.title;
+          })
+          .map((a, index) => {
+            return (
+              <BrandsContainer position={a.position}>
+                <div>
+                  <SubTitle>{a.title}</SubTitle>
+                  <Title> {i18n.t("gametype." + a.title)}</Title>
+                </div>
+                <LogosContainer>
+                  {hardcoded.brands
+                    .filter((b) => {
+                      return b.gametype.includes(selected.title);
+                    })
+                    .map((c, index) => {
+                      return (
+                        <Brands key={index}>
+                          <LogoHolder
+                            src={
+                              common.imageUrl + "providers/" + c.name + ".png"
+                            }
+                            alt={c.name}
+                          />
+                          <div>{i18n.t(a.title + "." + c.name)}</div>
+                        </Brands>
+                      );
+                    })}
+                </LogosContainer>
+              </BrandsContainer>
+            );
+          })}
+        <GameListContainer>
+          <GameList>
+            {hardcoded.homepage.map((data, index) => {
+              return (
+                <GameListItem
+                  key={index}
+                  selected={data.title === selected.title}
+                  onClick={() => {
+                    setSelected(data);
+                  }}
+                >
+                  <Icon icon={data.title} />
+                  {i18n.t("gametype." + data.title)}
+                </GameListItem>
+              );
+            })}
+          </GameList>
+        </GameListContainer>
+      </Page>
+    </>
   );
 };
 

@@ -232,6 +232,13 @@ const supports = [
   { icon: "line", name: "LINE", handle: "@PGGAME", url: "https://testing.com" },
 ];
 
+const appbarMenu = [
+  { title: "products", withBorder: false, route: "" },
+  { title: "demo", withBorder: false, route: "demo" },
+  { title: "about", withBorder: false, route: "about" },
+  { title: "contact", withBorder: true, route: "contact" },
+];
+
 export const hardcoded = {
   homepage,
   brands,
@@ -239,4 +246,5 @@ export const hardcoded = {
   demoWeb,
   demoWap,
   supports,
+  appbarMenu,
 };

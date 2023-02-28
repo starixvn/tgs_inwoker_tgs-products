@@ -1,8 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import AppBar from "../component/appbar";
-
 import AppRouter from "../config/router";
 
 const Pages = () => {
@@ -22,10 +20,9 @@ const Pages = () => {
   }, [y]);
 
   return (
-    <div>
-      <AppBar scrolled={y >= 100} />
+    <>
       <AppRouter />
-    </div>
+    </>
   );
 };
 

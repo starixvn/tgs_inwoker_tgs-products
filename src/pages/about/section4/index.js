@@ -181,7 +181,7 @@ const Partners = () => {
 };
 
 const AdvantageAndPartner = () => {
-  const [screenWidth, setScreenWidth] = React.useState(0);
+  const [screenWidth, setScreenWidth] = React.useState(1024);
   React.useEffect(() => {
     //keep listen to window size
     window.addEventListener("resize", () => {

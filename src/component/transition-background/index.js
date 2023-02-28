@@ -28,9 +28,9 @@ const BannerContainer = styled.div`
 `;
 
 const TransitionBackground = ({ selected }) => {
-  const [screenWidth, setScreenWidth] = React.useState(0);
+  const [screenWidth, setScreenWidth] = React.useState(1024);
   React.useEffect(() => {
-    //keep listen to window size
+    setScreenWidth(window.innerWidth);
     window.addEventListener("resize", () => {
       setScreenWidth(window.innerWidth);
     });

@@ -6,6 +6,7 @@ import LanguageChanger from "../languageChanger";
 import Image from "../image";
 import MobileMenu from "./mobilemenu";
 import breakpoint from "../../config/breakpoints";
+import { hardcoded } from "../../utils/hardcode";
 
 const CustomAppBarContainer = styled.div`
   height: 100px;
@@ -83,7 +84,7 @@ const MenuButton = styled.div`
   user-select: none;
 
   ${({ scrolled }) => {
-    return scrolled ? `color: black;` : `color: white;`;
+    return scrolled ? `color: white;` : `color: white;`;
   }}
 
   ${({ selected, border }) => {
@@ -115,13 +116,8 @@ const MenuButton = styled.div`
 const LogoHolder = styled.div`
   cursor: pointer;
 `;
-const MenuList = [
-  { title: "products", withBorder: false, route: "" },
-  { title: "demo", withBorder: false, route: "demo" },
-  { title: "about", withBorder: false, route: "about" },
-  { title: "contact", withBorder: true, route: "contact" },
-];
-const AppBar = ({ scrolled }) => {
+
+const AppBar = ({}) => {
   function redirect(path) {
     AppHistory.push("/" + i18n.language + "/" + path);
   }
@@ -138,8 +134,24 @@ const AppBar = ({ scrolled }) => {
     if (path[2] !== "") {
       setSelected(path[2]);
     } else {
+      setSelected("products");
     }
   }, []);
+
+  const [y, setY] = useState(window.scrollY);
+  var scrolled = y > 100;
+
+  const handleNavigation = (e) => {
+    setY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", (e) => handleNavigation(e));
+
+    return () => {
+      window.removeEventListener("scroll", (e) => handleNavigation(e));
+    };
+  }, [y]);
 
   return (
     <div>
@@ -157,7 +169,7 @@ const AppBar = ({ scrolled }) => {
           </Left>
           <Middle>
             <Menu>
-              {MenuList.map((data, index) => {
+              {hardcoded.appbarMenu.map((data, index) => {
                 return (
                   <MenuButton
                     scrolled={scrolled}
@@ -181,7 +193,7 @@ const AppBar = ({ scrolled }) => {
           </Right>
         </AppBarLength>
       </CustomAppBarContainer>
-      <MobileMenu menu={MenuList} />
+      <MobileMenu menu={hardcoded.appbarMenu} />
     </div>
   );
 };

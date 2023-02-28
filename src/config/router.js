@@ -19,20 +19,22 @@ const AppRouter = () => {
     { route: "/", component: Landing },
   ];
   return (
-    <Router history={AppHistory}>
-      <Switch>
-        {paths.map((data, index) => {
-          return (
-            <Route
-              exact
-              path={baseRouteUrl + data.route}
-              component={data.component}
-            />
-          );
-        })}
-        <Redirect to={`/${i18n.language}`} />
-      </Switch>
-    </Router>
+    <>
+      <Router history={AppHistory}>
+        <Switch>
+          {paths.map((data, index) => {
+            return (
+              <Route
+                exact
+                path={baseRouteUrl + data.route}
+                component={data.component}
+              />
+            );
+          })}
+          <Redirect to={`/${i18n.language}`} />
+        </Switch>
+      </Router>
+    </>
   );
 };
 
