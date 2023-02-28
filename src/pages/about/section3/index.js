@@ -10,6 +10,10 @@ const HugeAssNumber = styled.div`
   font-style: italic;
   color: #0389ff;
   font-weight: 700;
+
+  @media (${breakpoint.mobile}) {
+    font-size: 100px;
+  }
 `;
 
 const GapLeaver = styled.div`
@@ -39,12 +43,29 @@ const GapLeaver = styled.div`
       }
     }
   }
+
+  @media (${breakpoint.mobile}) {
+    background: #081120;
+    margin-top: -1px;
+  }
+
+  @media (${breakpoint.mobile}) {
+    height: fit-content;
+    padding: 20px;
+    padding-bottom: 40px;
+  }
 `;
 
 const TheContent = styled.div`
   display: grid;
   grid-template-columns: 28% 72%;
   align-items: center;
+
+  @media (${breakpoint.mobile}) {
+    align-items: flex-start;
+    grid-template-columns: 20% 80%;
+    gap: 0px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -54,6 +75,7 @@ const ContentWrapper = styled.div`
   align-items: center;
   @media (${breakpoint.mobile}) {
     width: 100%;
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -64,21 +86,39 @@ const RightContent = styled.div`
   align-items: flex-start;
   color: #fff;
   gap: 10px;
+
+  @media (${breakpoint.mobile}) {
+    padding-left: 20px;
+    gap: 5px;
+  }
 `;
 
 const Title = styled.div`
   font-size: 80px;
   font-weight: bold;
+
+  @media (${breakpoint.mobile}) {
+    font-size: 50px;
+  }
 `;
 
 const Subtitle = styled.span`
   color: #0389ff;
   font-size: 30px;
+
+  @media (${breakpoint.mobile}) {
+    font-size: 20px;
+  }
 `;
 
 const Description = styled.div`
   font-size: 20px;
   letter-spacing: 6px;
+
+  @media (${breakpoint.mobile}) {
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
 `;
 
 const Icon = styled.div`
@@ -110,6 +150,11 @@ const GameType = styled.div`
   gap: 10px;
   font-size: 20px;
   letter-spacing: 2px;
+
+  @media (${breakpoint.mobile}) {
+    font-size: 15px;
+    letter-spacing: 0px;
+  }
 `;
 
 const GameTypeLister = styled.div`
@@ -118,6 +163,26 @@ const GameTypeLister = styled.div`
   gap: 10px;
   align-items: center;
   height: 300px;
+
+  @media (${breakpoint.mobile}) {
+    gap: 0px;
+    padding: 20px;
+    justify-content: center;
+  }
+`;
+
+const ShowOnMobile = styled.div`
+  display: none;
+  @media (${breakpoint.mobile}) {
+    display: block;
+  }
+`;
+
+const HideOnMobile = styled.div`
+  display: block;
+  @media (${breakpoint.mobile}) {
+    display: none;
+  }
 `;
 
 const SectionThree = () => {
@@ -127,8 +192,14 @@ const SectionThree = () => {
         <TheContent>
           <HugeAssNumber>3</HugeAssNumber>
           <RightContent>
+            <ShowOnMobile>
+              <Subtitle>GAMES </Subtitle>
+            </ShowOnMobile>
             <Title>
-              选择游戏 <Subtitle>GAMES </Subtitle>
+              选择游戏
+              <HideOnMobile>
+                <Subtitle>GAMES </Subtitle>
+              </HideOnMobile>
             </Title>
             <Description>
               与各大知名游戏品牌合作,汇集20家以上平台, <br />

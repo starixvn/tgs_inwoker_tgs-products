@@ -8,7 +8,8 @@ const FooterContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #686868;
+  color: #fff;
+  background: #0a1324;
 `;
 
 const FooterContent = styled.div`
@@ -58,16 +59,16 @@ const Footer = () => {
       <FooterContent>
         <FooterIconContainer>
           <FooterIcon>
-            <Image src="/footer/dark-1.png" />
+            <Image src="/footer/white-1.png" />
           </FooterIcon>
           <FooterIcon>
-            <Image src="/footer/dark-2.png" />
+            <Image src="/footer/white-2.png" />
           </FooterIcon>
           <FooterIcon>
-            <Image src="/footer/dark-3.png" />
+            <Image src="/footer/white-3.png" />
           </FooterIcon>
           <FooterIcon>
-            <Image src="/footer/dark-4.png" />
+            <Image src="/footer/white-4.png" />
           </FooterIcon>
         </FooterIconContainer>
         <FooterText>Copyright (c) 2018 TC Gaming Solutions Inc.</FooterText>

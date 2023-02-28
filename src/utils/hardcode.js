@@ -193,13 +193,43 @@ const demoWap = [
 ];
 
 const supports = [
-  { icon: "skype", name: "Skype", handle: "@PGGAME" },
-  { icon: "wechat", name: "WeChat", handle: "@PGGAME" },
-  { icon: "whatsapp", name: "WhatsApp", handle: "@PGGAME" },
-  { icon: "telegram", name: "Telegram", handle: "@PGGAME" },
-  { icon: "kakaotalk", name: "KaKaoTalk", handle: "@PGGAME" },
-  { icon: "viber", name: "Viber", handle: "@PGGAME" },
-  { icon: "line", name: "LINE", handle: "@PGGAME" },
+  {
+    icon: "skype",
+    name: "Skype",
+    handle: "@PGGAME",
+    url: "https://testing.com",
+  },
+  {
+    icon: "wechat",
+    name: "WeChat",
+    handle: "@PGGAME",
+    url: "https://testing.com",
+  },
+  {
+    icon: "whatsapp",
+    name: "WhatsApp",
+    handle: "@PGGAME",
+    url: "https://testing.com",
+  },
+  {
+    icon: "telegram",
+    name: "Telegram",
+    handle: "@PGGAME",
+    url: "https://testing.com",
+  },
+  {
+    icon: "kakaotalk",
+    name: "KaKaoTalk",
+    handle: "@PGGAME",
+    url: "https://testing.com",
+  },
+  {
+    icon: "viber",
+    name: "Viber",
+    handle: "@PGGAME",
+    url: "https://testing.com",
+  },
+  { icon: "line", name: "LINE", handle: "@PGGAME", url: "https://testing.com" },
 ];
 
 export const hardcoded = {

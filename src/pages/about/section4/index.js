@@ -13,7 +13,9 @@ const Contents = styled.div`
 
   @media (${breakpoint.mobile}) {
     gap: 10px;
-    width: 100%;
+    max-width: 100vw;
+    padding: 20px;
+    min-height: fit-content;
   }
 `;
 
@@ -28,15 +30,27 @@ const TitleContainer = styled.div`
 const Title = styled.div`
   font-size: 60px;
   font-weight: 700;
+
+  @media (${breakpoint.mobile}) {
+    font-size: 50px;
+  }
 `;
 
 const Subtitle = styled.div`
   font-size: 20px;
+  @media (${breakpoint.mobile}) {
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
 `;
 
 const Logos = styled.img`
-  width: auto;
   height: auto;
+  width: 100%;
+  @media (${breakpoint.mobile}) {
+    width: 60px;
+  }
 `;
 
 const LogoHolder = styled.div`
@@ -46,6 +60,10 @@ const LogoHolder = styled.div`
   gap: 30px;
   align-items: center;
   justify-content: center;
+  @media (${breakpoint.mobile}) {
+    gap: 10px;
+    margin-top: 20px;
+  }
 `;
 
 const AdvantageHolder = styled.div`
@@ -71,6 +89,14 @@ const BenefitContainer = styled.div`
   border-radius: 10px;
   padding: 40px 30px;
   margin-top: 80px;
+  @media (${breakpoint.mobile}) {
+    margin-top: 10px;
+    padding: 20px 10px;
+
+    @media (${breakpoint.mobile}) {
+      margin-top: -1px;
+    }
+  }
 `;
 
 const HugeIcon = styled.div`
@@ -83,10 +109,19 @@ const HugeIcon = styled.div`
   mask-size: 80%;
   mask-repeat: no-repeat;
   mask-position: center;
+
+  @media (${breakpoint.mobile}) {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 const AdvantageTitle = styled.div`
   font-size: 40px;
+
+  @media (${breakpoint.mobile}) {
+    font-size: 20px;
+  }
 `;
 
 const AdvantageDescription = styled.div`
@@ -94,6 +129,10 @@ const AdvantageDescription = styled.div`
   text-align: center;
   padding-top: 20px;
   letter-spacing: 1.25px;
+
+  @media (${breakpoint.mobile}) {
+    font-size: 12px;
+  }
 `;
 
 const Advantages = () => {
@@ -142,8 +181,18 @@ const Partners = () => {
 };
 
 const AdvantageAndPartner = () => {
+  const [screenWidth, setScreenWidth] = React.useState(0);
+  React.useEffect(() => {
+    //keep listen to window size
+    window.addEventListener("resize", () => {
+      setScreenWidth(window.innerWidth);
+    });
+  }, []);
+
+  const device = screenWidth < 600 ? "-mb" : "";
+
   return (
-    <Page background={common.imageUrl + "/about/sc4.jpg"}>
+    <Page background={common.imageUrl + "/about/sc4" + device + ".jpg"}>
       <Contents>
         <Advantages />
         <Partners />

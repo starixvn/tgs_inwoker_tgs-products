@@ -9,6 +9,7 @@ import SectionTwo from "./section2";
 import SectionThree from "./section3";
 import AdvantageAndPartner from "./section4";
 import breakpoint from "../../config/breakpoints";
+import Footer from "../../component/footer";
 
 const SectionOne = styled.div`
   display: grid;
@@ -20,6 +21,8 @@ const SectionOne = styled.div`
     display: block;
     padding: 20px;
     transform: scale(0.7);
+
+    grid-template-columns: auto;
   }
 `;
 
@@ -52,6 +55,10 @@ const GapLeaver = styled.div`
   justify-content: center;
   align-items: center;
   padding: 50px 0;
+
+  @media (${breakpoint.mobile}) {
+    background: #081120;
+  }
 `;
 
 const Content = styled.div`
@@ -171,9 +178,10 @@ const TheCircleWrapper = styled.div`
   }
 `;
 
-const ToHide = styled.div`
+const ImageSizeAdjuster = styled.img`
   @media (${breakpoint.mobile}) {
-    display: none;
+    width: 500px;
+    margin-left: -70px;
   }
 `;
 
@@ -219,33 +227,38 @@ const SectionOneCircle = () => {
 const AboutPage = () => {
   return (
     <>
-      <Page
-        background={common.imageUrl + "/about/sc1.jpg"}
-        style={{ height: "calc(100vh - 200px)" }}
-      >
-        <SectionOne>
-          <SectionOneContent>
-            <SectionOneContentOrientation>
-              <Title>{i18n.t("new_about.sc1_title")}</Title>
-              <Description>{i18n.t("new_about.sc1_description")}</Description>
-              <Arrow direction="down" animate={true} size="xlarge" />
-            </SectionOneContentOrientation>
-          </SectionOneContent>
-          <SectionOneContent>
-            <ToHide>
-              <img
+      <>
+        <Page
+          background={common.imageUrl + "/about/sc1.jpg"}
+          style={{ height: "calc(100vh - 200px)" }}
+        >
+          <SectionOne>
+            <SectionOneContent>
+              <SectionOneContentOrientation>
+                <Title>{i18n.t("订制娱乐城")}</Title>
+                <Description>
+                  {i18n.t(
+                    "一站式全渠道品牌包网服务,全渠道游戏完整建站 \n 完全客制化品牌打造综合品牌系统"
+                  )}
+                </Description>
+                <Arrow direction="down" animate={true} size="xlarge" />
+              </SectionOneContentOrientation>
+            </SectionOneContent>
+            <SectionOneContent>
+              <ImageSizeAdjuster
                 src={common.imageUrl + "about/sc1-right.png"}
                 alt="sc1right"
               />
-            </ToHide>
-          </SectionOneContent>
-        </SectionOne>
-      </Page>
-      <SectionOneCircle />
-      <ProperSectionOne />
-      <SectionTwo />
-      <SectionThree />
-      <AdvantageAndPartner />
+            </SectionOneContent>
+          </SectionOne>
+        </Page>
+        <SectionOneCircle />
+        <ProperSectionOne />
+        <SectionTwo />
+        <SectionThree />
+        <AdvantageAndPartner />
+      </>
+      <Footer />
     </>
   );
 };

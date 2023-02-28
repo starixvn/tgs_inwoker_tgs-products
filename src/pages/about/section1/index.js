@@ -8,6 +8,9 @@ const HugeAssNumber = styled.div`
   font-style: italic;
   color: #0389ff;
   font-weight: 700;
+  @media (${breakpoint.mobile}) {
+    font-size: 100px;
+  }
 `;
 
 const GapLeaver = styled.div`
@@ -18,6 +21,11 @@ const GapLeaver = styled.div`
   align-items: center;
   display: flex;
   height: 850px;
+
+  @media (${breakpoint.mobile}) {
+    background: #081120;
+    margin-top: -1px;
+  }
 
   :hover {
     ${HugeAssNumber} {
@@ -38,6 +46,11 @@ const GapLeaver = styled.div`
       }
     }
   }
+  @media (${breakpoint.mobile}) {
+    height: fit-content;
+    padding-bottom: 40px;
+    padding: 20px;
+  }
 `;
 
 const TheContent = styled.div`
@@ -48,6 +61,8 @@ const TheContent = styled.div`
 
   @media (${breakpoint.mobile}) {
     width: 100%;
+    align-items: flex-start;
+    gap: 0px;
   }
 `;
 
@@ -57,32 +72,88 @@ const RightContent = styled.div`
   justify-content: center;
   align-items: flex-start;
   color: #fff;
+
+  @media (${breakpoint.mobile}) {
+    padding-left: 20px;
+    gap: 0px;
+  }
 `;
 
 const Title = styled.div`
   font-size: 100px;
   font-weight: bold;
+  @media (${breakpoint.mobile}) {
+    font-size: 50px;
+    padding: 0 0 10px 0;
+  }
 `;
 
 const Subtitle = styled.span`
   color: #0389ff;
   font-size: 50px;
+  @media (${breakpoint.mobile}) {
+    font-size: 20px;
+  }
 `;
 
 const Description = styled.div`
   font-size: 30px;
 
   letter-spacing: 6px;
+
+  @media (${breakpoint.mobile}) {
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
+`;
+
+const HideOnMobile = styled.div`
+  display: block;
+  @media (${breakpoint.mobile}) {
+    display: none;
+  }
+`;
+
+const ShowOnMobile = styled.div`
+  display: none;
+  @media (${breakpoint.mobile}) {
+    display: block;
+  }
+`;
+
+const StraightFuckingLine = styled.div`
+  width: 2px;
+  height: 200px;
+  background: #0389ff;
+`;
+
+const ContainerWithLine = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ProperSectionOne = () => {
   return (
     <GapLeaver>
       <TheContent>
-        <HugeAssNumber>1</HugeAssNumber>
+        <ContainerWithLine>
+          <HugeAssNumber>1</HugeAssNumber>
+          <ShowOnMobile>
+            <StraightFuckingLine />
+          </ShowOnMobile>
+        </ContainerWithLine>
+
         <RightContent>
+          <ShowOnMobile>
+            <Subtitle>CUSTOMIZED </Subtitle>
+          </ShowOnMobile>
           <Title>
-            专人諮詢 <Subtitle>CUSTOMIZED </Subtitle>
+            专人諮詢
+            <HideOnMobile>
+              <Subtitle>CUSTOMIZED </Subtitle>
+            </HideOnMobile>
           </Title>
           <Description>
             我们将有专人, 给您最适合的服务, 您只要提供 <br />

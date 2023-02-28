@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import Footer from "../../component/footer";
 import Page from "../../component/page";
+import breakpoint from "../../config/breakpoints";
 import i18n from "../../config/i18n";
 import { common } from "../../utils/common";
 import { hardcoded } from "../../utils/hardcode";
@@ -56,6 +58,11 @@ const TheSquare = styled.div`
   font-weight: 700;
   font-size: 2rem;
   justify-content: center;
+
+  @media (${breakpoint.mobile}) {
+    width: 75px;
+    height: 75px;
+  }
 `;
 
 const Overlay = styled.div`
@@ -103,6 +110,7 @@ const TitleHolder = styled.div`
   line-height: 0.85;
   padding-top: 100px;
   padding-bottom: 50px;
+
   color: #fff;
 `;
 
@@ -113,11 +121,17 @@ const Title = styled.div`
 const Subtittle = styled.div`
   font-weight: bold;
   color: #00a8ff;
-  font-size: 2.5rem;
+  font-size: 30px;
+  @media (${breakpoint.mobile}) {
+  }
 `;
 
 const Description = styled.div`
   text-align: center;
+  @media (${breakpoint.mobile}) {
+    padding: 0 40px;
+    line-height: 1.5;
+  }
 `;
 
 const Products = ({ data, onClick }) => {
@@ -141,54 +155,57 @@ const Demo = () => {
   }
 
   return (
-    <Page background={common.imageUrl + "/demo/web-bg.jpg"}>
-      <TitleHolder>
-        <Subtittle>FRONT END</Subtittle>
-        <Title>平台展示</Title>
-        <Description>
-          多種模板可以選，并且能依顧客需求客制化，所有版型都符合HTML5
-        </Description>
-      </TitleHolder>
-      <ButtonWrapper>
-        <CustomButton
-          selected={project === "web"}
-          onClick={() => {
-            setProject("web");
-          }}
-        >
-          {i18n.t("demo.version.web")}
-        </CustomButton>
-        <CustomButton
-          selected={project === "wap"}
-          onClick={() => {
-            setProject("wap");
-          }}
-        >
-          {i18n.t("demo.version.wap")}
-        </CustomButton>
-      </ButtonWrapper>
-      {project === "web" && (
-        <Contents totalPerRow={2}>
-          {hardcoded.demoWeb.map((item) => {
-            return <Products data={item} />;
-          })}
-        </Contents>
-      )}
-      {project === "wap" && (
-        <Contents totalPerRow={3}>
-          {hardcoded.demoWap.map((item) => {
-            return (
-              <Products
-                data={item}
-                onClick={() => {
-                  gotoPage(item.link);
-                }}
-              />
-            );
-          })}
-        </Contents>
-      )}
-    </Page>
+    <>
+      <Page background={common.imageUrl + "/demo/web-bg.jpg"}>
+        <TitleHolder>
+          <Subtittle>FRONT END</Subtittle>
+          <Title>平台展示</Title>
+          <Description>
+            多種模板可以選，并且能依顧客需求客制化，所有版型都符合HTML5
+          </Description>
+        </TitleHolder>
+        <ButtonWrapper>
+          <CustomButton
+            selected={project === "web"}
+            onClick={() => {
+              setProject("web");
+            }}
+          >
+            {i18n.t("demo.version.web")}
+          </CustomButton>
+          <CustomButton
+            selected={project === "wap"}
+            onClick={() => {
+              setProject("wap");
+            }}
+          >
+            {i18n.t("demo.version.wap")}
+          </CustomButton>
+        </ButtonWrapper>
+        {project === "web" && (
+          <Contents totalPerRow={2}>
+            {hardcoded.demoWeb.map((item) => {
+              return <Products data={item} />;
+            })}
+          </Contents>
+        )}
+        {project === "wap" && (
+          <Contents totalPerRow={3}>
+            {hardcoded.demoWap.map((item) => {
+              return (
+                <Products
+                  data={item}
+                  onClick={() => {
+                    gotoPage(item.link);
+                  }}
+                />
+              );
+            })}
+          </Contents>
+        )}
+      </Page>
+      <Footer />
+    </>
   );
 };
 

@@ -23,9 +23,11 @@ const PageWrapper = styled.div`
     return `url(${background}) top no-repeat;`;
   }};
   background-size: cover;
+  margin-bottom: -1px;
 
   @media (${breakpoint.mobile}) {
     padding: 60px 0px;
+    margin-top: -1px;
   }
 `;
 
@@ -33,6 +35,7 @@ const WorkableArea = styled.div`
   width: 1280px;
   @media (max-width: 768px) {
     width: 100vw;
+    max-width: 100vw;
   }
 `;
 const Page = (props) => {

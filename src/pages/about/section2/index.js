@@ -9,6 +9,9 @@ const HugeAssNumber = styled.div`
   color: #0389ff;
   font-weight: 700;
   line-height: 0.7;
+  @media (${breakpoint.mobile}) {
+    font-size: 100px;
+  }
 `;
 
 const GapLeaver = styled.div`
@@ -18,6 +21,11 @@ const GapLeaver = styled.div`
   align-items: center;
   display: flex;
   height: 850px;
+
+  @media (${breakpoint.mobile}) {
+    background: #081120;
+    margin-top: -1px;
+  }
 
   :hover {
     ${HugeAssNumber} {
@@ -38,6 +46,11 @@ const GapLeaver = styled.div`
       }
     }
   }
+  @media (${breakpoint.mobile}) {
+    height: fit-content;
+    padding-bottom: 40px;
+    padding: 20px;
+  }
 `;
 
 const TheContent = styled.div`
@@ -48,6 +61,7 @@ const TheContent = styled.div`
 
   @media (${breakpoint.mobile}) {
     width: 100%;
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -56,6 +70,11 @@ const RightContainer = styled.div`
   grid-template-columns: 30% 70%;
   gap: 20px;
   align-items: flex-end;
+  @media (${breakpoint.mobile}) {
+    align-items: flex-start;
+    grid-template-columns: 20% 80%;
+    gap: 0px;
+  }
 `;
 
 const RightContent = styled.div`
@@ -65,23 +84,59 @@ const RightContent = styled.div`
   align-items: flex-start;
   color: #fff;
   gap: 20px;
+  @media (${breakpoint.mobile}) {
+    padding-left: 20px;
+    gap: 10px;
+  }
 `;
 
 const Title = styled.div`
   font-size: 100px;
   font-weight: bold;
+  @media (${breakpoint.mobile}) {
+    font-size: 50px;
+  }
 `;
 
 const Subtitle = styled.span`
   color: #0389ff;
   font-size: 30px;
   line-height: 0.05;
+
+  @media (${breakpoint.mobile}) {
+    font-size: 20px;
+  }
 `;
 
 const Description = styled.div`
   font-size: 18px;
 
   letter-spacing: 3px;
+  @media (${breakpoint.mobile}) {
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
+`;
+
+const ShowOnMobile = styled.div`
+  display: none;
+  @media (${breakpoint.mobile}) {
+    display: block;
+  }
+`;
+
+const StraightFuckingLine = styled.div`
+  width: 2px;
+  height: 200px;
+  background: #0389ff;
+  margin-top: 30px;
+`;
+
+const ContainerWithLine = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const SectionTwo = () => {
@@ -90,7 +145,12 @@ const SectionTwo = () => {
       <TheContent>
         <div></div>
         <RightContainer>
-          <HugeAssNumber>2</HugeAssNumber>
+          <ContainerWithLine>
+            <HugeAssNumber>2</HugeAssNumber>
+            <ShowOnMobile>
+              <StraightFuckingLine />
+            </ShowOnMobile>
+          </ContainerWithLine>
           <RightContent>
             <Subtitle>WEB VERSION</Subtitle>
             <Title>选择模板</Title>

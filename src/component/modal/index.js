@@ -28,6 +28,7 @@ const TheModal = styled.div`
 
   @media (${breakpoint.mobile}) {
     width: 80%;
+    z-index: 100;
   }
 `;
 
@@ -47,7 +48,7 @@ const CloseButton = styled.div`
   cursor: pointer;
 `;
 
-const Modal = ({ open, closeModal, title }) => {
+const Modal = ({ open, closeModal, title, children }) => {
   return (
     <ModalOverlay
       open={open}
@@ -66,6 +67,7 @@ const Modal = ({ open, closeModal, title }) => {
             ✖
           </CloseButton>
         </TheModalTitle>
+        <div>{children}</div>
       </TheModal>
     </ModalOverlay>
   );
