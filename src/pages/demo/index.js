@@ -153,6 +153,7 @@ const EntireShitWrapper = styled.div`
   :hover {
     ${TheTitle} {
       background: #00a8ff;
+      border-radius: 0px 0px 20px 20px;
     }
   }
 `;

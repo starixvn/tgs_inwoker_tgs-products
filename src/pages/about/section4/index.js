@@ -101,8 +101,8 @@ const BenefitContainer = styled.div`
 
 const HugeIcon = styled.div`
   background: #0389ff;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin-bottom: 20px;
   mask: url(${(props) =>
     common.imageUrl + "about/benefit/" + props.src + ".svg"});
@@ -117,7 +117,7 @@ const HugeIcon = styled.div`
 `;
 
 const AdvantageTitle = styled.div`
-  font-size: 40px;
+  font-size: 30px;
 
   @media (${breakpoint.mobile}) {
     font-size: 20px;
@@ -125,7 +125,7 @@ const AdvantageTitle = styled.div`
 `;
 
 const AdvantageDescription = styled.div`
-  font-size: 18px;
+  font-size: 15px;
   text-align: center;
   padding-top: 20px;
   letter-spacing: 1.25px;
@@ -166,14 +166,19 @@ const Partners = () => {
       <TitleContainer>
         <Title>合作夥伴</Title>
         <LogoHolder>
-          {hardcoded.brands.map((data, index) => {
-            return (
-              <Logos
-                src={common.imageUrl + "/providers/bnw/" + data.name + ".png"}
-                alt={data.name}
-              ></Logos>
-            );
-          })}
+          {hardcoded.brands
+            .filter((data) => {
+              return data.name !== "tcg_sea" && data.name !== "tcg_lotto";
+            })
+
+            .map((data, index) => {
+              return (
+                <Logos
+                  src={common.imageUrl + "/providers/bnw/" + data.name + ".png"}
+                  alt={data.name}
+                ></Logos>
+              );
+            })}
         </LogoHolder>
       </TitleContainer>
     </div>

@@ -75,7 +75,7 @@ const SupportTitle = styled.div``;
 const SupportDescription = styled.div``;
 
 const Logos = styled.img`
-  width: 200px;
+  width: 150px;
   height: auto;
 
   @media (${breakpoint.mobile}) {

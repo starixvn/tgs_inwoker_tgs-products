@@ -9,7 +9,8 @@ const FooterContainer = styled.div`
   align-items: center;
   justify-content: center;
   color: #fff;
-  background: #0a1324;
+
+  background: #030303;
 `;
 
 const FooterContent = styled.div`
@@ -34,6 +35,8 @@ const FlipWithScale = keyframes`
 const FooterIconContainer = styled.div`
   display: flex;
   align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
 `;
 const FooterIcon = styled.div`
   padding: 10px;
@@ -51,7 +54,14 @@ const FooterIcon = styled.div`
   }
 `;
 
-const FooterText = styled.div``;
+const FooterText = styled.div`
+  @media (${breakpoint.mobile}) {
+    font-size: 0.8rem;
+    text-align: center;
+    //line break
+    word-break: break-all;
+  }
+`;
 
 const Footer = () => {
   return (
@@ -59,19 +69,21 @@ const Footer = () => {
       <FooterContent>
         <FooterIconContainer>
           <FooterIcon>
-            <Image src="/footer/white-1.png" />
+            <Image src="/footer/white-1.png" h="50px" w="50px" />
           </FooterIcon>
           <FooterIcon>
-            <Image src="/footer/white-2.png" />
+            <Image src="/footer/white-2.png" h="50px" w="50px" />
           </FooterIcon>
           <FooterIcon>
-            <Image src="/footer/white-3.png" />
+            <Image src="/footer/white-3.png" h="50px" w="50px" />
           </FooterIcon>
           <FooterIcon>
-            <Image src="/footer/white-4.png" />
+            <Image src="/footer/white-4.png" h="50px" w="50px" />
           </FooterIcon>
         </FooterIconContainer>
-        <FooterText>Copyright (c) 2018 TC Gaming Solutions Inc.</FooterText>
+        <FooterText>
+          Copyright©2021 PG GAMING Solution Inc. All rights reserved.
+        </FooterText>
       </FooterContent>
     </FooterContainer>
   );
