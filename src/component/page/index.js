@@ -28,6 +28,7 @@ const PageWrapper = styled.div`
   @media (${breakpoint.mobile}) {
     padding: 60px 0px;
     margin-top: -1px;
+    max-width: 100vw;
   }
 `;
 

@@ -59,6 +59,7 @@ const GapLeaver = styled.div`
 
   @media (${breakpoint.mobile}) {
     background: #081120;
+    padding-top: 200px;
   }
 `;
 
@@ -186,6 +187,17 @@ const ImageSizeAdjuster = styled.img`
   }
 `;
 
+const SubTitle = styled.div`
+  display: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #0389ff;
+
+  @media (${breakpoint.mobile}) {
+    display: block;
+  }
+`;
+
 const SectionOneCircle = () => {
   const TheCircle = ({ children, animate }) => {
     //randomly assign move1, move2, move3 to animate and wont duplicate the same move
@@ -237,6 +249,7 @@ const AboutPage = () => {
           <SectionOne>
             <SectionOneContent>
               <SectionOneContentOrientation>
+                <SubTitle>WHITE LABEL SOLUTION</SubTitle>
                 <Title>{i18n.t("订制娱乐城")}</Title>
                 <Description>
                   {i18n.t(

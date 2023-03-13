@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import breakpoint from "../../../config/breakpoints";
+import i18n from "../../../config/i18n";
+import { AppHistory } from "../../../config/router";
 import { common } from "../../../utils/common";
 
 const HugeAssNumber = styled.div`
@@ -139,6 +141,18 @@ const ContainerWithLine = styled.div`
   align-items: center;
 `;
 
+const TheNavigateButton = styled.div`
+  display: none;
+  background: #0389ff;
+  border-radius: 4px;
+  padding: 6px 40px;
+  font-size: 12px;
+
+  @media (${breakpoint.mobile}) {
+    display: block;
+  }
+`;
+
 const SectionTwo = () => {
   return (
     <GapLeaver>
@@ -160,6 +174,14 @@ const SectionTwo = () => {
               平板用户手机用户皆可畅行无阻,若您有需 <br />
               要还可以制作手机客户端。
             </Description>
+            <TheNavigateButton
+              onClick={() => {
+                window.scrollTo(0, 0);
+                AppHistory.push("/" + i18n.language + "/demo");
+              }}
+            >
+              平台展示
+            </TheNavigateButton>
           </RightContent>
         </RightContainer>
       </TheContent>
