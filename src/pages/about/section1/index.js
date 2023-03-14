@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import breakpoint from "../../../config/breakpoints";
+import i18n from "../../../config/i18n";
 import { common } from "../../../utils/common";
 
 const HugeAssNumber = styled.div`
@@ -83,14 +84,14 @@ const Title = styled.div`
   font-size: 100px;
   font-weight: bold;
   @media (${breakpoint.mobile}) {
-    font-size: 50px;
+    font-size: 40px;
     padding: 0 0 10px 0;
   }
 `;
 
 const Subtitle = styled.span`
   color: #0389ff;
-  font-size: 50px;
+  font-size: 40px;
   @media (${breakpoint.mobile}) {
     font-size: 20px;
   }
@@ -150,15 +151,12 @@ const ProperSectionOne = () => {
             <Subtitle>CUSTOMIZED </Subtitle>
           </ShowOnMobile>
           <Title>
-            专人諮詢
+            {i18n.t("about.section.1.title")}
             <HideOnMobile>
               <Subtitle>CUSTOMIZED </Subtitle>
             </HideOnMobile>
           </Title>
-          <Description>
-            我们将有专人, 给您最适合的服务, 您只要提供 <br />
-            几项简单的资讯,我们将为您打造最适合的方案。
-          </Description>
+          <Description>{i18n.t("about.section.1.description")}</Description>
         </RightContent>
       </TheContent>
     </GapLeaver>

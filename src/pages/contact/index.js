@@ -34,12 +34,18 @@ const TitleHolder = styled.div`
 
 const Title = styled.div`
   font-size: 3.4rem;
+  @media (${breakpoint.mobile}) {
+    font-size: 40px;
+  }
 `;
 
 const Subtittle = styled.div`
   font-weight: bold;
   color: #00a8ff;
   font-size: 2.5rem;
+  @media (${breakpoint.mobile}) {
+    font-size: 20px;
+  }
 `;
 
 const SupportsContainer = styled.div`
@@ -64,7 +70,7 @@ const SupportBackground = styled.div`
   gap: 20px;
   color: #fff;
   padding: 40px;
-
+  cursor: pointer;
   @media (${breakpoint.mobile}) {
     padding: 20px 40px;
     gap: 10px;
@@ -85,14 +91,29 @@ const Logos = styled.img`
 
 const Supports = ({ data }) => {
   const [open, setOpen] = useState(false);
+  const [hover, setHover] = useState(false);
   return (
     <>
       <SupportBackground
         onClick={() => {
           setOpen(true);
         }}
+        onMouseEnter={() => {
+          setHover(true);
+        }}
+        onMouseLeave={() => {
+          setHover(false);
+        }}
       >
-        <Logos src={common.imageUrl + "contact/icons/" + data.icon + ".png"} />
+        <Logos
+          src={
+            common.imageUrl +
+            "contact/icons/" +
+            data.icon +
+            (hover ? "-hover" : "") +
+            ".png"
+          }
+        />
         <SupportTitle>{data.name}</SupportTitle>
         <SupportDescription>{data.handle}</SupportDescription>
       </SupportBackground>

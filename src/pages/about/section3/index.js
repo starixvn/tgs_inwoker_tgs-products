@@ -71,7 +71,7 @@ const TheContent = styled.div`
 const ContentWrapper = styled.div`
   display: grid;
   width: 1280px;
-  grid-template-columns: 76% 24%;
+  grid-template-columns: 67% 33%;
   align-items: center;
   @media (${breakpoint.mobile}) {
     width: 100%;
@@ -98,7 +98,7 @@ const Title = styled.div`
   font-weight: bold;
 
   @media (${breakpoint.mobile}) {
-    font-size: 50px;
+    font-size: 40px;
   }
 `;
 
@@ -114,7 +114,7 @@ const Subtitle = styled.span`
 const Description = styled.div`
   font-size: 20px;
   letter-spacing: 6px;
-
+  white-space: pre-line;
   @media (${breakpoint.mobile}) {
     font-size: 12px;
     letter-spacing: 0px;
@@ -196,17 +196,12 @@ const SectionThree = () => {
               <Subtitle>GAMES </Subtitle>
             </ShowOnMobile>
             <Title>
-              选择游戏
+              {i18n.t("about.section.3.title")}
               <HideOnMobile>
                 <Subtitle>GAMES </Subtitle>
               </HideOnMobile>
             </Title>
-            <Description>
-              与各大知名游戏品牌合作,汇集20家以上平台, <br />
-              游戏从经典真人百家乐游戏至电竞竞猜,千款游
-              <br />
-              戏任意畅玩,欢迎您前往试玩。
-            </Description>
+            <Description>{i18n.t("about.section.3.description")}</Description>
           </RightContent>
         </TheContent>
         <GameTypeLister>

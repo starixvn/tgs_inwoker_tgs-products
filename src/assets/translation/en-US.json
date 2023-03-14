@@ -96,133 +96,98 @@
 
   "gametype": {
     "slots": "Slots",
-    "egame": "E-Games",
-    "sports": "Sports ",
-    "esports": "E-Sports",
+    "egame": "Egames",
+    "sports": "Sportsbook ",
+    "esports": "eSports",
     "horserace": "Horse Racing",
     "live": "Live Casino",
-    "fish": "Fishing Game",
-    "qipai": "Chess Game",
-    "cockfight": "Cockfighting",
-    "lottery": "Lottery Game"
+    "fish": "Fishing",
+    "qipai": "Poker",
+    "cockfight": "eSabong",
+    "lottery": "Lottery"
   },
   "menu": {
-    "products": "Products",
-    "demo": "Demo",
-    "partners": "Partners",
-    "about": "About",
+    "products": "Game Collections",
+    "demo": "Platform Demo",
+    "about": "About PG",
     "contact": "Contact"
   },
-  "landing": {
-    "title": "ONE STOP PACKAGE NETWORK SYSTEM",
-    "description": "The PG system is the most popular all-round game package network system in Asia. It is built by an experienced top R&D team and is committed to providing customers with the most powerful and complete online entertainment products and customized integration services; precise control Market trend, use strength to create unlimited profits, and create the ultimate peak of your career with you!",
-    "sec2": {
-      "title": "Hundreds of popular games with free collocation",
-      "description": "PG has the most popular and popular games at present, including live action, sports, chess, slot machines, fishing, lottery, as many as thousands of games to choose from; with the most exciting and exciting gameplay, it is guaranteed to satisfy everyone The ultimate entertainment experience for players! It can also match the game currency and language according to the country and region of the customer, and quickly respond to customer customized needs.",
-      "cards": {
-        "category": {
-          "product": "Game Product"
-        },
-        "gametype": {
-          "lottery": {
-            "title": "Lottery Game",
-            "description": "Through the core technology algorithm of the blockchain, to ensure fairness, justice, and the safest and most reliable data lottery results."
-          },
-          "chess": {
-            "title": "Chess and Card Game",
-            "description": "With the rapid rise of board and card games, switching from casual to real money game mode has become an indispensable part of the market."
-          },
-          "live": {
-            "title": "Live Video",
-            "description": "Live video brings players an unprecedented entertainment experience. It is a must-have product for your business."
-          },
-          "sport": {
-            "title": "Sports Event",
-            "description": "Provides access to a variety of sports competition platforms. There are at least thousands of joint sports events every week for your sports fans to bet. It is the best platform for your sports fans."
-          },
-          "slot": {
-            "title": "Slot Machine",
-            "description": "Online slot games are still the most popular way of online gambling. Countless gamblers love slot games. There are hundreds of slot games for you to choose from."
-          },
-          "electron": {
-            "title": "Video Game",
-            "description": "Through the core technology algorithm of the blockchain to ensure fairness, fairness, and the safest and most reliable data lottery results."
-          },
-          "fish": {
-            "title": "Fishing Game",
-            "description": "This game can not only relax the mood but also feel the fish wandering happily in the water!"
-          }
-        }
-      }
-    },
-    "partner": "Official Named Partners",
-    "contact": {
-      "title": "The most comprehensive package network solution",
-      "button": "Contact Us"
-    }
-  },
-  "product": {
-    "title": "Enjoy brand customization service",
-    "description": "Exclusive consultants provide free online consultation, and instantly create your own online entertainment platform! One-stop fast site building service, fully supports PC/mobile terminal omni-channel site opening, brand operation, game interface, data management, With powerful functions such as marketing and promotion, the technical team provides 24-hour online support throughout the year to escort your career!",
-    "1": {
-      "title": "Massive exquisite templates",
-      "point1": "A variety of exclusive exquisite templates",
-      "point2": "Professional customized web design",
-      "point3": "Create an exclusive brand image"
-    },
-    "2": {
-      "title": "Thousands of Wonderful Games",
-      "point1": "A collection of world-renowned games",
-      "point2": "A variety of exciting and unique gameplay",
-      "point3": "Free Combination and Collocation"
-    },
-    "3": {
-      "title": "Intelligent Data Management",
-      "point1": "Single background multi-station management",
-      "point2": "Big Data Report Analysis",
-      "point3": "Smart CRM Player Tracking"
-    },
-    "4": {
-      "title": "Efficient Marketing Promotion",
-      "point1": "VIP member hierarchical management",
-      "point2": "Universal agent unlimited promotion",
-      "point3": "Custom offers"
-    },
-    "last": "Create The Future, Start With You"
-  },
+
   "demo": {
-    "title": "The most comprehensive package network solution",
+    "title": "Platform Demo",
+    "description": "",
     "version": {
       "web": "Web",
       "wap": "Mobile"
     }
   },
   "about": {
-    "title": "Strongest gaming and entertainment packet network system",
-    "description": "Since its establishment, PegaGaming (PG) has always insisted on innovation and service, gathering all the industry's top technology, marketing, art, operation and maintenance talents, and has actively established strategic partnerships with large global gaming groups to successfully develop Asia The market continues to set new industry records, and is committed to tailoring the most stable and excellent gaming Internet products for customers.",
-    "1": {
-      "title": "Independent research and development system",
-      "point1": "Global unique development of GMS system",
-      "point2": "One-stop management of funds/customer service/player/agent/team",
-      "point3": "Real-time data automatic report generation"
+    "title": "Customized Entertainment",
+    "description": "PegaGaming offers the best gaming platform in the online casino industry. With many years of experience, using by the latest technology, exclusive games, cutting-edge tools we can either help you build your own online casino, spice it up with more games from top game providers or take your existing gaming environment online.",
+
+    "bubble": {
+      "title": "Quick Start",
+      "description": "User Interface, Back Office, and Affiliate Marketing tool all in one simple 3-step solution.",
+      "1": "Custmized Front End",
+      "2": "Back Office",
+      "3": "Affiliate Program"
     },
-    "2": {
-      "title": "Efficient defense mechanism",
-      "point1": "WAF protection intercepts malicious intrusion",
-      "point2": "CDN real-time information security protection",
-      "point3": "Enterprise-level multi-level defense architecture"
-    },
-    "3": {
-      "title": "Extremely fast and smooth line",
-      "point1": "Equipped with the world's top server and cloud technology",
-      "point2": "International Route Backup Mechanism",
-      "point3": "SSL transmission security technology"
-    },
-    "4": {
-      "title": "Online Technical Support",
-      "point1": "24x7x365 Technical Online Support",
-      "point2": "Quickly respond to customer needs",
-      "point3": "Regularly upgrade and optimize the system"
+    "section": {
+      "1": {
+        "title": "Professional Consultation",
+        "description": "We’ll make all your brilliant ideas work! With the combination of our specialists and your inputs, not only can we create the most suitable platform for you, but can also assist you with other matters such as designing a logo for your company."
+      },
+      "2": {
+        "title": "Select Template ",
+        "description": "Choose a template and customize it to your business needs.This product is available for desktop as well as mobile users and can also be made into native apps if required."
+      },
+      "3": {
+        "title": "Select Game",
+        "description": "Collaborate with well-known gaming brands and take advantage of the opportunity to unite games from more than 25 platforms. As a result, you have access to thousands of games, ranging from traditional live baccarat to e-sports."
+      },
+      "4": {
+        "title": "Product Advantages",
+        "description": "We have a dedicated team of technical experts who are robust, responsive and ready to deliver.",
+        "partner": "Partners",
+        "advantage": {
+          "1": {
+            "title": "One Stop Solution",
+            "description": "Equipped with a specialized team that proactively provides you with a complete suite of products and services to start your gaming operation with your unique brand identity. Entertainment like never before with our single portal to create the richest gaming experience in this industry with all your desired achievements at your fingertips."
+          },
+          "2": {
+            "title": "Diverse gaming platforms",
+            "description": "Boost your revenues with our vast choice of casino content. Not only do we offer games from well established game providers such as Playtech, Asia Gaming and many more, but we are also expanding our offer as we are regulary adding new game providers and new games from the existing ones. Every new casino game is offered in an instant play allowing you to enjoy rich variety and top-quality 24/7."
+          },
+          "3": {
+            "title": "Multiple Agency Models",
+            "description": "We apply the pyramid model with real-time billing layer by layer commission. Our site is not only user friendly, but also helps you to earn money in a very short time; the universal agency model allows all players to become a site agent, which is why this model has become the most popular marketing tool of modern times."
+          },
+          "4": {
+            "title": "Fast and Convenient Payment",
+            "description": "We support various payment methods, members can deposit quickly and conveniently with the highest level of security. The user-friendly interface and the increased flexibility in defining your limits allow you to manage your members' deposit amounts effectively."
+          },
+          "5": {
+            "title": "Full Platform Support",
+            "description": "We support all types of computers as well as mobile devices and are perfectly compatible with Android and iOS systems. In addition, we offer a native app for better performance and best experience. Hot patch instant updates, no need of waiting to play games."
+          },
+          "6": {
+            "title": "Professional Data Analysis",
+            "description": "Timely and accurate information to power your business. The back end functions are constantly updated to stay on the cutting edge of the industry. Our platform enables you to monitor and manage your player’s accounts, thoroughly analyze their behavior, and keep track of your revenues online for lifetime player value optimization."
+          },
+          "7": {
+            "title": "Security",
+            "description": "Usage of Global Trust certified AES 256-bit encryption for high access rates and data security. With no downtime for maintenance and constant updates, you can enjoy a smoother and more stable web experience."
+          },
+          "8": {
+            "title": "CDN Acceleration Service",
+            "description": "No need for you to worry about the application for the domain name and the website's set-up. All these tasks are taken care of by us for your satisfaction. With the CDN service, you can boost your website speed and optimize the stability of your system."
+          },
+          "9": {
+            "title": "24/7 Technical Support",
+            "description": "We have a professional and round-the-clock online technical support that takes care of all kinds of emergencies and offers solutions to all sorts of problems to expand your global success."
+          }
+        }
+      }
     }
   },
   "contact": {

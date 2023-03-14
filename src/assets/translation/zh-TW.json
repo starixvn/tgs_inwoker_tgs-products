@@ -1,9 +1,244 @@
 {
+  "slots": {
+    "pp": "PP",
+    "haba": "Habanero",
+    "jdb": "JDB",
+    "sw": "Skywind",
+    "rt": "RT",
+    "jili": "JILI吉利",
+    "awc_facai": "FC發財",
+    "nt": "NT",
+    "awc_spade": "Spade",
+    "awc_pgs": "PGSoft",
+    "endorphina": "Endorphina",
+    "awc_fs": "Fast Spin",
+    "joker": "Joker",
+    "nlc": "NLC",
+    "btg": "BTG"
+  },
+
+  "egame": {
+    "pp": "PP",
+    "haba": "Habanero",
+    "sw": "Skywind",
+    "rt": "RT",
+    "awc_spade": "Spade",
+    "awc_facai": "FC發財",
+    "awc_pgs": "PGSoft",
+    "awc_km": "KM",
+    "awc_ludo": "LUDO",
+    "awc_yl": "YL"
+  },
+
+  "sports": {
+    "saba": "SABA體育",
+    "sbo": "SBO體育",
+    "bc": "BC體育",
+    "wg": "WG體育",
+    "bti": "BTi體育",
+    "phsb": "PHSB體育",
+    "pinnacle": "平博",
+    "pp": "PP虛擬體育"
+  },
+
+  "esports": {
+    "imes": "IM",
+    "avia": "AVIA",
+    "tf": "TF"
+  },
+
+  "horserace": {
+    "wgfm": "WG",
+    "awc_rcb": "RCB888"
+  },
+
+  "live": {
+    "ag": "AG真人",
+    "bg": "BG真人",
+    "sg": "SEXY真人",
+    "sw": "SW真人",
+    "evo": "EVO真人",
+    "ab": "AB真人",
+    "dg": "DG真人",
+    "wm": "WM真人",
+    "pp": "PP真人",
+    "awc_venus": "VENUS真人"
+  },
+
+  "fish": {
+    "ly": "LEG樂游",
+    "ky": "KY",
+    "bg": "BG",
+    "awc_spade": "Spade",
+    "jili": "JILI吉利",
+    "awc_facai": "FC發財",
+    "jdb": "JDB",
+    "awc_yl": "YL",
+    "joker": "Joker"
+  },
+
+  "qipai": {
+    "ly": "LEG棋牌",
+    "ky": "KY棋牌",
+    "365": "365棋牌"
+  },
+
+  "cockfight": {
+    "awc_cockfight": "SV388",
+    "sm01": "SM01"
+  },
+
+  "lottery": {
+    "vr": "VR",
+    "tcg_sea": "TCG東南亞彩",
+    "tcg_lotto": "TCG彩票",
+    "tcg_lotto_vn": "TCG越南彩"
+  },
+
+  "gametype": {
+    "slots": "老虎機",
+    "egame": "電子遊戲",
+    "sports": "體育博彩",
+    "esports": "電子競技",
+    "horserace": "賽馬遊戲",
+    "live": "真人視訊",
+    "fish": "捕魚遊戲",
+    "qipai": "棋牌遊戲",
+    "cockfight": "鬥雞直播",
+    "lottery": "彩票遊戲"
+  },
   "menu": {
-    "products": "產品價紹",
-    "demo": "案例展示",
-    "partners": "合作夥伴",
+    "products": "产品价绍",
+    "demo": "平台展示",
     "about": "關於PG",
     "contact": "免費諮詢"
+  },
+  "landing": {
+    "title": "一站式包网系统 定义全球新未来",
+    "description": "PG系统是亚洲地区最受欢迎的全方位游戏包网系统，由经验丰富的顶尖研发团队潜心打造，致力于为客户提供最强大、最完善的在线娱乐产品及客制化整合服务；精准掌握市场趋势，用实力创造无限盈利，与您共创事业极致巅峰！",
+    "sec2": {
+      "title": "热门流行玩法 上百款游戏自由搭配",
+      "description": "PG拥有当前最热门流行的游戏，包含真人、体育、棋牌、老虎机、捕鱼、彩票，多达上千款游戏任君挑选；搭配最刺激精彩的玩法，保证满足每一位玩家的极致娱乐体验！更可以根据客户所在的国家和区域匹配游戏币别和语言，快速响应客户客制化需求。",
+      "cards": {
+        "category": {
+          "product": "游戏产品"
+        },
+        "gametype": {
+          "lottery": {
+            "title": "彩票游戏",
+            "description": "通过区块链的核心技术算法，确保公平、公正、以及最安全可靠数据的开奖结果。"
+          },
+          "chess": {
+            "title": "棋牌游戏",
+            "description": "随着棋牌游戏的火速崛起，从休闲切换为真金白银的游戏模式，己经是市场不能缺的一部分。"
+          },
+          "live": {
+            "title": "真人视讯",
+            "description": "真人视讯给玩家带来前所未有的娱乐体验，是您提升业务的必备产品。"
+          },
+          "sport": {
+            "title": "体育赛事",
+            "description": "提供接入多款体育竟技平台， 每周至少有上千场的体育联合赛事供您的体彩迷投注，是您体育迷的最佳选择平台。"
+          },
+          "slot": {
+            "title": "老虎机",
+            "description": "在线老虎机游戏仍然是网上博彩最流行的方式。无数的赌博者热爱老虎机游戏，上百种老虎机游戏供君挑选。"
+          },
+          "electron": {
+            "title": "电子游戏",
+            "description": "通过区块链的核心技术算法，确保公平 公正、以及最安全可靠数据的开奖结果。"
+          },
+          "fish": {
+            "title": "捕鱼游戏",
+            "description": "这款游戏不仅可以放松心情而且可以感受到鱼儿在水中欢快的游荡！"
+          }
+        }
+      }
+    },
+    "partner": "官方指名合作伙伴",
+    "contact": {
+      "title": "最全面的包网方案",
+      "button": "联系我们"
+    }
+  },
+
+  "demo": {
+    "title": "平台展示",
+    "description": "多種模版可選擇，並且能依客戶需求客制化，所有版型都符合HTML5",
+    "version": {
+      "web": "网页版本",
+      "wap": "手机版本"
+    }
+  },
+  "about": {
+    "title": "訂制娛樂城",
+    "description": "一站式全渠道品牌包網服務，全渠道遊戲完整建站，\n 完全客制化品牌打造綜合品牌系統",
+    "bubble": {
+      "title": "迅速開站",
+      "description": "簡單3步驟前台、後台、代理一次解決",
+      "1": "客制 \n 前台",
+      "2": "後台 \n 系統",
+      "3": "代理 \n 系統"
+    },
+    "section": {
+      "1": {
+        "title": "專人諮詢",
+        "description": "我們將有專人，給您最適合的服務，您只要提供  \n 幾項簡單的資訊，我們將為您打造最適合的方案。若您需要LOGO我們也能為您服務。"
+      },
+      "2": {
+        "title": "選擇模板",
+        "description": "根據您的需求，選擇或訂製版型。 \n 本產品不管是桌機用戶、 平板用戶、\n 手機用戶皆可暢行無阻，若您有需 \n 要還可以製作手機客戶端。"
+      },
+      "3": {
+        "title": "選擇遊戲",
+        "description": "與各大知名遊戲品牌合作，匯集25家以上平台， \n遊戲從經典真人百家樂遊戲至電競競猜，千款遊 \n戲任意暢玩，歡迎您前往試玩。"
+      },
+      "4": {
+        "title": "產品優勢",
+        "description": "我們擁有專業的技術團隊，為您打造最合適的娛樂城",
+        "partner": "合作夥伴",
+        "advantage": {
+          "1": {
+            "title": "一站式解決方案",
+            "description": "業界最豐富的博弈經驗,由專業團隊滿足個性化定制需求,提供一站式集成整合服務。"
+          },
+          "2": {
+            "title": "多樣化遊戲平台",
+            "description": "提供多種遊戲多元化，嚴格把關遊戲合作商，高質量公正公平的遊戲廠商集成接入，讓您營運安枕無憂。"
+          },
+          "3": {
+            "title": "多種代理模式",
+            "description": "多種代理模式：金字塔代理模式，實時結算層層抽傭，網站營運輕而易舉，快速賺進大把鈔票；全民代理模式，時下最為熱門的營銷手段，每個玩家都能成為站點代理。"
+          },
+          "4": {
+            "title": "快速便利支付",
+            "description": "支持網銀、雲閃付、微信、支付寶等等第三方支付，會員存款自動上分，快速便利更有保障。簡單的操作接口、高彈性的自定義限額，有效管理會員入款金額。"
+          },
+          "5": {
+            "title": "全平台支持",
+            "description": "支持各種計算機、行動裝置，玩遊戲無需下載/安裝任何手機程序。匯集多個平台的移動端設備，完美適配Android和iOS兩大系統。"
+          },
+          "6": {
+            "title": "專業數據分析",
+            "description": "不斷更新後台功能，與業界時時接軌，計算各種資金、遊戲數據，圖像展示報表，隨時動態掌握，讓您可以更輕鬆且聰明的管理娛樂城。"
+          },
+          "7": {
+            "title": "安全防護",
+            "description": "通過Global Trust國際安全認證，採AES 256位加密，保證大用戶量訪問，提升數據安全性。免停機的維護方式，以及不斷的更新功能，使用起來更加順暢，並且保障您的網頁穩定。"
+          },
+          "8": {
+            "title": "CDN加速服務",
+            "description": "域名申請、架設網站的瑣事您都不必煩惱，這些瑣事我們將會為您服務。搭配CDN服務，加速網站，提高系統的穩定性。"
+          },
+          "9": {
+            "title": "24/7技術客服",
+            "description": "我們擁有專業的24小時不間斷在線技術客服，第一時間處理各類突發事件解決各類問題及答覆。"
+          }
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "免费咨询"
   }
 }

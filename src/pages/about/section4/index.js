@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Page from "../../../component/page";
 import breakpoint from "../../../config/breakpoints";
+import i18n from "../../../config/i18n";
 import { common } from "../../../utils/common";
 import { hardcoded } from "../../../utils/hardcode";
 
@@ -32,7 +33,7 @@ const Title = styled.div`
   font-weight: 700;
 
   @media (${breakpoint.mobile}) {
-    font-size: 50px;
+    font-size: 40px;
   }
 `;
 
@@ -118,7 +119,7 @@ const HugeIcon = styled.div`
 
 const AdvantageTitle = styled.div`
   font-size: 30px;
-
+  text-align: center;
   @media (${breakpoint.mobile}) {
     font-size: 20px;
   }
@@ -136,24 +137,28 @@ const AdvantageDescription = styled.div`
 `;
 
 const Advantages = () => {
-  const Benefits = ({ data }) => {
+  const Benefits = ({ data, item }) => {
     return (
       <BenefitContainer>
         <HugeIcon src={data.icon} />
-        <AdvantageTitle>{data.title}</AdvantageTitle>
-        <AdvantageDescription>{data.description}</AdvantageDescription>
+        <AdvantageTitle>
+          {i18n.t("about.section.4.advantage." + item + ".title")}
+        </AdvantageTitle>
+        <AdvantageDescription>
+          {i18n.t("about.section.4.advantage." + item + ".description")}
+        </AdvantageDescription>
       </BenefitContainer>
     );
   };
   return (
     <div>
       <TitleContainer>
-        <Title>产品优势</Title>
-        <Subtitle>我们拥有专业的技术团队,为您打造最合适的娱乐城</Subtitle>
+        <Title> {i18n.t("about.section.4.title")}</Title>
+        <Subtitle> {i18n.t("about.section.4.description")}</Subtitle>
       </TitleContainer>
       <AdvantageHolder>
         {hardcoded.benefits.map((data, index) => {
-          return <Benefits data={data} key={index} />;
+          return <Benefits data={data} key={index} item={index + 1} />;
         })}
       </AdvantageHolder>
     </div>
@@ -164,7 +169,7 @@ const Partners = () => {
   return (
     <div>
       <TitleContainer>
-        <Title>合作夥伴</Title>
+        <Title> {i18n.t("about.section.4.partner")}</Title>
         <LogoHolder>
           {hardcoded.brands
             .filter((data) => {

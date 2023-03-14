@@ -79,13 +79,13 @@ const TitleHolder = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 3.4rem;
+  font-size: 40px;
 `;
 
 const Subtittle = styled.div`
   font-weight: bold;
   color: #00a8ff;
-  font-size: 30px;
+  font-size: 20px;
   @media (${breakpoint.mobile}) {
   }
 `;
@@ -186,10 +186,8 @@ const Demo = () => {
       <Page background={common.imageUrl + "/demo/web-bg.jpg"}>
         <TitleHolder>
           <Subtittle>FRONT END</Subtittle>
-          <Title>平台展示</Title>
-          <Description>
-            多種模板可以選，并且能依顧客需求客制化，所有版型都符合HTML5
-          </Description>
+          <Title>{i18n.t("demo.title")}</Title>
+          <Description>{i18n.t("demo.description")}</Description>
         </TitleHolder>
         <ButtonWrapper>
           <CustomButton

@@ -8,6 +8,7 @@ const LanguageHolder = styled.div`
   color: ${({ scrolled }) => {
     return scrolled ? "white" : "white ";
   }};
+  align-items: center;
 `;
 
 const LanguageOption = styled.div`
@@ -26,7 +27,12 @@ const LanguageChanger = ({ scrolled }) => {
 
     {
       language: "zh-CN",
-      name: "CN",
+      name: "简中",
+    },
+
+    {
+      language: "zh-TW",
+      name: "繁中",
     },
   ];
 
@@ -34,10 +40,10 @@ const LanguageChanger = ({ scrolled }) => {
 
   function changeLanguage(language) {
     i18n.changeLanguage(language);
-    if (path[2] !== "") {
+    if (path[2] !== "" && path[2] !== undefined && path[2] !== null) {
       AppHistory.push("/" + language + "/" + path[2]);
     } else {
-      AppHistory.push("/" + language);
+      AppHistory.push("/" + language + "/");
     }
   }
 

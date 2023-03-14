@@ -14,7 +14,7 @@ const GameListContainer = styled.div`
   bottom: 40px;
   display: flex;
   justify-content: center;
-  position: fixed;
+
   z-index: 1;
   width: 100%;
   left: 0;
@@ -82,16 +82,18 @@ const Icon = styled.div`
   background: white;
 `;
 
+const BrandWrapper = styled.div``;
+
 const BrandsContainer = styled.div`
   color: #fff;
   position: absolute;
   ${({ position }) => {
     return [position] + ": 320px;";
   }};
-  top: 200px;
+  top: 150px;
 
   @media (${breakpoint.mobile}) {
-    left: 0;
+    left: -10px;
     right: 0;
     top: 140px;
     bottom: 0;
@@ -107,6 +109,11 @@ const Brands = styled.div`
 
   align-items: center;
   gap: 10px;
+
+  :hover {
+    background: #0389ff;
+    cursor: pointer;
+  }
   @media (${breakpoint.mobile}) {
     background: rgba(0, 0, 0, 0.5);
   }
@@ -132,7 +139,7 @@ const CustomMenu = styled.div`
   right: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 
   @media (${breakpoint.mobile}) {
     display: flex;
@@ -144,31 +151,47 @@ const CustomGameListItem = styled.div`
   flex-direction: column;
   background: ${({ selected }) => (selected ? "#0389ff" : "rgba(0,0,0,0.5)")};
   color: #fff;
-  min-width: fit-content;
   justify-content: center;
   align-items: center;
   padding: 10px;
 
-  :first-child {
-    padding: 20px;
-  }
+  white-space: nowrap;
+  width: 75px;
+  max-width: 75px;
+  min-width: 75px;
 `;
 
 const LogosContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
+  width: 400px;
   gap: 10px;
+
+  @media (${breakpoint.mobile}) {
+    width: auto;
+    padding-bottom: 100px;
+  }
 `;
 
 const Title = styled.div`
-  font-size: 3rem;
+  font-size: 38px;
   padding-bottom: 20px;
 `;
 const SubTitle = styled.div`
-  font-size: 1.5rem;
+  font-size: 28px;
   text-transform: uppercase;
   font-weight: bold;
   color: #0389ff;
+`;
+
+const TheWrapperForContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 200px);
+  justify-content: space-between;
+
+  @media (${breakpoint.mobile}) {
+    padding-bottom: 100px;
 `;
 const Landing = () => {
   const [gameList, setGameList] = useState(hardcoded.homepage);
@@ -195,57 +218,66 @@ const Landing = () => {
             );
           })}
         </CustomMenu>
-        {hardcoded.homepage
-          .filter((a) => {
-            return a.title === selected.title;
-          })
-          .map((a, index) => {
-            return (
-              <BrandsContainer position={a.position}>
-                <div>
-                  <SubTitle>{a.title}</SubTitle>
-                  <Title> {i18n.t("gametype." + a.title)}</Title>
-                </div>
-                <LogosContainer>
-                  {hardcoded.brands
-                    .filter((b) => {
-                      return b.gametype.includes(selected.title);
-                    })
-                    .map((c, index) => {
-                      return (
-                        <Brands key={index}>
-                          <LogoHolder
-                            src={
-                              common.imageUrl + "providers/" + c.name + ".png"
-                            }
-                            alt={c.name}
-                          />
-                          <div>{i18n.t(a.title + "." + c.name)}</div>
-                        </Brands>
-                      );
-                    })}
-                </LogosContainer>
-              </BrandsContainer>
-            );
-          })}
-        <GameListContainer>
-          <GameList>
-            {hardcoded.homepage.map((data, index) => {
-              return (
-                <GameListItem
-                  key={index}
-                  selected={data.title === selected.title}
-                  onClick={() => {
-                    setSelected(data);
-                  }}
-                >
-                  <Icon icon={data.title} />
-                  {i18n.t("gametype." + data.title)}
-                </GameListItem>
-              );
-            })}
-          </GameList>
-        </GameListContainer>
+        <TheWrapperForContent>
+          <BrandWrapper>
+            {" "}
+            {hardcoded.homepage
+              .filter((a) => {
+                return a.title === selected.title;
+              })
+              .map((a, index) => {
+                return (
+                  <BrandsContainer position={a.position}>
+                    <div>
+                      <SubTitle>{a.title}</SubTitle>
+                      <Title> {i18n.t("gametype." + a.title)}</Title>
+                    </div>
+                    <LogosContainer>
+                      {hardcoded.brands
+                        .filter((b) => {
+                          return b.gametype.includes(selected.title);
+                        })
+                        .map((c, index) => {
+                          return (
+                            <Brands key={index}>
+                              <LogoHolder
+                                src={
+                                  common.imageUrl +
+                                  "providers/" +
+                                  c.name +
+                                  ".png"
+                                }
+                                alt={c.name}
+                              />
+                              <div>{i18n.t(a.title + "." + c.name)}</div>
+                            </Brands>
+                          );
+                        })}
+                    </LogosContainer>
+                  </BrandsContainer>
+                );
+              })}
+          </BrandWrapper>
+
+          <GameListContainer>
+            <GameList>
+              {hardcoded.homepage.map((data, index) => {
+                return (
+                  <GameListItem
+                    key={index}
+                    selected={data.title === selected.title}
+                    onClick={() => {
+                      setSelected(data);
+                    }}
+                  >
+                    <Icon icon={data.title} />
+                    {i18n.t("gametype." + data.title)}
+                  </GameListItem>
+                );
+              })}
+            </GameList>
+          </GameListContainer>
+        </TheWrapperForContent>
       </Page>
     </>
   );

@@ -15,7 +15,7 @@ import AppBar from "../../component/appbar";
 const SectionOne = styled.div`
   display: grid;
   grid-template-columns: 55% 45%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 500px);
   align-items: center;
 
   @media (${breakpoint.mobile}) {
@@ -38,6 +38,7 @@ const SectionOneContentOrientation = styled.div`
 const Title = styled.div`
   font-size: 4rem;
   font-weight: 700;
+  text-align: center;
 `;
 
 const Description = styled.div`
@@ -59,7 +60,7 @@ const GapLeaver = styled.div`
 
   @media (${breakpoint.mobile}) {
     background: #081120;
-    padding-top: 200px;
+    padding-top: 100px;
   }
 `;
 
@@ -163,6 +164,7 @@ const AboveCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   position: absolute;
   z-index: 1;
   font-size: 2rem;
@@ -218,19 +220,15 @@ const SectionOneCircle = () => {
     <GapLeaver>
       <Content>
         <TitleAndDescription>
-          <AnotherTitle>迅速开站</AnotherTitle>
-          <AnotherDescription>前台、后台、代理一次解决</AnotherDescription>
+          <AnotherTitle>{i18n.t("about.bubble.title")}</AnotherTitle>
+          <AnotherDescription>
+            {i18n.t("about.bubble.description")}
+          </AnotherDescription>
         </TitleAndDescription>
         <TripleCircleContainer>
-          <TheCircle>
-            客制 <br></br> 前台
-          </TheCircle>
-          <TheCircle>
-            後台 <br></br> 系統
-          </TheCircle>
-          <TheCircle>
-            代理 <br></br> 系統
-          </TheCircle>
+          <TheCircle>{i18n.t("about.bubble.1")}</TheCircle>
+          <TheCircle>{i18n.t("about.bubble.2")}</TheCircle>
+          <TheCircle>{i18n.t("about.bubble.3")}</TheCircle>
         </TripleCircleContainer>
       </Content>
     </GapLeaver>
@@ -250,12 +248,8 @@ const AboutPage = () => {
             <SectionOneContent>
               <SectionOneContentOrientation>
                 <SubTitle>WHITE LABEL SOLUTION</SubTitle>
-                <Title>{i18n.t("订制娱乐城")}</Title>
-                <Description>
-                  {i18n.t(
-                    "一站式全渠道品牌包网服务,全渠道游戏完整建站 \n 完全客制化品牌打造综合品牌系统"
-                  )}
-                </Description>
+                <Title>{i18n.t("about.title")}</Title>
+                <Description>{i18n.t("about.description")}</Description>
                 <Arrow direction="down" animate={true} size="xlarge" />
               </SectionOneContentOrientation>
             </SectionOneContent>

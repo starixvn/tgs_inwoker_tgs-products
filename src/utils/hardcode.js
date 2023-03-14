@@ -95,38 +95,30 @@ const brands = [
 const benefits = [
   {
     icon: "film",
-    title: "一站式解决方案",
-    description:
-      "业界最丰富的博弈经验,由专业团队满足个性化 定制需求,提供一站式集成整合服务。",
   },
   {
     icon: "card",
-    title: "多样化游戏平台",
-    description:
-      "提供多种游戏多元化,严格把关游戏合作商, 高质量公正公平的游戏厂商集成接入,让您营 运安枕无忧。",
   },
   {
     icon: "file",
-    title: "多种代理模式",
-    description:
-      "多种代理模式:金字塔代理模式,实时结算层 层抽佣,网站营运轻而易举,快速赚进大把钞",
   },
   {
     icon: "wallet",
-    title: "快速便利支付",
-    description:
-      "支持网银、云闪付、微信、支付宝等等第三方支 付,会员存款自动上分,快速便利更有保障。",
   },
   {
     icon: "browser",
-    title: "全平台支持",
-    description: "支持各种计算机、行动装置,玩游戏无需下载 安装任何手机程序。",
   },
   {
     icon: "brief",
-    title: "专业数据分析",
-    description:
-      "不断更新后台功能,与业界时时接轨,计算各 种资金、游戏数据,图像展示报表,随时动态 掌握,让您可以更轻松且聪明的管理娱乐城。",
+  },
+  {
+    icon: "secure",
+  },
+  {
+    icon: "fast",
+  },
+  {
+    icon: "technical",
   },
 ];
 
@@ -164,8 +156,8 @@ const demoWap = [
   { image: "/demo/wap/t1.jpg", title: "T1", link: "https://t1.srvptt.com/" },
   { image: "/demo/wap/t2.jpg", title: "T2", link: "https://t2.srvptt.com/" },
   {
-    image: "/demo/wap/t2-1.jpg",
-    title: "T2-1",
+    image: "/demo/wap/t2-2.jpg",
+    title: "T2-2",
     link: "https://t2.srvptt.com/",
   },
   {

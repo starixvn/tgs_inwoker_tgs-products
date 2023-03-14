@@ -96,7 +96,7 @@ const Title = styled.div`
   font-size: 100px;
   font-weight: bold;
   @media (${breakpoint.mobile}) {
-    font-size: 50px;
+    font-size: 40px;
   }
 `;
 
@@ -112,6 +112,8 @@ const Subtitle = styled.span`
 
 const Description = styled.div`
   font-size: 18px;
+
+  white-space: pre-line;
 
   letter-spacing: 3px;
   @media (${breakpoint.mobile}) {
@@ -167,13 +169,8 @@ const SectionTwo = () => {
           </ContainerWithLine>
           <RightContent>
             <Subtitle>WEB VERSION</Subtitle>
-            <Title>选择模板</Title>
-            <Description>
-              根据您的需求, 选择或订制版型。
-              <br /> 真人遊本产品不管是桌机用户、 <br />
-              平板用户手机用户皆可畅行无阻,若您有需 <br />
-              要还可以制作手机客户端。
-            </Description>
+            <Title>{i18n.t("about.section.2.title")}</Title>
+            <Description>{i18n.t("about.section.2.description")}</Description>
             <TheNavigateButton
               onClick={() => {
                 window.scrollTo(0, 0);
