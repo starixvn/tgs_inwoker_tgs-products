@@ -11,7 +11,7 @@ import Contact from "../pages/contact";
 export const AppHistory = createBrowserHistory();
 
 const AppRouter = () => {
-  const baseRouteUrl = `/:locale(en-US|zh-CN)`;
+  const baseRouteUrl = `/:locale(en-US|zh-CN|zh-TW)`;
   const paths = [
     { route: "/demo", component: Demo },
     { route: "/contact", component: Contact },
