@@ -37,7 +37,7 @@ const TheDropdownContainer = styled.div`
 const HideOnMobile = styled.div`
   display: none;
   @media (${breakpoint.mobile}) {
-    display: block;
+    display: flex;
   }
 `;
 
