@@ -157,11 +157,10 @@ const CustomGameListItem = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
+  min-width: 110px;
+  text-align: center;
 
   white-space: nowrap;
-  width: 75px;
-  max-width: 75px;
-  min-width: 75px;
 `;
 
 const LogosContainer = styled.div`

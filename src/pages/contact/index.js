@@ -8,6 +8,7 @@ import Footer from "../../component/footer";
 import Modal from "../../component/modal";
 import QRCode from "react-qr-code";
 import AppBar from "../../component/appbar";
+import i18n from "../../config/i18n";
 
 const Content = styled.div`
   min-height: 100vh;
@@ -144,7 +145,7 @@ const Contact = () => {
         <Content>
           <TitleHolder>
             <Subtittle>CONSULT</Subtittle>
-            <Title>免費咨詢</Title>
+            <Title>{i18n.t("menu.contact")}</Title>
           </TitleHolder>
           <SupportsContainer>
             {hardcoded.supports.map((data, index) => {
