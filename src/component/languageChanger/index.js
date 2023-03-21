@@ -14,7 +14,7 @@ const LanguageHolder = styled.div`
 
 const TheDropdownWrapper = styled.div`
   position: relative;
-  display: none;
+  display: block;
   @media (${breakpoint.mobile}) {
     display: none;
   }
@@ -35,8 +35,9 @@ const TheDropdownContainer = styled.div`
 `;
 
 const HideOnMobile = styled.div`
+  display: none;
   @media (${breakpoint.mobile}) {
-    display: none;
+    display: block;
   }
 `;
 
@@ -48,6 +49,7 @@ const TheBubble = styled.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
+  width: 100px;
   gap: 10px;
   border-radius: 8px;
   ::after {
@@ -141,19 +143,20 @@ const LanguageChanger = ({ scrolled }) => {
           </TheBubble>
         </TheDropdownContainer>
       </TheDropdownWrapper>
-
-      {languages.map((data, index) => {
-        return (
-          <LanguageOption
-            key={index}
-            onClick={() => {
-              changeLanguage(data.language);
-            }}
-          >
-            {data.name}
-          </LanguageOption>
-        );
-      })}
+      <HideOnMobile>
+        {languages.map((data, index) => {
+          return (
+            <LanguageOption
+              key={index}
+              onClick={() => {
+                changeLanguage(data.language);
+              }}
+            >
+              {data.name}
+            </LanguageOption>
+          );
+        })}
+      </HideOnMobile>
     </LanguageHolder>
   );
 };
