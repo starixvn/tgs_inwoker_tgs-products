@@ -242,7 +242,7 @@ const AboutPage = () => {
       <>
         <Page
           background={common.imageUrl + "/about/sc1.jpg"}
-          style={{ minHeight: "calc(125vh )" }}
+          style={{ minHeight: "calc(105vh )" }}
         >
           <SectionOne>
             <SectionOneContent>

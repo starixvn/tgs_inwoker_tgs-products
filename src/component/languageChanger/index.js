@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import breakpoint from "../../config/breakpoints";
 import i18n from "../../config/i18n";
 import { AppHistory } from "../../config/router";
 
@@ -9,12 +10,14 @@ const LanguageHolder = styled.div`
     return scrolled ? "white" : "white ";
   }};
   align-items: center;
-  width: 100%;
-  justify-content: flex-end;
 `;
 
 const TheDropdownWrapper = styled.div`
   position: relative;
+  display: none;
+  @media (${breakpoint.mobile}) {
+    display: none;
+  }
 `;
 
 const TheGoddamnButton = styled.div`
@@ -31,7 +34,11 @@ const TheDropdownContainer = styled.div`
   left: -30px;
 `;
 
-const ArrowDown = styled.div``;
+const HideOnMobile = styled.div`
+  @media (${breakpoint.mobile}) {
+    display: none;
+  }
+`;
 
 const TheBubble = styled.div`
   cursor: pointer;
@@ -58,6 +65,13 @@ const TheBubble = styled.div`
 const Arrow = styled.div`
   padding-top: 0;
   padding-left: 10px;
+`;
+
+const LanguageOption = styled.div`
+  padding-left: 20px;
+
+  user-select: none;
+  cursor: pointer;
 `;
 
 const LanguageChanger = ({ scrolled }) => {
@@ -127,6 +141,19 @@ const LanguageChanger = ({ scrolled }) => {
           </TheBubble>
         </TheDropdownContainer>
       </TheDropdownWrapper>
+
+      {languages.map((data, index) => {
+        return (
+          <LanguageOption
+            key={index}
+            onClick={() => {
+              changeLanguage(data.language);
+            }}
+          >
+            {data.name}
+          </LanguageOption>
+        );
+      })}
     </LanguageHolder>
   );
 };

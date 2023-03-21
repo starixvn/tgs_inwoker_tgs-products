@@ -10,7 +10,6 @@ const PageWrapper = styled.div`
   justify-content: center;
   max-width: 100vw;
   box-sizing: border-box;
-  overflow-x: hidden;
 
   animation: fadeIn 1s;
   @keyframes fadeIn {

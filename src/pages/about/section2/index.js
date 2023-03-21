@@ -177,7 +177,7 @@ const SectionTwo = () => {
                 AppHistory.push("/" + i18n.language + "/demo");
               }}
             >
-              平台展示
+              {i18n.t("demo.title")}
             </TheNavigateButton>
           </RightContent>
         </RightContainer>
