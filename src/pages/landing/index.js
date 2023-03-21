@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { hardcoded } from "../../utils/hardcode";
 import TransitionBackground from "../../component/transition-background";
 import i18n from "../../config/i18n";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Page from "../../component/page";
 import { common } from "../../utils/common";
 import breakpoint from "../../config/breakpoints";
@@ -82,20 +82,21 @@ const Icon = styled.div`
   background: white;
 `;
 
-const BrandWrapper = styled.div``;
+const BrandWrapper = styled.div`
+  padding-top: 50px;
+  padding-bottom: 20px;
+`;
 
 const BrandsContainer = styled.div`
   color: #fff;
-  position: absolute;
-  ${({ position }) => {
-    return [position] + ": 320px;";
+
+  float: ${({ position }) => {
+    return [position];
   }};
-  top: 150px;
 
   @media (${breakpoint.mobile}) {
-    left: -10px;
     right: 0;
-    top: 140px;
+    padding-top: 80px;
     bottom: 0;
     padding: 20px;
   }
@@ -220,7 +221,6 @@ const Landing = () => {
         </CustomMenu>
         <TheWrapperForContent>
           <BrandWrapper>
-            {" "}
             {hardcoded.homepage
               .filter((a) => {
                 return a.title === selected.title;
