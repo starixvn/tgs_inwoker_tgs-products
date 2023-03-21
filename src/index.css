@@ -12,6 +12,7 @@ code {
 
 * {
   user-select: none;
+  box-sizing: border-box;
 }
 .fade-in-section {
   opacity: 0;

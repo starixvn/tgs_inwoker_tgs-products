@@ -8,6 +8,9 @@ const PageWrapper = styled.div`
   padding: 100px 0;
   display: flex;
   justify-content: center;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
 
   animation: fadeIn 1s;
   @keyframes fadeIn {
@@ -26,7 +29,6 @@ const PageWrapper = styled.div`
   margin-bottom: -1px;
 
   @media (${breakpoint.mobile}) {
-    padding: 60px 0px;
     margin-top: -1px;
     max-width: 100vw;
   }

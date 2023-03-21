@@ -99,9 +99,7 @@ const BrandsContainer = styled.div`
   }};
 
   @media (${breakpoint.mobile}) {
-    right: 0;
-    padding-top: 80px;
-    bottom: 0;
+    width: 100%;
     padding: 20px;
   }
 `;
@@ -168,7 +166,7 @@ const CustomGameListItem = styled.div`
 
 const LogosContainer = styled.div`
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   width: 400px;
   gap: 10px;
 
@@ -194,6 +192,7 @@ const TheWrapperForContent = styled.div`
   flex-direction: column;
   height: calc(100vh - 200px);
   justify-content: space-between;
+  box-sizing: border-box;
 
   @media (${breakpoint.mobile}) {
     padding-bottom: 100px;

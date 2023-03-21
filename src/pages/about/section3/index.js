@@ -159,7 +159,7 @@ const GameType = styled.div`
 
 const GameTypeLister = styled.div`
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
   align-items: center;
   height: 300px;
