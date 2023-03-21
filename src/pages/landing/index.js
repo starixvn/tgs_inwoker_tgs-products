@@ -85,6 +85,10 @@ const Icon = styled.div`
 const BrandWrapper = styled.div`
   padding-top: 50px;
   padding-bottom: 20px;
+
+  @media (${breakpoint.mobile}) {
+    padding-top: 80px;
+  }
 `;
 
 const BrandsContainer = styled.div`
