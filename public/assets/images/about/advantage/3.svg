@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 41.5 33.5" style="enable-background:new 0 0 41.5 33.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#444444;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#444444;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:10;}
+	.st4{fill:#E1E1E1;}
+	.st5{fill:#444444;}
+</style>
+<g id="base-size">
+</g>
+<g id="icon">
+	<g>
+		<g>
+			<g>
+				<line class="st2" x1="0.75" y1="27.66" x2="8.75" y2="27.66"/>
+				<rect x="0.75" y="24.75" class="st2" width="8" height="8"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<line class="st2" x1="16.75" y1="27.66" x2="24.75" y2="27.66"/>
+				<rect x="16.75" y="24.75" class="st2" width="8" height="8"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<line class="st2" x1="32.75" y1="27.66" x2="40.75" y2="27.66"/>
+				<rect x="32.75" y="24.75" class="st2" width="8" height="8"/>
+			</g>
+		</g>
+		<line class="st2" x1="20.75" y1="19.75" x2="20.75" y2="24.75"/>
+		<path class="st2" d="M10.63,17.61l-4.1,2.32c-1.1,0.62-1.78,1.79-1.78,3.06v1.76"/>
+		<path class="st2" d="M30.87,17.61l4.1,2.32c1.1,0.62,1.78,1.79,1.78,3.06v1.76"/>
+		<path class="st2" d="M21.17,11.76c-3.11,0.24-4.6-3.37-2.24-5.4c0.39-0.34,0.9-0.55,1.41-0.59c3.11-0.24,4.6,3.37,2.24,5.4
+			C22.2,11.51,21.69,11.72,21.17,11.76z"/>
+		<path class="st2" d="M27.23,7.24c-0.17-0.72-0.45-1.39-0.83-2l0.8-1.35L25.61,2.3l-1.35,0.8c-0.61-0.38-1.28-0.66-2-0.83
+			l-0.38-1.52h-2.25l-0.38,1.52c-0.72,0.17-1.39,0.45-2,0.83l-1.35-0.8L14.3,3.89l0.8,1.35c-0.38,0.61-0.66,1.28-0.83,2l-1.52,0.38
+			v2.25l1.52,0.38c0.17,0.72,0.45,1.39,0.83,2l-0.8,1.35l1.59,1.59l1.35-0.8c0.61,0.38,1.28,0.66,2,0.83l0.38,1.52h2.25l0.38-1.52
+			c0.72-0.17,1.39-0.45,2-0.83l1.35,0.8l1.59-1.59l-0.8-1.35c0.38-0.61,0.66-1.28,0.83-2l1.52-0.38V7.62L27.23,7.24z"/>
+	</g>
+</g>
+<g id="title">
+</g>
+</svg>

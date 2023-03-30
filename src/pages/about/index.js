@@ -78,7 +78,7 @@ const Content = styled.div`
 `;
 
 const AnotherTitle = styled.div`
-  font-size: 5rem;
+  font-size: 67px;
   font-weight: 700;
 `;
 
@@ -92,13 +92,20 @@ const AnotherDescription = styled.div`
   padding: 10px 0;
   white-space: pre-line;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 22px;
   line-height: 2.5rem;
 `;
 
 const TripleCircleContainer = styled.div`
   display: flex;
   justify-content: space-around;
+  align-items: center;
+`;
+
+const TheCircleContent = styled.div`
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 `;
 
@@ -200,6 +207,17 @@ const SubTitle = styled.div`
   }
 `;
 
+const TheIcon = styled.div`
+  mask: url(${({ icon }) =>
+    common.imageUrl + "about/advantage/" + icon + ".svg"});
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background: #fff;
+  width: 75px;
+  height: 75px;
+`;
+
 const SectionOneCircle = () => {
   const TheCircle = ({ children, animate }) => {
     //randomly assign move1, move2, move3 to animate and wont duplicate the same move
@@ -211,7 +229,9 @@ const SectionOneCircle = () => {
     return (
       <TheCircleWrapper>
         <UnderneathCircle animate={animate}></UnderneathCircle>
-        <AboveCircle>{children}</AboveCircle>
+        <AboveCircle>
+          <TheIcon icon={children}></TheIcon>
+        </AboveCircle>
       </TheCircleWrapper>
     );
   };
@@ -226,9 +246,18 @@ const SectionOneCircle = () => {
           </AnotherDescription>
         </TitleAndDescription>
         <TripleCircleContainer>
-          <TheCircle>{i18n.t("about.bubble.1")}</TheCircle>
-          <TheCircle>{i18n.t("about.bubble.2")}</TheCircle>
-          <TheCircle>{i18n.t("about.bubble.3")}</TheCircle>
+          <TheCircleContent>
+            <TheCircle>1</TheCircle>
+            <div>{i18n.t("about.bubble.1")}</div>
+          </TheCircleContent>
+          <TheCircleContent>
+            <TheCircle>2</TheCircle>
+            <div>{i18n.t("about.bubble.2")}</div>
+          </TheCircleContent>
+          <TheCircleContent>
+            <TheCircle>3</TheCircle>
+            <div>{i18n.t("about.bubble.3")}</div>
+          </TheCircleContent>
         </TripleCircleContainer>
       </Content>
     </GapLeaver>
