@@ -185,7 +185,7 @@ const TheCircleWrapper = styled.div`
   width: 170px;
   height: 170px;
   @media (${breakpoint.mobile}) {
-    transform: scale(0.7);
+    transform: scale(0.85);
   }
 `;
 
