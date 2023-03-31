@@ -13,7 +13,7 @@ import i18n from "../../config/i18n";
 const Content = styled.div`
   min-height: 100vh;
   @media (${breakpoint.mobile}) {
-    padding: 20px;
+    padding: 0px 40px 20px 40px;
   }
 `;
 
@@ -29,12 +29,14 @@ const TitleHolder = styled.div`
   color: #fff;
 
   @media (${breakpoint.mobile}) {
-    padding-top: 100px;
+    padding-top: 0px;
+    padding-bottom: 40px;
   }
 `;
 
 const Title = styled.div`
   font-size: 3.4rem;
+  font-weight: bold;
   @media (${breakpoint.mobile}) {
     font-size: 40px;
   }
@@ -73,20 +75,24 @@ const SupportBackground = styled.div`
   padding: 40px;
   cursor: pointer;
   @media (${breakpoint.mobile}) {
-    padding: 20px 40px;
+    padding: 20px;
     gap: 10px;
   }
 `;
 
-const SupportTitle = styled.div``;
-const SupportDescription = styled.div``;
+const SupportTitle = styled.div`
+  font-size: 12px;
+`;
+const SupportDescription = styled.div`
+  font-size: 12px;
+`;
 
 const Logos = styled.img`
   width: 150px;
   height: auto;
 
   @media (${breakpoint.mobile}) {
-    width: 100%;
+    width: 60%;
   }
 `;
 
@@ -141,7 +147,10 @@ const Contact = () => {
   return (
     <>
       <AppBar />
-      <Page background={common.imageUrl + "/contact/bg.jpg"}>
+      <Page
+        background={common.imageUrl + "/contact/bg.jpg"}
+        style={{ paddingBottom: 10 }}
+      >
         <Content>
           <TitleHolder>
             <Subtittle>CONSULT</Subtittle>
