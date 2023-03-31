@@ -4,6 +4,7 @@ import styled from "styled-components";
 import breakpoint from "../../../config/breakpoints";
 import i18n from "../../../config/i18n";
 import { AppHistory } from "../../../config/router";
+import { common } from "../../../utils/common";
 import LanguageChanger from "../../languageChanger";
 
 const FixedPosition = styled.div`
@@ -38,15 +39,13 @@ const MobileMenuList = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   display: ${({ open }) => {
     return open ? "block" : "none";
   }};
 `;
 
-const MenuList = styled.div`
-  margin-top: 100px;
-`;
+const MenuList = styled.div``;
 
 const MenuItem = styled.div`
   font-size: 30px;
@@ -54,10 +53,24 @@ const MenuItem = styled.div`
   font-weight: bold;
   color: white;
   cursor: pointer;
+  text-align: center;
 `;
 
 const Language = styled.div`
   padding: 20px 35px;
+  display: flex;
+  justify-content: center;
+`;
+
+const LogoHolder = styled.div`
+  display: flex;
+  justify-content: center;
+
+  padding: 20px;
+`;
+
+const Logo = styled.img`
+  height: 40px;
 `;
 
 const MobileMenu = ({ menu }) => {
@@ -77,8 +90,11 @@ const MobileMenu = ({ menu }) => {
 
   return (
     <FixedPosition>
-      <Hamburger onClick={toggleMenu}>{!open ? "☰" : "✖"}</Hamburger>
+      <Hamburger onClick={toggleMenu}>{!open ? "☰" : "✖"}</Hamburger>{" "}
       <MobileMenuList open={open}>
+        <LogoHolder>
+          <Logo src={common.imageUrl + "/logo/PGG.png"} />
+        </LogoHolder>
         <MenuList>
           {menu.map((data, index) => {
             return (

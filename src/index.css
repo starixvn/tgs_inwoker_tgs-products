@@ -13,7 +13,7 @@ code {
 * {
   user-select: none;
   box-sizing: border-box;
-  font-family: "Microsoft Jhenghei,微軟正黑體,sans-serif";
+  font-family: Microsoft Jhenghei, 微軟正黑體, sans-serif;
 }
 .fade-in-section {
   opacity: 0;

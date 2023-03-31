@@ -74,6 +74,10 @@ const LanguageOption = styled.div`
 
   user-select: none;
   cursor: pointer;
+
+  @media (${breakpoint.mobile}) {
+    padding: 0 20px;
+  }
 `;
 
 const LanguageChanger = ({ scrolled }) => {
