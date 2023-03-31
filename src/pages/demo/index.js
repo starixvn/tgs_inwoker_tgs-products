@@ -10,9 +10,14 @@ import { hardcoded } from "../../utils/hardcode";
 
 const Contents = styled.div`
   display: grid;
-  grid-template-columns: repeat(${(props) => props.totalPerRow}, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   padding: 20px;
+
+  @media (${breakpoint.mobile}) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
 `;
 
 const CustomButton = styled.div`
@@ -36,7 +41,7 @@ const CustomButton = styled.div`
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding: 50px 0px;
+  padding: 20px 0px;
 
   @media (${breakpoint.mobile}) {
     padding: 20px 0px;
@@ -77,13 +82,9 @@ const TitleHolder = styled.div`
   gap: 20px;
   line-height: 0.85;
   padding-top: 100px;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 
   color: #fff;
-
-  @media (${breakpoint.mobile}) {
-    padding: 0px;
-  }
 `;
 
 const Title = styled.div`
@@ -112,6 +113,10 @@ const TheTitle = styled.div`
   with: 100%;
   text-align: center;
   padding: 20px;
+
+  @media (${breakpoint.mobile}) {
+    display: none;
+  }
 `;
 
 const Overlay = styled.div`
@@ -176,6 +181,7 @@ const Products = ({ data, onClick }) => {
         </Overlay>
         <TheImage src={common.imageUrl + data.image} alt={data.title} />
       </ProductContainer>
+      <TheTitle>{data.title} </TheTitle>
     </EntireShitWrapper>
   );
 };
@@ -218,7 +224,7 @@ const Demo = () => {
           </CustomButton>
         </ButtonWrapper>
         {project === "web" && (
-          <Contents totalPerRow={2}>
+          <Contents>
             {hardcoded.demoWeb.map((item) => {
               return <Products data={item} />;
             })}

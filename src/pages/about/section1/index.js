@@ -100,15 +100,12 @@ const Subtitle = styled.span`
 
 const Description = styled.div`
   font-size: 30px;
-
-  letter-spacing: 6px;
+  color: #c4c4c4;
+  line-height: 1.8;
+  text-align: justify;
 
   @media (${breakpoint.mobile}) {
     font-size: 12px;
-    letter-spacing: 0px;
-    color: #c4c4c4;
-    line-height: 1.8;
-    text-alifn: justify;
     padding-right: 20px;
   }
 `;

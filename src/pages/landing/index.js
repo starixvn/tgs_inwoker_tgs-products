@@ -40,8 +40,9 @@ const GameListItem = styled.div`
   
   border-radius: 8px;
   color: white;
-  background: ${({ selected }) => (selected ? "#0389ff" : "rgba(0,0,0,0.5)")};
-  border: solid 2px #0389ff;
+  background: ${({ selected }) =>
+    selected ? "#0389ff" : "rgba(38, 41, 49,0.8)"};
+
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -49,7 +50,7 @@ const GameListItem = styled.div`
   gap: 10px;
 
   &:hover {
-   border: solid 2px #0389ff;
+
     animation: breathing 0.75s infinite;
     @keyframes breathing {
       0% {
@@ -116,6 +117,8 @@ const Brands = styled.div`
     background: #0389ff;
     cursor: pointer;
   }
+
+  background: rgba(30, 31, 32, 0.9);
   @media (${breakpoint.mobile}) {
     background: rgba(0, 0, 0, 0.5);
   }
@@ -165,25 +168,35 @@ const CustomGameListItem = styled.div`
 
 const LogosContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 400px;
+  grid-template-columns: 1fr 1fr 1fr;
+
   gap: 10px;
 
   @media (${breakpoint.mobile}) {
     width: auto;
     padding-bottom: 100px;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
 const Title = styled.div`
-  font-size: 30px;
+  font-size: 40px;
   padding-bottom: 20px;
+  font-weight: bold;
+
+  @media (${breakpoint.mobile}) {
+    font-size: 30px;
+  }
 `;
 const SubTitle = styled.div`
-  font-size: 20px;
+  font-size: 24px;
   text-transform: uppercase;
   font-weight: bold;
   color: #0389ff;
+
+  @media (${breakpoint.mobile}) {
+    font-size: 20px;
+  }
 `;
 
 const TheWrapperForContent = styled.div`

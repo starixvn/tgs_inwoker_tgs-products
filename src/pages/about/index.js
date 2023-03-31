@@ -37,8 +37,12 @@ const SectionOneContentOrientation = styled.div`
 
 const Title = styled.div`
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
+
+  @media (${breakpoint.mobile}) {
+    font-weight: 700;
+  }
 `;
 
 const Description = styled.div`
@@ -69,6 +73,7 @@ const Content = styled.div`
   color: #fff;
   display: grid;
   grid-template-columns: 40% 60%;
+  align-items: center;
 
   @media (${breakpoint.mobile}) {
     width: 100%;
@@ -79,7 +84,11 @@ const Content = styled.div`
 
 const AnotherTitle = styled.div`
   font-size: 67px;
-  font-weight: 700;
+  font-weight: 600;
+
+  @media (${breakpoint.mobile}) {
+    font-weight: 700;
+  }
 `;
 
 const TitleAndDescription = styled.div`
@@ -92,8 +101,12 @@ const AnotherDescription = styled.div`
   padding: 10px 0;
   white-space: pre-line;
   text-align: center;
-  font-size: 22px;
+
   line-height: 2.5rem;
+  font-size: 20px;
+  @media (${breakpoint.mobile}) {
+    font-size: 22px;
+  }
 `;
 
 const TripleCircleContainer = styled.div`
@@ -107,6 +120,8 @@ const TheCircleContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  font-size: 16px;
 `;
 
 const random = () => {
@@ -115,8 +130,8 @@ const random = () => {
 
 const UnderneathCircle = styled.div`
   background: #03396a;
-  width: 150px;
-  height: 150px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
   position: absolute;
 
@@ -161,11 +176,16 @@ const UnderneathCircle = styled.div`
       transform: translate(${random()}px, ${random()}px);
     }
   }
+
+  @media (${breakpoint.mobile}) {
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 const AboveCircle = styled.div`
-  width: 150px;
-  height: 150px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
   background: #0389ff;
   display: flex;
@@ -178,14 +198,21 @@ const AboveCircle = styled.div`
   white-space: pre-line;
   font-weight: bold;
   letter-spacing: 0.25rem;
+
+  @media (${breakpoint.mobile}) {
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 const TheCircleWrapper = styled.div`
   position: relative;
-  width: 170px;
-  height: 170px;
+  width: 210px;
+  height: 210px;
   @media (${breakpoint.mobile}) {
     transform: scale(0.85);
+    width: 170px;
+    height: 170px;
   }
 `;
 
@@ -197,13 +224,12 @@ const ImageSizeAdjuster = styled.img`
 `;
 
 const SubTitle = styled.div`
-  display: none;
   font-weight: bold;
   font-size: 1.5rem;
   color: #0389ff;
 
   @media (${breakpoint.mobile}) {
-    display: block;
+    color: rgb(3, 137, 255);
   }
 `;
 
@@ -214,8 +240,13 @@ const TheIcon = styled.div`
   mask-repeat: no-repeat;
   mask-position: center;
   background: #fff;
-  width: 75px;
-  height: 75px;
+  width: 86px;
+  height: 86px;
+
+  @media (${breakpoint.mobile}) {
+    width: 75px;
+    height: 75px;
+  }
 `;
 
 const SectionOneCircle = () => {

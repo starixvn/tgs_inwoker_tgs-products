@@ -24,7 +24,7 @@ const TitleHolder = styled.div`
   flex-direction: column;
   gap: 20px;
   line-height: 0.85;
-  padding-top: 600px;
+  padding-top: 100px;
   padding-bottom: 100px;
   color: #fff;
 
@@ -35,17 +35,18 @@ const TitleHolder = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 3.4rem;
-  font-weight: bold;
+  font-size: 67px;
+  font-weight: 600;
   @media (${breakpoint.mobile}) {
     font-size: 40px;
+    font-weight: bold;
   }
 `;
 
 const Subtittle = styled.div`
   font-weight: bold;
   color: #00a8ff;
-  font-size: 2.5rem;
+  font-size: 30px;
   @media (${breakpoint.mobile}) {
     font-size: 20px;
   }
@@ -53,9 +54,9 @@ const Subtittle = styled.div`
 
 const SupportsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   align-items: stretch;
-  gap: 100px;
+  gap: 50px;
 
   @media (${breakpoint.mobile}) {
     grid-template-columns: repeat(2, 1fr);
@@ -64,7 +65,6 @@ const SupportsContainer = styled.div`
 `;
 
 const SupportBackground = styled.div`
-  background: #001731;
   border-radius: 40px;
   display: flex;
   flex-direction: column;
@@ -74,9 +74,12 @@ const SupportBackground = styled.div`
   color: #fff;
   padding: 40px;
   cursor: pointer;
+
+  background: rgb(0, 40, 100);
   @media (${breakpoint.mobile}) {
     padding: 20px;
     gap: 10px;
+    background: #001731;
   }
 `;
 

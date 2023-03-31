@@ -10,7 +10,6 @@ const HugeAssNumber = styled.div`
   font-style: italic;
   color: #0389ff;
   font-weight: 700;
-  //use arial
   font-family: "Arial", sans-serif;
 
   @media (${breakpoint.mobile}) {
@@ -115,14 +114,13 @@ const Subtitle = styled.span`
 
 const Description = styled.div`
   font-size: 20px;
-  letter-spacing: 6px;
-  white-space: pre-line;
+  line-height: 1.8;
+  color: #c4c4c4;
+  text-align: justify;
+  padding-right: 100px;
   @media (${breakpoint.mobile}) {
     font-size: 12px;
     letter-spacing: 0px;
-    color: #c4c4c4;
-    line-height: 1.8;
-    text-alifn: justify;
     padding-right: 20px;
   }
 `;

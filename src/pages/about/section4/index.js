@@ -81,7 +81,7 @@ const AdvantageHolder = styled.div`
 `;
 
 const BenefitContainer = styled.div`
-  background: #001731;
+  background: rgb(0, 40, 100);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -136,6 +136,11 @@ const AdvantageDescription = styled.div`
   }
 `;
 
+const AnotherSubtitle = styled.div`
+  color: rgb(3, 137, 255);
+  text-transform: uppercase;
+`;
+
 const Advantages = () => {
   const Benefits = ({ data, item }) => {
     return (
@@ -153,6 +158,7 @@ const Advantages = () => {
   return (
     <div>
       <TitleContainer>
+        <AnotherSubtitle>Advantage</AnotherSubtitle>
         <Title> {i18n.t("about.section.4.title")}</Title>
         <Subtitle> {i18n.t("about.section.4.description")}</Subtitle>
       </TitleContainer>
