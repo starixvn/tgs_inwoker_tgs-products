@@ -11,7 +11,7 @@ import { hardcoded } from "../../utils/hardcode";
 const Contents = styled.div`
   display: grid;
   grid-template-columns: repeat(${(props) => props.totalPerRow}, 1fr);
-  gap: 20px;
+  gap: 10px;
   padding: 20px;
 `;
 
@@ -37,6 +37,10 @@ const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding: 50px 0px;
+
+  @media (${breakpoint.mobile}) {
+    padding: 20px 0px;
+  }
 `;
 
 const ProductContainer = styled.div`
@@ -76,10 +80,15 @@ const TitleHolder = styled.div`
   padding-bottom: 50px;
 
   color: #fff;
+
+  @media (${breakpoint.mobile}) {
+    padding: 0px;
+  }
 `;
 
 const Title = styled.div`
   font-size: 40px;
+  font-weight: bold;
 `;
 
 const Subtittle = styled.div`
@@ -167,8 +176,6 @@ const Products = ({ data, onClick }) => {
         </Overlay>
         <TheImage src={common.imageUrl + data.image} alt={data.title} />
       </ProductContainer>
-
-      <TheTitle>{data.title} </TheTitle>
     </EntireShitWrapper>
   );
 };
@@ -183,7 +190,10 @@ const Demo = () => {
   return (
     <>
       <AppBar />
-      <Page background={common.imageUrl + "/demo/web-bg.jpg"}>
+      <Page
+        background={common.imageUrl + "/demo/web-bg.jpg"}
+        style={{ paddingBottom: 0 }}
+      >
         <TitleHolder>
           <Subtittle>FRONT END</Subtittle>
           <Title>{i18n.t("demo.title")}</Title>
