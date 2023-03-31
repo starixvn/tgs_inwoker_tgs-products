@@ -77,8 +77,8 @@ const Icon = styled.div`
   mask-size: 100%;
   mask-repeat: no-repeat;
   mask-position: center;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   background: white;
 `;
 
@@ -87,7 +87,7 @@ const BrandWrapper = styled.div`
   padding-bottom: 20px;
 
   @media (${breakpoint.mobile}) {
-    padding-top: 80px;
+    padding-top: 40px;
   }
 `;
 
@@ -105,7 +105,6 @@ const BrandsContainer = styled.div`
 `;
 
 const Brands = styled.div`
-  border: solid 1px #fff;
   padding: 10px 20px;
   border-radius: 4px;
   display: flex;
@@ -123,8 +122,8 @@ const Brands = styled.div`
 `;
 
 const LogoHolder = styled.img`
-  height: auto;
-  width: 40px;
+  height: 38px;
+  width: 38px;
 `;
 
 const CustomMenu = styled.div`
@@ -152,12 +151,13 @@ const CustomMenu = styled.div`
 const CustomGameListItem = styled.div`
   display: flex;
   flex-direction: column;
-  background: ${({ selected }) => (selected ? "#0389ff" : "rgba(0,0,0,0.5)")};
+  background: ${({ selected }) =>
+    selected ? "#0389ff" : "rgba(38,41,49,0.9)"};
   color: #fff;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  min-width: 110px;
+  min-width: 70px;
   text-align: center;
 
   white-space: nowrap;
@@ -176,11 +176,11 @@ const LogosContainer = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 38px;
+  font-size: 30px;
   padding-bottom: 20px;
 `;
 const SubTitle = styled.div`
-  font-size: 28px;
+  font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
   color: #0389ff;
