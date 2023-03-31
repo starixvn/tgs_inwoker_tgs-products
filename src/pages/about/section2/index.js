@@ -11,6 +11,7 @@ const HugeAssNumber = styled.div`
   color: #0389ff;
   font-weight: 700;
   line-height: 0.7;
+  font-family: Arial, sans-serif;
   @media (${breakpoint.mobile}) {
     font-size: 100px;
   }
@@ -95,6 +96,7 @@ const RightContent = styled.div`
 const Title = styled.div`
   font-size: 100px;
   font-weight: bold;
+
   @media (${breakpoint.mobile}) {
     font-size: 40px;
   }
@@ -119,6 +121,10 @@ const Description = styled.div`
   @media (${breakpoint.mobile}) {
     font-size: 12px;
     letter-spacing: 0px;
+    color: #c4c4c4;
+    line-height: 1.8;
+    text-alifn: justify;
+    padding-right: 20px;
   }
 `;
 
@@ -131,7 +137,7 @@ const ShowOnMobile = styled.div`
 
 const StraightFuckingLine = styled.div`
   width: 2px;
-  height: 200px;
+  height: 300px;
   background: #0389ff;
   margin-top: 30px;
 `;
@@ -149,6 +155,16 @@ const TheNavigateButton = styled.div`
   border-radius: 4px;
   padding: 6px 40px;
   font-size: 12px;
+
+  @media (${breakpoint.mobile}) {
+    display: block;
+  }
+`;
+
+const TheImageHolder = styled.img`
+  width: 100%;
+  margin-right: -20px;
+  display: none;
 
   @media (${breakpoint.mobile}) {
     display: block;
@@ -179,6 +195,7 @@ const SectionTwo = () => {
             >
               {i18n.t("demo.title")}
             </TheNavigateButton>
+            <TheImageHolder src={common.imageUrl + "/about/2mb.png"} />
           </RightContent>
         </RightContainer>
       </TheContent>

@@ -9,6 +9,7 @@ const HugeAssNumber = styled.div`
   font-style: italic;
   color: #0389ff;
   font-weight: 700;
+  font-family: "Arial", sans-serif;
   @media (${breakpoint.mobile}) {
     font-size: 100px;
   }
@@ -105,6 +106,10 @@ const Description = styled.div`
   @media (${breakpoint.mobile}) {
     font-size: 12px;
     letter-spacing: 0px;
+    color: #c4c4c4;
+    line-height: 1.8;
+    text-alifn: justify;
+    padding-right: 20px;
   }
 `;
 
@@ -135,6 +140,16 @@ const ContainerWithLine = styled.div`
   align-items: center;
 `;
 
+const TheImageHolder = styled.img`
+  width: 100%;
+  margin-right: -20px;
+  display: none;
+
+  @media (${breakpoint.mobile}) {
+    display: block;
+  }
+`;
+
 const ProperSectionOne = () => {
   return (
     <GapLeaver>
@@ -157,6 +172,7 @@ const ProperSectionOne = () => {
             </HideOnMobile>
           </Title>
           <Description>{i18n.t("about.section.1.description")}</Description>
+          <TheImageHolder src={common.imageUrl + "/about/1mb.png"} />
         </RightContent>
       </TheContent>
     </GapLeaver>
