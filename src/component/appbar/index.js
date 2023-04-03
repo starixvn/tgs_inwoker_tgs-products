@@ -28,7 +28,6 @@ const CustomAppBarContainer = styled.div`
   @media (${breakpoint.mobile}) {
     height: 60px;
   }
-
   ${({ scrolled }) => {
     return (
       scrolled &&
@@ -37,10 +36,24 @@ const CustomAppBarContainer = styled.div`
     `
     );
   }}
+
   transition: background 0.75s;
 
   @media (${breakpoint.mobile}) {
-    background: #111;
+    background: linear-gradient(
+      180deg,
+      #000 0,
+      rgba(0, 0, 0, 0.6) 68%,
+      transparent
+    );
+    ${({ scrolled }) => {
+      return (
+        scrolled &&
+        `
+        background: #111;
+      `
+      );
+    }}
   }
 `;
 
