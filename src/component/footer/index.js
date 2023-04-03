@@ -11,6 +11,10 @@ const FooterContainer = styled.div`
   color: #fff;
 
   background: #030303;
+
+  @media (${breakpoint.mobile}) {
+    height: 150px;
+  }
 `;
 
 const FooterContent = styled.div`
