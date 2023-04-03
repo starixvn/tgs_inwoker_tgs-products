@@ -84,7 +84,9 @@ const SupportBackground = styled.div`
 `;
 
 const SupportTitle = styled.div`
-  font-size: 12px;
+  @media (${breakpoint.mobile}) {
+    font-size: 12px;
+  }
 `;
 const SupportDescription = styled.div`
   font-size: 12px;

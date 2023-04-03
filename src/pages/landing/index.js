@@ -9,6 +9,8 @@ import { common } from "../../utils/common";
 import breakpoint from "../../config/breakpoints";
 
 import AppBar from "../../component/appbar";
+import { useParams } from "react-router";
+import { AppHistory } from "../../config/router";
 
 const GameListContainer = styled.div`
   bottom: 40px;
@@ -113,11 +115,6 @@ const Brands = styled.div`
   align-items: center;
   gap: 10px;
 
-  :hover {
-    background: #0389ff;
-    cursor: pointer;
-  }
-
   background: rgba(30, 31, 32, 0.9);
   @media (${breakpoint.mobile}) {
     background: rgba(0, 0, 0, 0.5);
@@ -213,6 +210,18 @@ const Landing = () => {
   const [gameList, setGameList] = useState(hardcoded.homepage);
   const [selected, setSelected] = useState(gameList[0]);
 
+  const { game } = useParams();
+
+  useEffect(() => {
+    //find matching title from homepage, if match with game param, set selected
+    const found = gameList.find((a) => {
+      return a.title === game;
+    });
+    if (found) {
+      setSelected(found);
+    }
+  }, []);
+
   return (
     <>
       <AppBar />
@@ -283,6 +292,13 @@ const Landing = () => {
                     selected={data.title === selected.title}
                     onClick={() => {
                       setSelected(data);
+                      //replace the last item in the url with the title
+                      AppHistory.replace(
+                        AppHistory.location.pathname.replace(
+                          /[^/]*$/,
+                          data.title
+                        )
+                      );
                     }}
                   >
                     <Icon icon={data.title} />

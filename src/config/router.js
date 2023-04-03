@@ -17,6 +17,7 @@ const AppRouter = () => {
     { route: "/contact", component: Contact },
     { route: "/about", component: AboutPage },
     { route: "/", component: Landing },
+    { route: "/:game", component: Landing },
   ];
   return (
     <>

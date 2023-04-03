@@ -4,6 +4,7 @@ import breakpoint from "../../../config/breakpoints";
 import i18n from "../../../config/i18n";
 import { common } from "../../../utils/common";
 import { hardcoded } from "../../../utils/hardcode";
+import { AppHistory } from "../../../config/router";
 
 const HugeAssNumber = styled.div`
   font-size: 400px;
@@ -154,6 +155,7 @@ const GameType = styled.div`
   gap: 10px;
   font-size: 20px;
   letter-spacing: 2px;
+  cursor: pointer;
 
   @media (${breakpoint.mobile}) {
     font-size: 15px;
@@ -211,7 +213,14 @@ const SectionThree = () => {
         <GameTypeLister>
           {hardcoded.homepage.map((data, index) => {
             return (
-              <GameType key={index}>
+              <GameType
+                key={index}
+                onClick={() => {
+                  AppHistory.replace(
+                    AppHistory.location.pathname.replace(/[^/]*$/, data.title)
+                  );
+                }}
+              >
                 <IconWrapper>
                   <Icon icon={data.title} />
                 </IconWrapper>

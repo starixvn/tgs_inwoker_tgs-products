@@ -129,10 +129,19 @@ const demoWeb = [
   { image: "/demo/web/t4.jpg", title: "T4", link: "https://t4.srvptt.com/" },
   { image: "/demo/web/t5.jpg", title: "T5", link: "https://t5.srvptt.com/" },
   { image: "/demo/web/t8.jpg", title: "T8", link: "https://t5.srvptt.com/" },
-  { image: "/demo/web/t9.jpg", title: "T9", link: "https://t5.srvptt.com/" },
+  {
+    image: "/demo/web/t10.jpg",
+    title: "T10",
+    link: "https://t5.srvptt.com/",
+  },
   {
     image: "/demo/web/t11.jpg",
     title: "T11",
+    link: "https://t5.srvptt.com/",
+  },
+  {
+    image: "/demo/web/t11-1.jpg",
+    title: "T11-1",
     link: "https://t5.srvptt.com/",
   },
   {
@@ -140,11 +149,7 @@ const demoWeb = [
     title: "T13",
     link: "https://t5.srvptt.com/",
   },
-  {
-    image: "/demo/web/bunny.jpg",
-    title: "BUNNY",
-    link: "https://t5.srvptt.com/",
-  },
+
   {
     image: "/demo/web/t14.jpg",
     title: "T14",
@@ -158,11 +163,6 @@ const demoWap = [
   {
     image: "/demo/wap/t2-2.jpg",
     title: "T2-2",
-    link: "https://t2.srvptt.com/",
-  },
-  {
-    image: "/demo/wap/t2-2.jpg",
-    title: "T2=2",
     link: "https://t2.srvptt.com/",
   },
   { image: "/demo/wap/t3.jpg", title: "T3", link: "https://t3.srvptt.com/" },
@@ -238,7 +238,7 @@ const appbarMenu = [
   { title: "products", withBorder: false, route: "" },
   { title: "demo", withBorder: false, route: "demo" },
   { title: "about", withBorder: false, route: "about" },
-  { title: "contact", withBorder: true, route: "contact" },
+  { title: "contact", withBorder: false, route: "contact" },
 ];
 
 export const hardcoded = {

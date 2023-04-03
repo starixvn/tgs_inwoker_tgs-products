@@ -36,6 +36,11 @@ const ImageContainer = styled.div`
       return wapPadding ? wapPadding : "0";
     }};
   }
+
+  @media (${breakpoint.mobile}) {
+    height: auto;
+    width: auto;
+  }
 `;
 
 const ImageComponent = styled.img`

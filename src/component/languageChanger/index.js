@@ -7,9 +7,10 @@ import { AppHistory } from "../../config/router";
 const LanguageHolder = styled.div`
   display: flex;
   color: ${({ scrolled }) => {
-    return scrolled ? "white" : "white ";
+    return scrolled ? "hsla(0,0%,100%,.6)" : "hsla(0,0%,100%,.6) ";
   }};
   align-items: center;
+  white-space: nowrap;
 `;
 
 const TheDropdownWrapper = styled.div`
@@ -25,13 +26,23 @@ const TheGoddamnButton = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+
+  ${({ show }) => {
+    return (
+      show &&
+      `
+    color: #fff;
+    `
+    );
+  }}
 `;
 
 const TheDropdownContainer = styled.div`
-  display: ${({ show }) => (show ? "block" : "none")};
+  opacity: ${({ show }) => (show ? "1" : "0")};
   position: absolute;
   top: 50px;
   left: -30px;
+  transition: opacity 0.3s ease-in-out;
 `;
 
 const HideOnMobile = styled.div`
@@ -46,7 +57,7 @@ const TheBubble = styled.div`
   background: #313132;
   width: 50px;
   color: #a1a1a1;
-  padding: 20px;
+  padding: 10px 0;
   display: flex;
   flex-direction: column;
   width: 100px;
@@ -77,6 +88,14 @@ const LanguageOption = styled.div`
 
   @media (${breakpoint.mobile}) {
     padding: 0 20px;
+  }
+`;
+
+const WebLanguageOption = styled.div`
+  padding: 3px 20px;
+  :hover {
+    background: #0389ff;
+    color: #fff;
   }
 `;
 
@@ -122,6 +141,7 @@ const LanguageChanger = ({ scrolled }) => {
     <LanguageHolder scrolled={scrolled}>
       <TheDropdownWrapper>
         <TheGoddamnButton
+          show={show}
           onClick={() => {
             setShow(!show);
           }}
@@ -132,7 +152,7 @@ const LanguageChanger = ({ scrolled }) => {
           <TheBubble>
             {languages.map((data, index) => {
               return (
-                <div
+                <WebLanguageOption
                   key={index}
                   onClick={() => {
                     setSelected(data.name);
@@ -141,7 +161,7 @@ const LanguageChanger = ({ scrolled }) => {
                   }}
                 >
                   {data.name}
-                </div>
+                </WebLanguageOption>
               );
             })}
           </TheBubble>

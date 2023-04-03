@@ -80,26 +80,6 @@ const AdvantageHolder = styled.div`
   }
 `;
 
-const BenefitContainer = styled.div`
-  background: rgb(0, 40, 100);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  border-radius: 10px;
-  padding: 40px 30px;
-  margin-top: 80px;
-  @media (${breakpoint.mobile}) {
-    margin-top: 10px;
-    padding: 20px 10px;
-
-    @media (${breakpoint.mobile}) {
-      margin-top: -1px;
-    }
-  }
-`;
-
 const HugeIcon = styled.div`
   background: #0389ff;
   width: 150px;
@@ -115,6 +95,33 @@ const HugeIcon = styled.div`
     width: 80px;
     height: 80px;
   }
+
+  transition: background 0.3s ease-in-out;
+`;
+
+const BenefitContainer = styled.div`
+  :hover {
+    box-shadow: 8px 8px 0 0 #00378a;
+
+    ${HugeIcon} {
+      background: #0064fc;
+    }
+  }
+  background: rgb(0, 40, 100);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 10px;
+  padding: 40px 30px;
+  margin-top: 80px;
+  @media (${breakpoint.mobile}) {
+    margin-top: 10px;
+    padding: 20px 10px;
+  }
+
+  transition: box-shadow 0.3s ease-in-out;
 `;
 
 const AdvantageTitle = styled.div`

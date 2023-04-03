@@ -9,7 +9,7 @@ import breakpoint from "../../config/breakpoints";
 import { hardcoded } from "../../utils/hardcode";
 
 const CustomAppBarContainer = styled.div`
-  height: 100px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,13 @@ const CustomAppBarContainer = styled.div`
   width: 100%;
   z-index: 3;
   color: black;
-  transition: background 0.75s;
+
+  background: linear-gradient(
+    180deg,
+    #000 0,
+    rgba(0, 0, 0, 0.2) 68%,
+    transparent
+  );
 
   @media (${breakpoint.mobile}) {
     height: 60px;
@@ -27,20 +33,24 @@ const CustomAppBarContainer = styled.div`
     return (
       scrolled &&
       `
-    background: #081120;
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);
+     background: linear-gradient(180deg,#000 0,rgba(0,0,0,.6) 68%,transparent);
     `
     );
   }}
+  transition: background 0.75s;
+
+  @media (${breakpoint.mobile}) {
+    background: #111;
+  }
 `;
 
 const AppBarLength = styled.div`
   width: 1280px;
   height: 100%;
-  display: grid;
-  grid-template-columns: 15% 70% 15%;
-
+  display: flex;
+  justify-content: space-between;
   @media (${breakpoint.mobile}) {
+    display: grid;
     width: 100%;
     grid-template-columns: 40%;
   }
@@ -58,12 +68,7 @@ const Left = styled(AppBarContent)`
     width: 50%;
   }
 `;
-const Middle = styled(AppBarContent)`
-  @media (${breakpoint.mobile}) {
-    display: none;
-  }
-`;
-const Right = styled(AppBarContent)`
+const HideOnMobile = styled(AppBarContent)`
   @media (${breakpoint.mobile}) {
     display: none;
   }
@@ -72,8 +77,8 @@ const Right = styled(AppBarContent)`
 const Menu = styled.div`
   display: flex;
   width: 100%;
-  justify-content: space-around;
-  padding: 0px 100px;
+  justify-content: flex-end;
+  padding: 0px 20px;
 `;
 
 const MenuButton = styled.div`
@@ -84,11 +89,17 @@ const MenuButton = styled.div`
   user-select: none;
 
   ${({ scrolled }) => {
-    return scrolled ? `color: white;` : `color: white;`;
+    return scrolled
+      ? `color: hsla(0,0%,100%,.6);`
+      : `color: hsla(0,0%,100%,.6);`;
   }}
 
   ${({ selected, border }) => {
-    return selected ? (border ? "color: white;" : "color: #0389FF;") : ``;
+    return selected
+      ? border
+        ? "color: hsla(0,0%,100%,.6);"
+        : "color: #fff;"
+      : ``;
   }}
 
 
@@ -164,33 +175,39 @@ const AppBar = ({}) => {
                 performClickMenu("");
               }}
             >
-              <Image src={scrolled ? "/logo/PGG-gold.png" : "/logo/PGG.png"} />
+              <Image
+                src={scrolled ? "/logo/PGG.png" : "/logo/PGG.png"}
+                h="40px"
+              />
             </LogoHolder>
           </Left>
-          <Middle>
+          <HideOnMobile>
             <Menu>
               {hardcoded.appbarMenu.map((data, index) => {
                 return (
-                  <MenuButton
-                    scrolled={scrolled}
-                    key={index}
-                    selected={selected === data.title}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                      performClickMenu(data.route);
-                    }}
-                    border={data.withBorder}
-                  >
-                    {i18n.t(`menu.` + data.title)}
-                  </MenuButton>
+                  <div>
+                    <MenuButton
+                      scrolled={scrolled}
+                      key={index}
+                      selected={selected === data.title}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                        performClickMenu(data.route);
+                      }}
+                      border={data.withBorder}
+                    >
+                      {i18n.t(`menu.` + data.title)}
+                    </MenuButton>
+                  </div>
                 );
               })}
             </Menu>
-          </Middle>
-          <Right>
-            <LanguageChanger scrolled={scrolled} />
-          </Right>
+
+            <div>
+              <LanguageChanger scrolled={scrolled} />
+            </div>
+          </HideOnMobile>
         </AppBarLength>
       </CustomAppBarContainer>
       <MobileMenu menu={hardcoded.appbarMenu} />

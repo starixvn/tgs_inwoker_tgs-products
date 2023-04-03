@@ -7,6 +7,7 @@ import breakpoint from "../../config/breakpoints";
 import i18n from "../../config/i18n";
 import { common } from "../../utils/common";
 import { hardcoded } from "../../utils/hardcode";
+import ImageViewer from "../../component/imageviewer";
 
 const Contents = styled.div`
   display: grid;
@@ -54,7 +55,19 @@ const ProductContainer = styled.div`
   position: relative;
 `;
 
-const TheImage = styled.img`
+const TheImage = styled.div`
+  width: 100%;
+  height: 250px;
+  background-image: url(${({ src }) => src});
+  background-size: cover;
+  background-position: top;
+
+  @media (${breakpoint.mobile}) {
+    height: 100px;
+  }
+`;
+
+const TheImageWap = styled.img`
   width: 100%;
 `;
 
@@ -85,6 +98,10 @@ const TitleHolder = styled.div`
   padding-bottom: 0px;
 
   color: #fff;
+
+  @media (${breakpoint.mobile}) {
+    padding-top: 0px;
+  }
 `;
 
 const Title = styled.div`
@@ -172,14 +189,18 @@ const EntireShitWrapper = styled.div`
   }
 `;
 
-const Products = ({ data, onClick }) => {
+const Products = ({ data, onClick, variant }) => {
   return (
     <EntireShitWrapper>
       <ProductContainer>
         <Overlay>
           <TheSquare onClick={onClick}>DEMO</TheSquare>
         </Overlay>
-        <TheImage src={common.imageUrl + data.image} alt={data.title} />
+        {variant === "web" ? (
+          <TheImage src={common.imageUrl + data.image} alt={data.title} />
+        ) : (
+          <TheImageWap src={common.imageUrl + data.image} alt={data.title} />
+        )}
       </ProductContainer>
       <TheTitle>{data.title} </TheTitle>
     </EntireShitWrapper>
@@ -188,9 +209,36 @@ const Products = ({ data, onClick }) => {
 
 const Demo = () => {
   const [project, setProject] = React.useState("web");
+  const [openViewer, setOpenViewer] = React.useState(false);
+  const [image, setImage] = React.useState("");
+  const [data, setData] = React.useState([]);
 
-  function gotoPage(link) {
-    window.open(link);
+  function openImage(image, data) {
+    setOpenViewer(true);
+    setImage(image);
+    setData(data);
+  }
+
+  function closeImage() {
+    setOpenViewer(false);
+  }
+
+  function nextImage() {
+    const index = data.findIndex((item) => item.image === image);
+    if (index === data.length - 1) {
+      setImage(data[0].image);
+    } else {
+      setImage(data[index + 1].image);
+    }
+  }
+
+  function prevImage() {
+    const index = data.findIndex((item) => item.image === image);
+    if (index === 0) {
+      setImage(data[data.length - 1].image);
+    } else {
+      setImage(data[index - 1].image);
+    }
   }
 
   return (
@@ -226,7 +274,15 @@ const Demo = () => {
         {project === "web" && (
           <Contents>
             {hardcoded.demoWeb.map((item) => {
-              return <Products data={item} />;
+              return (
+                <Products
+                  data={item}
+                  variant={"web"}
+                  onClick={() => {
+                    openImage(item.image, hardcoded.demoWeb);
+                  }}
+                />
+              );
             })}
           </Contents>
         )}
@@ -237,7 +293,7 @@ const Demo = () => {
                 <Products
                   data={item}
                   onClick={() => {
-                    gotoPage(item.link);
+                    openImage(item.image, hardcoded.demoWap);
                   }}
                 />
               );
@@ -245,7 +301,14 @@ const Demo = () => {
           </Contents>
         )}
       </Page>
-      <Footer />
+      <Footer />{" "}
+      <ImageViewer
+        open={openViewer}
+        handleClose={closeImage}
+        image={image}
+        handleNext={nextImage}
+        handlePrevious={prevImage}
+      />
     </>
   );
 };
