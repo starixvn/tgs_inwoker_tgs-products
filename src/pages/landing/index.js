@@ -212,6 +212,17 @@ const Landing = () => {
 
   const { game } = useParams();
 
+  //check if game param is valid
+  const isValid = gameList.find((a) => {
+    return a.title === game;
+  });
+
+  useEffect(() => {
+    if (!isValid) {
+      AppHistory.push("/" + i18n.language + "/");
+    }
+  });
+
   useEffect(() => {
     //find matching title from homepage, if match with game param, set selected
     const found = gameList.find((a) => {
@@ -235,6 +246,7 @@ const Landing = () => {
                 selected={data.title === selected.title}
                 onClick={() => {
                   setSelected(data);
+                  AppHistory.push("/" + i18n.language + "/" + data.title);
                 }}
               >
                 <Icon icon={data.title} />
