@@ -292,13 +292,7 @@ const Landing = () => {
                     selected={data.title === selected.title}
                     onClick={() => {
                       setSelected(data);
-                      //replace the last item in the url with the title
-                      AppHistory.replace(
-                        AppHistory.location.pathname.replace(
-                          /[^/]*$/,
-                          data.title
-                        )
-                      );
+                      AppHistory.push("/" + i18n.language + "/" + data.title);
                     }}
                   >
                     <Icon icon={data.title} />
