@@ -124,10 +124,6 @@ const TheCircleContent = styled.div`
   font-size: 16px;
 `;
 
-const random = () => {
-  return Math.floor(Math.random() * 20) - 10;
-};
-
 const UnderneathCircle = styled.div`
   background: #03396a;
   width: 190px;
@@ -136,46 +132,8 @@ const UnderneathCircle = styled.div`
   position: absolute;
 
   z-index: 0;
-
-  animation: ${({ animate }) => {
-      return [animate];
-    }}
-    5s infinite;
-  @keyframes move1 {
-    0% {
-      transform: translate(${random()}px, ${random()}px);
-    }
-    50% {
-      transform: translate(${random()}px, ${random()}px);
-    }
-    100% {
-      transform: translate(${random()}px, ${random()}px);
-    }
-  }
-
-  @keyframes move2 {
-    0% {
-      transform: translate(${random()}px, ${random()}px);
-    }
-    50% {
-      transform: translate(${random()}px, ${random()}px);
-    }
-    100% {
-      transform: translate(${random()}px, ${random()}px);
-    }
-  }
-
-  @keyframes move3 {
-    0% {
-      transform: translate(${random()}px, ${random()}px);
-    }
-    50% {
-      transform: translate(${random()}px, ${random()}px);
-    }
-    100% {
-      transform: translate(${random()}px, ${random()}px);
-    }
-  }
+  margin-top: 5px;
+  margin-left: 5px;
 
   @media (${breakpoint.mobile}) {
     width: 150px;
