@@ -221,7 +221,7 @@ const Landing = () => {
     if (!isValid) {
       AppHistory.push("/" + i18n.language + "/");
     }
-  });
+  }, []);
 
   useEffect(() => {
     //find matching title from homepage, if match with game param, set selected
