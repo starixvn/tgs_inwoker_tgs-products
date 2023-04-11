@@ -260,7 +260,7 @@ const AboutPage = () => {
       <>
         <Page
           background={common.imageUrl + "/about/sc1.jpg"}
-          style={{ minHeight: "calc(105vh )" }}
+          style={{ minHeight: i18n.language === "en-US" ? "calc(140vh)" :"calc(105vh)" }}
         >
           <SectionOne>
             <SectionOneContent>
