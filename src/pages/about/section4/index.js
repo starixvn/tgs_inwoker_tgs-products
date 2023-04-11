@@ -215,7 +215,10 @@ const AdvantageAndPartner = () => {
   const device = screenWidth < 600 ? "-mb" : "";
 
   return (
-    <Page background={common.imageUrl + "/about/sc4" + device + ".jpg"}>
+    <Page
+      background={common.imageUrl + "/about/sc4" + device + ".jpg"}
+      style={{ paddingBottom: 10 }}
+    >
       <Contents>
         <Advantages />
         <Partners />

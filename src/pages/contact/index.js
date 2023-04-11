@@ -70,7 +70,7 @@ const SupportBackground = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-top;
-  gap: 20px;
+  gap: 50px;
   color: #fff;
   padding: 40px;
   cursor: pointer;
