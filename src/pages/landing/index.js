@@ -118,7 +118,7 @@ const Brands = styled.div`
   background: rgba(30, 31, 32, 0.9);
   @media (${breakpoint.mobile}) {
     padding: 10px 15px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(38, 41, 49, 0.9);
   }
 `;
 
@@ -166,7 +166,7 @@ const CustomGameListItem = styled.div`
 
 const GameListItemTitle = styled.div`
   @media (${breakpoint.mobile}) {
-    ${()=> i18n.language === 'en-US'? 'font-size: 11px;': ''} 
+    ${() => (i18n.language === "en-US" ? "font-size: 11px;" : "")}
   }
 `;
 
@@ -257,7 +257,9 @@ const Landing = () => {
                 }}
               >
                 <Icon icon={data.title} />
-                <GameListItemTitle>{i18n.t("gametype." + data.title)}</GameListItemTitle>
+                <GameListItemTitle>
+                  {i18n.t("gametype." + data.title)}
+                </GameListItemTitle>
               </CustomGameListItem>
             );
           })}
