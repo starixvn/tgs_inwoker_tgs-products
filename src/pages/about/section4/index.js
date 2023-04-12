@@ -146,6 +146,8 @@ const AdvantageDescription = styled.div`
 const AnotherSubtitle = styled.div`
   color: rgb(3, 137, 255);
   text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
 `;
 
 const Advantages = () => {
