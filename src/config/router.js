@@ -14,9 +14,9 @@ const AppRouter = () => {
   const paths = [
     { route: "/demo", component: Demo },
     { route: "/contact", component: Contact },
-    { route: "/about", component: AboutPage },
-    { route: "/", component: Landing },
-    { route: "/:game", component: Landing },
+    { route: "/", component: AboutPage },
+    { route: "/products", component: Landing },
+    { route: "/products/:game", component: Landing },
   ];
   return (
     <>

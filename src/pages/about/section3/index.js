@@ -216,9 +216,7 @@ const SectionThree = () => {
               <GameType
                 key={index}
                 onClick={() => {
-                  AppHistory.replace(
-                    AppHistory.location.pathname.replace(/[^/]*$/, data.title)
-                  );
+                  AppHistory.push("/products/" + data.title);
                 }}
               >
                 <IconWrapper>
