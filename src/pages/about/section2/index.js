@@ -186,7 +186,7 @@ const SectionTwo = () => {
             <TheNavigateButton
               onClick={() => {
                 window.scrollTo(0, 0);
-                AppHistory.push("/" + i18n.language + "/demo");
+                AppHistory.push("/demo");
               }}
             >
               {i18n.t("demo.title")}
