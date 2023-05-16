@@ -226,7 +226,7 @@ const Landing = () => {
 
   useEffect(() => {
     if (!isValid) {
-      AppHistory.push("/");
+      AppHistory.push("/products");
     }
   }, []);
 
@@ -313,7 +313,7 @@ const Landing = () => {
                     selected={data.title === selected.title}
                     onClick={() => {
                       setSelected(data);
-                      AppHistory.push("/" + data.title);
+                      AppHistory.push("/products/" + data.title);
                     }}
                   >
                     <Icon icon={data.title} />

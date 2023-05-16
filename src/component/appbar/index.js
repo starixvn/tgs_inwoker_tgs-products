@@ -133,7 +133,7 @@ const AppBar = ({}) => {
     AppHistory.push("/" + path);
   }
 
-  const [selected, setSelected] = useState("products");
+  const [selected, setSelected] = useState("");
 
   function performClickMenu(item) {
     setSelected(item);
@@ -145,7 +145,7 @@ const AppBar = ({}) => {
     if (path[2] !== "") {
       setSelected(path[2]);
     } else {
-      setSelected("products");
+      setSelected("");
     }
   }, []);
 

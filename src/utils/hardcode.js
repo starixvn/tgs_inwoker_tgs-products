@@ -235,9 +235,9 @@ const supports = [
 ];
 
 const appbarMenu = [
-  { title: "products", withBorder: false, route: "" },
+  { title: "about", withBorder: false, route: "" },
+  { title: "products", withBorder: false, route: "products" },
   { title: "demo", withBorder: false, route: "demo" },
-  { title: "about", withBorder: false, route: "about" },
   { title: "contact", withBorder: false, route: "contact" },
 ];
 
