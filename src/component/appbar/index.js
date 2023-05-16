@@ -130,7 +130,7 @@ const LogoHolder = styled.div`
 
 const AppBar = ({}) => {
   function redirect(path) {
-    AppHistory.push("/" + i18n.language + "/" + path);
+    AppHistory.push("/" + path);
   }
 
   const [selected, setSelected] = useState("products");
