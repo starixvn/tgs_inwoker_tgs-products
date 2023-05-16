@@ -11,8 +11,7 @@ i18n.on("languageChanged", function (lng) {
   //       window.location.replace(newUrl);
   //     }
   //   }
-
-  window.localStorage.setItem("i18nextLng", lng);
+  //  window.localStorage.setItem("i18nextLng", lng);
 });
 
 const languageInLocalStorage = localStorage.getItem("i18nextLng");
