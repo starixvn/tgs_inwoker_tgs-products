@@ -124,10 +124,10 @@ const LanguageChanger = ({ scrolled }) => {
 
   function changeLanguage(language) {
     i18n.changeLanguage(language);
-    if (path[2] !== "" && path[2] !== undefined && path[2] !== null) {
-      AppHistory.push("/" + language + "/" + path[2]);
+    if (path[1] !== "" && path[1] !== undefined && path[1] !== null) {
+      AppHistory.push("/" + path[1]);
     } else {
-      AppHistory.push("/" + language + "/");
+      AppHistory.push("/");
     }
   }
 

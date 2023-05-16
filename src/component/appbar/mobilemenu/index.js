@@ -80,7 +80,7 @@ const MobileMenu = ({ menu }) => {
   }
 
   function redirect(path) {
-    AppHistory.push("/" + i18n.language + "/" + path);
+    AppHistory.push("/" + path);
   }
 
   function performClickMenu(item) {

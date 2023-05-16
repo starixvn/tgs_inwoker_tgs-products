@@ -226,7 +226,7 @@ const Landing = () => {
 
   useEffect(() => {
     if (!isValid) {
-      AppHistory.push("/" + i18n.language + "/");
+      AppHistory.push("/");
     }
   }, []);
 
@@ -253,7 +253,7 @@ const Landing = () => {
                 selected={data.title === selected.title}
                 onClick={() => {
                   setSelected(data);
-                  AppHistory.push("/" + i18n.language + "/" + data.title);
+                  AppHistory.push("/" + data.title);
                 }}
               >
                 <Icon icon={data.title} />
@@ -313,7 +313,7 @@ const Landing = () => {
                     selected={data.title === selected.title}
                     onClick={() => {
                       setSelected(data);
-                      AppHistory.push("/" + i18n.language + "/" + data.title);
+                      AppHistory.push("/" + data.title);
                     }}
                   >
                     <Icon icon={data.title} />

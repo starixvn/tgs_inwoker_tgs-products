@@ -11,7 +11,6 @@ import Contact from "../pages/contact";
 export const AppHistory = createBrowserHistory();
 
 const AppRouter = () => {
-  const baseRouteUrl = `/:locale(en-US|zh-CN|zh-TW)`;
   const paths = [
     { route: "/demo", component: Demo },
     { route: "/contact", component: Contact },
@@ -24,15 +23,9 @@ const AppRouter = () => {
       <Router history={AppHistory}>
         <Switch>
           {paths.map((data, index) => {
-            return (
-              <Route
-                exact
-                path={baseRouteUrl + data.route}
-                component={data.component}
-              />
-            );
+            return <Route exact path={data.route} component={data.component} />;
           })}
-          <Redirect to={`/${i18n.language}`} />
+          <Redirect to={`/`} />
         </Switch>
       </Router>
     </>
