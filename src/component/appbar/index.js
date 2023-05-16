@@ -142,8 +142,8 @@ const AppBar = ({}) => {
   var path = window.location.pathname.split("/");
 
   useEffect(() => {
-    if (path[2] !== "") {
-      setSelected(path[2]);
+    if (path[1] !== "") {
+      setSelected(path[1]);
     } else {
       setSelected("");
     }
