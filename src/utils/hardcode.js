@@ -158,37 +158,31 @@ const demoWeb = [
 ];
 
 const demoWap = [
-  { image: "/demo/wap/t1.jpg", title: "T1", link: "https://t1.srvptt.com/" },
-  { image: "/demo/wap/t2.jpg", title: "T2", link: "https://t2.srvptt.com/" },
+  { image: "/demo/wap/t1.png", title: "T1", link: "https://t1.srvptt.com/" },
+  { image: "/demo/wap/t2.png", title: "T2", link: "https://t2.srvptt.com/" },
+
+  { image: "/demo/wap/t3.png", title: "T3", link: "https://t3.srvptt.com/" },
+  { image: "/demo/wap/t4.png", title: "T4", link: "https://t4.srvptt.com/" },
+  { image: "/demo/wap/t5.png", title: "T5", link: "https://t5.srvptt.com/" },
+  { image: "/demo/wap/t8.png", title: "T8", link: "https://t5.srvptt.com/" },
+
   {
-    image: "/demo/wap/t2-2.jpg",
-    title: "T2-2",
-    link: "https://t2.srvptt.com/",
-  },
-  { image: "/demo/wap/t3.jpg", title: "T3", link: "https://t3.srvptt.com/" },
-  { image: "/demo/wap/t4.jpg", title: "T4", link: "https://t4.srvptt.com/" },
-  { image: "/demo/wap/t5.jpg", title: "T5", link: "https://t5.srvptt.com/" },
-  { image: "/demo/wap/t6.jpg", title: "T6", link: "https://t3.srvptt.com/" },
-  { image: "/demo/wap/t7.jpg", title: "T7", link: "https://t4.srvptt.com/" },
-  { image: "/demo/wap/t8.jpg", title: "T8", link: "https://t5.srvptt.com/" },
-  { image: "/demo/wap/t9.jpg", title: "T9", link: "https://t5.srvptt.com/" },
-  {
-    image: "/demo/wap/t10.jpg",
+    image: "/demo/wap/t10.png",
     title: "T10",
     link: "https://t5.srvptt.com/",
   },
   {
-    image: "/demo/wap/t11.jpg",
+    image: "/demo/wap/t11.png",
     title: "T11",
     link: "https://t5.srvptt.com/",
   },
   {
-    image: "/demo/wap/t13.jpg",
+    image: "/demo/wap/t13.png",
     title: "T13",
     link: "https://t5.srvptt.com/",
   },
   {
-    image: "/demo/wap/t14.jpg",
+    image: "/demo/wap/t14.png",
     title: "T14",
     link: "https://t5.srvptt.com/",
   },
