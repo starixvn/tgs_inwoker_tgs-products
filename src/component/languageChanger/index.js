@@ -99,31 +99,31 @@ const WebLanguageOption = styled.div`
   }
 `;
 
+export const languages = [
+  {
+    language: "en-US",
+    name: "EN",
+  },
+
+  {
+    language: "zh-CN",
+    name: "简中",
+  },
+
+  {
+    language: "zh-TW",
+    name: "繁中",
+  },
+];
+
 const LanguageChanger = ({ scrolled }) => {
-  const languages = [
-    {
-      language: "en-US",
-      name: "EN",
-    },
-
-    {
-      language: "zh-CN",
-      name: "简中",
-    },
-
-    {
-      language: "zh-TW",
-      name: "繁中",
-    },
-  ];
-
   var path = window.location.pathname.split("/");
 
-  var languageInLocalStorage = localStorage.getItem("i18nextLng");
   const [selected, setSelected] = useState(languages[0].name);
 
   function changeLanguage(language) {
     i18n.changeLanguage(language);
+    localStorage.setItem("fallbackLng", language);
     if (path[1] !== "" && path[1] !== undefined && path[1] !== null) {
       AppHistory.push("/" + path[1]);
     } else {

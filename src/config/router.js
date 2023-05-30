@@ -7,6 +7,7 @@ import i18n from "./i18n";
 import Demo from "../pages/demo";
 import AboutPage from "../pages/about";
 import Contact from "../pages/contact";
+import PathWrapper from "../component/pathwrapper";
 
 export const AppHistory = createBrowserHistory();
 
