@@ -119,23 +119,11 @@ export const languages = [
 const LanguageChanger = ({ scrolled }) => {
   var path = window.location.pathname.split("/");
 
-  //language in localStorage
-  var language = localStorage.getItem("i18nextLng");
-
-  const matchLanguage = (language) => {
-    for (var i = 0; i < languages.length; i++) {
-      if (languages[i].language === language) {
-        return languages[i].name;
-      }
-    }
-  };
-
-  const [selected, setSelected] = useState(
-    matchLanguage(language) || languages[0].name
-  );
+  const [selected, setSelected] = useState(languages[0].name);
 
   function changeLanguage(language) {
     i18n.changeLanguage(language);
+    localStorage.setItem("fallbackLng", language);
     if (path[1] !== "" && path[1] !== undefined && path[1] !== null) {
       AppHistory.push("/" + path[1]);
     } else {
