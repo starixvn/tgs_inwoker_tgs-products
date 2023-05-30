@@ -1,4 +1,5 @@
 import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 i18n.on("languageChanged", function (lng) {
   // if the language we switched to is the default language we need to remove the /en from URL
@@ -16,29 +17,36 @@ i18n.on("languageChanged", function (lng) {
 
 const languageInLocalStorage = localStorage.getItem("i18nextLng");
 
-i18n.use(LanguageDetector).init({
-  resources: {
-    "en-US": {
-      translation: require("../assets/translation/en-US.json"),
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources: {
+      "en-US": {
+        translation: require("../assets/translation/en-US.json"),
+      },
+      "zh-CN": {
+        translation: require("../assets/translation/zh-CN.json"),
+      },
+      "zh-TW": {
+        translation: require("../assets/translation/zh-TW.json"),
+      },
     },
-    "zh-CN": {
-      translation: require("../assets/translation/zh-CN.json"),
+    whitelist: ["en-US", "zh-TW", "zh-CN"],
+    fallbackLng: languageInLocalStorage ? languageInLocalStorage : "en-US",
+    detection: {
+      order: ["path"],
+      lookupFromPathIndex: 1,
+      checkWhitelist: true,
     },
-    "zh-TW": {
-      translation: require("../assets/translation/zh-TW.json"),
+    interpolation: {
+      escapeValue: false,
+      formatSeparator: ".",
     },
-  },
-  whitelist: ["en-US", "zh-TW", "zh-CN"],
-  fallbackLng: languageInLocalStorage ? languageInLocalStorage : "en-US",
-  detection: {
-    order: ["path"],
-    lookupFromPathIndex: 0,
-    checkWhitelist: true,
-  },
-  interpolation: {
-    escapeValue: false,
-    formatSeparator: ".",
-  },
-});
+    react: {
+      wait: true,
+    },
+    debug: false,
+  });
 
 export default i18n;
