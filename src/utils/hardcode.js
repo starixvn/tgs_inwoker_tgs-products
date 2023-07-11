@@ -155,6 +155,11 @@ const demoWeb = [
     title: "T14",
     link: "https://t5.srvptt.com/",
   },
+  {
+    image: "/demo/web/t15.jpg",
+    title: "T15",
+    link: "https://t5.srvptt.com/",
+  },
 ];
 
 const demoWap = [
@@ -184,6 +189,11 @@ const demoWap = [
   {
     image: "/demo/wap/t14.png",
     title: "T14",
+    link: "https://t5.srvptt.com/",
+  },
+  {
+    image: "/demo/wap/t15.png",
+    title: "T15",
     link: "https://t5.srvptt.com/",
   },
 ];
