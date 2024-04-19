@@ -139,11 +139,13 @@ const demoWeb = [
     title: "T11",
     link: "https://t5.srvptt.com/",
   },
+  /*
   {
     image: "/demo/web/t11-1.jpg",
     title: "T11-1",
     link: "https://t5.srvptt.com/",
   },
+  */
   {
     image: "/demo/web/t13.jpg",
     title: "T13",
