@@ -127,7 +127,7 @@ const Description = styled.div`
 
 const TheTitle = styled.div`
   color: #fff;
-  with: 100%;
+  width: 100%;
   text-align: center;
   padding: 20px;
 

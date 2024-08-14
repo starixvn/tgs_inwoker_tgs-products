@@ -126,19 +126,19 @@ const demoWeb = [
   { image: "/demo/web/t1.jpg", title: "T1", link: "https://t1.srvptt.com/" },
   { image: "/demo/web/t2.jpg", title: "T2", link: "https://t2.srvptt.com/" },
   { image: "/demo/web/t3.jpg", title: "T3", link: "https://t3.srvptt.com/" },
-  { image: "/demo/web/t4.jpg", title: "T4", link: "https://t4.srvptt.com/" },
-  { image: "/demo/web/t5.jpg", title: "T5", link: "https://t5.srvptt.com/" },
+  // { image: "/demo/web/t4.jpg", title: "T4", link: "https://t4.srvptt.com/" },
+  // { image: "/demo/web/t5.jpg", title: "T5", link: "https://t5.srvptt.com/" },
   { image: "/demo/web/t8.jpg", title: "T8", link: "https://t5.srvptt.com/" },
   {
     image: "/demo/web/t10.jpg",
     title: "T10",
     link: "https://t5.srvptt.com/",
   },
-  {
-    image: "/demo/web/t11.jpg",
-    title: "T11",
-    link: "https://t5.srvptt.com/",
-  },
+  // {
+  //   image: "/demo/web/t11.jpg",
+  //   title: "T11",
+  //   link: "https://t5.srvptt.com/",
+  // },
   /*
   {
     image: "/demo/web/t11-1.jpg",
@@ -146,22 +146,25 @@ const demoWeb = [
     link: "https://t5.srvptt.com/",
   },
   */
-  {
-    image: "/demo/web/t13.jpg",
-    title: "T13",
-    link: "https://t5.srvptt.com/",
-  },
+  // {
+  //   image: "/demo/web/t13.jpg",
+  //   title: "T13",
+  //   link: "https://t5.srvptt.com/",
+  // },
 
-  {
-    image: "/demo/web/t14.jpg",
-    title: "T14",
-    link: "https://t5.srvptt.com/",
-  },
-  {
-    image: "/demo/web/t15.jpg",
-    title: "T15",
-    link: "https://t5.srvptt.com/",
-  },
+  // {
+  //   image: "/demo/web/t14.jpg",
+  //   title: "T14",
+  //   link: "https://t5.srvptt.com/",
+  // },
+  // {
+  //   image: "/demo/web/t15.jpg",
+  //   title: "T15",
+  //   link: "https://t5.srvptt.com/",
+  // },
+  { image: "/demo/web/t20.png", title: "T20", link: "https://t20.srvptt.com/" },
+  { image: "/demo/web/t29.png", title: "T29", link: "https://t29.srvptt.com/" },
+  { image: "/demo/web/t36.png", title: "T36", link: "https://t36.srvptt.com/" },
 ];
 
 const demoWap = [
@@ -169,8 +172,8 @@ const demoWap = [
   { image: "/demo/wap/t2.png", title: "T2", link: "https://t2.srvptt.com/" },
 
   { image: "/demo/wap/t3.png", title: "T3", link: "https://t3.srvptt.com/" },
-  { image: "/demo/wap/t4.png", title: "T4", link: "https://t4.srvptt.com/" },
-  { image: "/demo/wap/t5.png", title: "T5", link: "https://t5.srvptt.com/" },
+  // { image: "/demo/wap/t4.png", title: "T4", link: "https://t4.srvptt.com/" },
+  // { image: "/demo/wap/t5.png", title: "T5", link: "https://t5.srvptt.com/" },
   { image: "/demo/wap/t8.png", title: "T8", link: "https://t5.srvptt.com/" },
 
   {
@@ -178,26 +181,29 @@ const demoWap = [
     title: "T10",
     link: "https://t5.srvptt.com/",
   },
-  {
-    image: "/demo/wap/t11.png",
-    title: "T11",
-    link: "https://t5.srvptt.com/",
-  },
-  {
-    image: "/demo/wap/t13.png",
-    title: "T13",
-    link: "https://t5.srvptt.com/",
-  },
-  {
-    image: "/demo/wap/t14.png",
-    title: "T14",
-    link: "https://t5.srvptt.com/",
-  },
-  {
-    image: "/demo/wap/t15.png",
-    title: "T15",
-    link: "https://t5.srvptt.com/",
-  },
+  // {
+  //   image: "/demo/wap/t11.png",
+  //   title: "T11",
+  //   link: "https://t5.srvptt.com/",
+  // },
+  // {
+  //   image: "/demo/wap/t13.png",
+  //   title: "T13",
+  //   link: "https://t5.srvptt.com/",
+  // },
+  // {
+  //   image: "/demo/wap/t14.png",
+  //   title: "T14",
+  //   link: "https://t5.srvptt.com/",
+  // },
+  // {
+  //   image: "/demo/wap/t15.png",
+  //   title: "T15",
+  //   link: "https://t5.srvptt.com/",
+  // },
+  { image: "/demo/wap/t20.png", title: "T20", link: "https://t20.srvptt.com/" },
+  { image: "/demo/wap/t29.png", title: "T29", link: "https://t29.srvptt.com/" },
+  { image: "/demo/wap/t36.png", title: "T36", link: "https://t36.srvptt.com/" },
 ];
 
 const supports = [
