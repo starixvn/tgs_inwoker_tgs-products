@@ -1,6 +1,6 @@
 variables:
   Registry: "pgtgs/"
-  Image: "tgs-products"
+  Image: "tgs-production"
 
 stages:
   - build
@@ -29,9 +29,8 @@ docker_build:
     paths:
       - tag.txt
   only:
-    - main
-    - release
-    - develop
+    - master
+    - release/current
 
 .deploy_template: &deploy_template
   stage: deploy
@@ -45,15 +44,6 @@ docker_build:
   dependencies:
     - docker_build
 
-deploy-dev:
-  <<: *deploy_template
-  tags:
-    - dev
-  variables:
-    CI_ENVIRONMENT_NAME: dev
-  only:
-    - develop
-
 deploy-staging:
   <<: *deploy_template
   tags:
@@ -61,7 +51,7 @@ deploy-staging:
   variables:
     CI_ENVIRONMENT_NAME: staging
   only:
-    - release
+    - release/current
 
 deploy-prod:
   <<: *deploy_template
@@ -71,4 +61,4 @@ deploy-prod:
     CI_ENVIRONMENT_NAME: prod
   when: manual
   only:
-    - main
+    - master
